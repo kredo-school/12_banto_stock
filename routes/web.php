@@ -16,9 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/items', function () {
+    return view('items');
+});
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/items', [App\Http\Controllers\HomeController::class, 'items'])->name('items');
+// Route::get('/items', [App\Http\Controllers\HomeController::class, 'items'])->name('items');
