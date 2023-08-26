@@ -37,7 +37,7 @@
             <option selected>Sort By</option>
             <option value="1">Price High to Low</option>
             <option value="2">Name</option>
-            <option value="3">Inventry Few</option>
+            <option value="3">Stock Few</option>
           </select>
         </div>
       </div>
@@ -51,7 +51,7 @@
             <div class="card-body">
               <p class="card-text text-center fs-4 fw-bold">Lettuce</p>
               <div class="row">
-                <div class="col-6 pe-0 fw-bold">Inventry : <span class="fw-normal">5</span></div>
+                <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$15.00</div>
                 <div class="col-12 fw-bold">Category : <span class="fw-normal">Vegitable</span></div>
               </div>
@@ -64,7 +64,7 @@
             <div class="card-body">
               <p class="card-text text-center fs-4 fw-bold">Tomato</p>
               <div class="row">
-                <div class="col-6 pe-0 fw-bold">Inventry : <span class="fw-normal">5</span></div>
+                <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$15.00</div>
                 <div class="col-12 fw-bold">Category : <span class="fw-normal">Vegitable</span></div>
               </div>
@@ -78,7 +78,7 @@
             <div class="card-body">
               <p class="card-text text-center fs-4 fw-bold">Egg</p>
               <div class="row">
-                <div class="col-6 pe-0 fw-bold">Inventry : <span class="fw-normal">5</span></div>
+                <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$15.00</div>
                 <div class="col-12 fw-bold">Category : <span class="fw-normal">Daily</span></div>
               </div>
@@ -92,7 +92,7 @@
             <div class="card-body">
               <p class="card-text text-center fs-4 fw-bold">Grape</p>
               <div class="row">
-                <div class="col-6 pe-0 fw-bold">Inventry : <span class="fw-normal">5</span></div>
+                <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$15.00</div>
                 <div class="col-12 fw-bold">Category : <span class="fw-normal">Fruit</span></div>
               </div>
@@ -105,7 +105,7 @@
             <div class="card-body">
               <p class="card-text text-center fs-4 fw-bold">Mango</p>
               <div class="row">
-                <div class="col-6 pe-0 fw-bold">Inventry : <span class="fw-normal">5</span></div>
+                <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$15.00</div>
                 <div class="col-12 fw-bold">Category : <span class="fw-normal">Fruit</span></div>
               </div>
@@ -119,7 +119,7 @@
             <div class="card-body">
               <p class="card-text text-center fs-4 fw-bold">Melon</p>
               <div class="row">
-                <div class="col-6 pe-0 fw-bold">Inventry : <span class="fw-normal">5</span></div>
+                <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$105.00</div>
                 <div class="col-12 fw-bold">Category : <span class="fw-normal">Fruit</span></div>
               </div>
@@ -133,7 +133,7 @@
             <div class="card-body">
               <p class="card-text text-center fs-4 fw-bold">Peach</p>
               <div class="row">
-                <div class="col-6 pe-0 fw-bold">Inventry : <span class="fw-normal">5</span></div>
+                <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$15.00</div>
                 <div class="col-12 fw-bold">Category : <span class="fw-normal">Fruit</span></div>
               </div>
@@ -147,7 +147,7 @@
             <div class="card-body">
               <p class="card-text text-center fs-4 fw-bold">Pineapple</p>
               <div class="row">
-                <div class="col-6 pe-0 fw-bold">Inventry : <span class="fw-normal">5</span></div>
+                <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$15.00</div>
                 <div class="col-12 fw-bold">Category : <span class="fw-normal">Fruit</span></div>
               </div>
@@ -161,7 +161,7 @@
             <div class="card-body">
               <p class="card-text text-center fs-4 fw-bold">Passionfruit</p>
               <div class="row">
-                <div class="col-6 pe-0 fw-bold">Inventry : <span class="fw-normal">5</span></div>
+                <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$7.00</div>
                 <div class="col-12 fw-bold">Category : <span class="fw-normal">Fruit</span></div>
               </div>
@@ -175,7 +175,7 @@
             <div class="card-body">
               <p class="card-text text-center fs-4 fw-bold">Buleberry</p>
               <div class="row">
-                <div class="col-6 pe-0 fw-bold">Inventry : <span class="fw-normal">5</span></div>
+                <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$5.00</div>
                 <div class="col-12 fw-bold">Category : <span class="fw-normal">Fruit</span></div>
               </div>
@@ -189,7 +189,7 @@
             <div class="card-body">
               <p class="card-text text-center fs-4 fw-bold">Grapefruit</p>
               <div class="row">
-                <div class="col-6 pe-0 fw-bold">Inventry : <span class="fw-normal">5</span></div>
+                <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$15.00</div>
                 <div class="col-12 fw-bold">Category : <span class="fw-normal">Fruit</span></div>
               </div>
@@ -203,7 +203,7 @@
             <div class="card-body">
               <p class="card-text text-center fs-4 fw-bold">Watermelon</p>
               <div class="row">
-                <div class="col-6 pe-0 fw-bold">Inventry : <span class="fw-normal">5</span></div>
+                <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$10.00</div>
                 <div class="col-12 fw-bold">Category : <span class="fw-normal">Fruit</span></div>
               </div>
