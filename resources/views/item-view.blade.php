@@ -41,119 +41,166 @@
         
         
         <div class="col">
-          <div class="card mb-3" style="overflow: hidden">
-            <div class="card-img-top" style="background-image: url('https://thumb.photo-ac.com/98/9877c97fad4e73196bffc0c8b3645393_w.jpeg'); height: 130px; background-size: cover; background-position: center center;"></div>
-            <div class="card-body" style="background-color: #fff; padding-top: 0;">
-              <p class="card-text text-center fs-4 fw-bold">Lettuce</p>
+          <div class="card mb-3" >
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/beef.png") }}')!important; height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-body">
+              <p class="card-text text-center fs-4 fw-bold">Beef</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
-                <div class="col-6 text-end ps-0 fs-5">$15.00</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Vegitable</span></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      
-        <div class="col">
-          <div class="card mb-3" style="overflow: hidden">
-            <div class="card-img-top" style="background-image: url('https://thumb.photo-ac.com/e3/e3464159c83bcc22ec6a8149706c59a6_w.jpeg'); height: 130px; background-size: cover; background-position: center center;"></div>
-            <div class="card-body" style="background-color: #fff; padding-top: 0;">
-              <p class="card-text text-center fs-4 fw-bold">Lettuce</p>
-              <div class="row">
-                <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
-                <div class="col-6 text-end ps-0 fs-5">$15.00</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Vegitable</span></div>
+                <div class="col-6 text-end ps-0 fs-5">$10.74</div>
+                <div class="col-12 fw-bold">Category : <span class="fw-normal">Meat & Seafood</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card mb-3" style="overflow: hidden">
-            <div class="card-img-top" style="background-image: url('https://thumb.photo-ac.com/6c/6c172543c194df2d4517d630f4e48234_w.jpeg'); height: 130px; background-size: cover; background-position: center center;"></div>
-            <div class="card-body" style="background-color: #fff; padding-top: 0;">
-              <p class="card-text text-center fs-4 fw-bold">Lettuce</p>
+          <div class="card mb-3">
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/bread.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-body">
+              <p class="card-text text-center fs-4 fw-bold">Bread</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
-                <div class="col-6 text-end ps-0 fs-5">$15.00</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Vegitable</span></div>
+                <div class="col-6 text-end ps-0 fs-5">$1.53</div>
+                <div class="col-12 fw-bold">Category : <span class="fw-normal">Bakery & Bread</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card mb-3" style="overflow: hidden">
-            <div class="card-img-top" style="background-image: url('https://thumb.photo-ac.com/98/9877c97fad4e73196bffc0c8b3645393_w.jpeg'); height: 130px; background-size: cover; background-position: center center;"></div>
-            <div class="card-body" style="background-color: #fff; padding-top: 0;">
-              <p class="card-text text-center fs-4 fw-bold">Lettuce</p>
+          <div class="card mb-3">
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/cheese.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+
+            <div class="card-body">
+              <p class="card-text text-center fs-4 fw-bold">Cheese</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
-                <div class="col-6 text-end ps-0 fs-5">$15.00</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Vegitable</span></div>
+                <div class="col-6 text-end ps-0 fs-5">$2.33</div>
+                <div class="col-12 fw-bold">Category : <span class="fw-normal">Dairy & Eggs</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card mb-3" style="overflow: hidden">
-            <div class="card-img-top" style="background-image: url('https://thumb.photo-ac.com/13/13e548f60f06bc17058f40147f91f191_w.jpeg'); height: 130px; background-size: cover; background-position: center center;"></div>
-            <div class="card-body" style="background-color: #fff; padding-top: 0;">
-              <p class="card-text text-center fs-4 fw-bold">Lettuce</p>
+          <div class="card mb-3">
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/milk.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+
+            <div class="card-body">
+              <p class="card-text text-center fs-4 fw-bold">Milk</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
-                <div class="col-6 text-end ps-0 fs-5">$15.00</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Vegitable</span></div>
+                <div class="col-6 text-end ps-0 fs-5">$2.00</div>
+                <div class="col-12 fw-bold">Category : <span class="fw-normal">Dairy & Eggs</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card mb-3" style="overflow: hidden">
-            <div class="card-img-top" style="background-image: url('https://thumb.photo-ac.com/e3/e3464159c83bcc22ec6a8149706c59a6_w.jpeg'); height: 130px; background-size: cover; background-position: center center;"></div>
-            <div class="card-body" style="background-color: #fff; padding-top: 0;">
-              <p class="card-text text-center fs-4 fw-bold">Lettuce</p>
+          <div class="card mb-3">
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/egg.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-body">
+              <p class="card-text text-center fs-4 fw-bold">Eggs</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
-                <div class="col-6 text-end ps-0 fs-5">$15.00</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Vegitable</span></div>
+                <div class="col-6 text-end ps-0 fs-5">$3.00</div>
+                <div class="col-12 fw-bold">Category : <span class="fw-normal">Dairy & Eggs</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card mb-3" style="overflow: hidden">
-            <div class="card-img-top" style="background-image: url('https://thumb.photo-ac.com/6c/6c172543c194df2d4517d630f4e48234_w.jpeg'); height: 130px; background-size: cover; background-position: center center;"></div>
-            <div class="card-body" style="background-color: #fff; padding-top: 0;">
-              <p class="card-text text-center fs-4 fw-bold">Lettuce</p>
+          <div class="card">
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/Cake.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+
+            <div class="card-body">
+              <p class="card-text text-center fs-4 fw-bold">Cakes</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
-                <div class="col-6 text-end ps-0 fs-5">$15.00</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Vegitable</span></div>
+                <div class="col-6 text-end ps-0 fs-5">$5.98</div>
+                <div class="col-12 fw-bold">Category : <span class="fw-normal">Bakery & Bread</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card mb-3" style="overflow: hidden">
-            <div class="card-img-top" style="background-image: url('https://thumb.photo-ac.com/3f/3f6d6fe260c32306ecf30491dc2a2989_w.jpeg'); height: 130px; background-size: cover; background-position: center center;"></div>
-            <div class="card-body" style="background-color: #fff; padding-top: 0;">
-              <p class="card-text text-center fs-4 fw-bold">Lettuce</p>
+          <div class="card mb-3">
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/cookie.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+
+            <div class="card-body">
+              <p class="card-text text-center fs-4 fw-bold">Cookies</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
-                <div class="col-6 text-end ps-0 fs-5">$15.00</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Vegitable</span></div>
+                <div class="col-6 text-end ps-0 fs-5">$4.58</div>
+                <div class="col-12 fw-bold">Category : <span class="fw-normal">Snacks</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
-          <div class="card mb-3" style="overflow: hidden">
-            <div class="card-img-top" style="background-image: url('https://thumb.photo-ac.com/6c/6c172543c194df2d4517d630f4e48234_w.jpeg'); height: 130px; background-size: cover; background-position: center center;"></div>
-            <div class="card-body" style="background-color: #fff; padding-top: 0;">
-              <p class="card-text text-center fs-4 fw-bold">Lettuce</p>
+          <div class="card mb-3">
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/potatochips.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+
+            <div class="card-body">
+              <p class="card-text text-center fs-4 fw-bold">Chips</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
-                <div class="col-6 text-end ps-0 fs-5">$15.00</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Vegitable</span></div>
+                <div class="col-6 text-end ps-0 fs-5">$4.98</div>
+                <div class="col-12 fw-bold">Category : <span class="fw-normal">Snacks</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3">
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/coffeebean.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+
+            <div class="card-body">
+              <p class="card-text text-center fs-4 fw-bold">Coffee </p>
+              <div class="row">
+                <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
+                <div class="col-6 text-end ps-0 fs-5">$18.98</div>
+                <div class="col-12 fw-bold">Category : <span class="fw-normal">Coffee & Tea</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3">
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/tea.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+
+            <div class="card-body">
+              <p class="card-text text-center fs-4 fw-bold">Tea</p>
+              <div class="row">
+                <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
+                <div class="col-6 text-end ps-0 fs-5">$3.78</div>
+                <div class="col-12 fw-bold">Category : <span class="fw-normal">Coffee & Tea</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3">
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/salmon.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+
+            <div class="card-body">
+              <p class="card-text text-center fs-4 fw-bold">Fish</p>
+              <div class="row">
+                <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
+                <div class="col-6 text-end ps-0 fs-5">$11.54</div>
+                <div class="col-12 fw-bold">Category : <span class="fw-normal">Meat & Seafood</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card mb-3">
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/pie.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+
+            <div class="card-body">
+              <p class="card-text text-center fs-4 fw-bold">Frozen Meals</p>
+              <div class="row">
+                <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
+                <div class="col-6 text-end ps-0 fs-5">$3.48</div>
+                <div class="col-12 fw-bold">Category : <span class="fw-normal">Frozen</span></div>
               </div>
             </div>
           </div>
