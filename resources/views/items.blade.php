@@ -2,8 +2,12 @@
 @section('title', 'Item List')
 @section('content')
 
+<link rel="stylesheet" href="{{ asset('/css/items.css')  }}" >
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
-<div id="item-list">
+<div id="item-list" id="item-list">
 
   <div class="container">
     <div class="row d-flex align-items-center">
@@ -16,10 +20,10 @@
         </div>
       </div>
       <div class="col-sm">
-        <a href="" class="btn btn-ml" style="width: 100%; background-color: #99CCFF; color: #fff;">Add Category</a>
+        <a href="" class="btn btn-ml fw-bold" style="width: 100%; background-color: #99CCFF; color: #fff;">Add Category</a>
       </div>
       <div class="col-sm">
-        <a href="" class="btn btn-ml" style="width: 100%; background-color: #99CCFF; color: #fff;">Add Item</a>
+        <a href="" class="btn btn-ml fw-bold" style="width: 100%; background-color: #99CCFF; color: #fff;">Add Item</a>
       </div>
       <div class="col-sm">
         <div class="form-group">
@@ -43,169 +47,169 @@
       </div>
     </div>
   
-    <div class="container mt-5">
+    <div class="container mt-5 item-container">
       <div class="row row-cols-5">
         <div class="col">
           <div class="card mb-3" >
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/beef.png") }}')!important; height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/beef.png") }}')"></div>
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Beef</p>
+              <p class="card-text text-center fs-4 fw-bold title">Beef</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$10.74</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Meat & Seafood</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Meat & Seafood</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-3">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/bread.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/bread.png") }}');"></div>
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Bread</p>
+              <p class="card-text text-center fs-4 fw-bold title">Bread</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$1.53</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Bakery & Bread</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Bakery & Bread</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-3">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/cheese.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/cheese.png") }}');"></div>
 
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Cheese</p>
+              <p class="card-text text-center fs-4 fw-bold title">Cheese</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$2.33</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Dairy & Eggs</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Dairy & Eggs</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-3">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/milk.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/milk.png") }}');"></div>
 
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Milk</p>
+              <p class="card-text text-center fs-4 fw-bold title">Milk</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$2.00</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Dairy & Eggs</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Dairy & Eggs</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-3">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/egg.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/egg.png") }}');"></div>
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Eggs</p>
+              <p class="card-text text-center fs-4 fw-bold title">Eggs</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$3.00</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Dairy & Eggs</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Dairy & Eggs</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/Cake.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/Cake.png") }}');"></div>
 
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Cakes</p>
+              <p class="card-text text-center fs-4 fw-bold title">Cakes</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$5.98</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Bakery & Bread</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Bakery & Bread</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-3">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/cookie.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/cookie.png") }}');"></div>
 
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Cookies</p>
+              <p class="card-text text-center fs-4 fw-bold title">Cookies</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$4.58</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Snacks</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Snacks</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-3">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/potatochips.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/potatochips.png") }}');"></div>
 
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Chips</p>
+              <p class="card-text text-center fs-4 fw-bold title">Chips</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$4.98</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Snacks</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Snacks</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-3">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/coffeebean.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/coffeebean.png") }}');"></div>
 
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Coffee </p>
+              <p class="card-text text-center fs-4 fw-bold title">Coffee </p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$18.98</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Coffee & Tea</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Coffee & Tea</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-3">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/tea.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/tea.png") }}');"></div>
 
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Tea</p>
+              <p class="card-text text-center fs-4 fw-bold title">Tea</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$3.78</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Coffee & Tea</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Coffee & Tea</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-3">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/salmon.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/salmon.png") }}');"></div>
 
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Fish</p>
+              <p class="card-text text-center fs-4 fw-bold title">Fish</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$11.54</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Meat & Seafood</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Meat & Seafood</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-3">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/pie.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/pie.png") }}');"></div>
 
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Frozen Meals</p>
+              <p class="card-text text-center fs-4 fw-bold title">Frozen Meals</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$3.48</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Frozen</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Frozen</span></div>
               </div>
             </div>
           </div>

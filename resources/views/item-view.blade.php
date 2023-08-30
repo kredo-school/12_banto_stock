@@ -2,7 +2,13 @@
 @section('title', 'Item View')
 @section('content')
 
-<div class="container">
+<link rel="stylesheet" href="{{ asset('/css/items.css')  }}" >
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+
+<div class="container" id="item-view">
   <div class="row">
 
     <div class="col-8">
@@ -37,170 +43,169 @@
           </div>
         </div>
       </div>
-      <div class="row row-cols-4">
-        
-        
+
+      <div class="row row-cols-4 item-container">
         <div class="col">
           <div class="card mb-3" >
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/beef.png") }}')!important; height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/beef.png") }}')"></div>
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Beef</p>
+              <p class="card-text text-center fs-4 fw-bold title">Beef</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$10.74</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Meat & Seafood</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Meat & Seafood</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-3">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/bread.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/bread.png") }}');"></div>
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Bread</p>
+              <p class="card-text text-center fs-4 fw-bold title">Bread</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$1.53</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Bakery & Bread</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Bakery & Bread</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-3">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/cheese.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/cheese.png") }}');"></div>
 
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Cheese</p>
+              <p class="card-text text-center fs-4 fw-bold title">Cheese</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$2.33</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Dairy & Eggs</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Dairy & Eggs</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-3">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/milk.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/milk.png") }}');"></div>
 
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Milk</p>
+              <p class="card-text text-center fs-4 fw-bold title">Milk</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$2.00</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Dairy & Eggs</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Dairy & Eggs</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-3">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/egg.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/egg.png") }}');"></div>
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Eggs</p>
+              <p class="card-text text-center fs-4 fw-bold title">Eggs</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$3.00</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Dairy & Eggs</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Dairy & Eggs</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/Cake.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/Cake.png") }}');"></div>
 
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Cakes</p>
+              <p class="card-text text-center fs-4 fw-bold title">Cakes</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$5.98</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Bakery & Bread</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Bakery & Bread</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-3">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/cookie.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/cookie.png") }}');"></div>
 
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Cookies</p>
+              <p class="card-text text-center fs-4 fw-bold title">Cookies</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$4.58</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Snacks</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Snacks</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-3">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/potatochips.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/potatochips.png") }}');"></div>
 
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Chips</p>
+              <p class="card-text text-center fs-4 fw-bold title">Chips</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$4.98</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Snacks</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Snacks</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-3">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/coffeebean.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/coffeebean.png") }}');"></div>
 
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Coffee </p>
+              <p class="card-text text-center fs-4 fw-bold title">Coffee </p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$18.98</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Coffee & Tea</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Coffee & Tea</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-3">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/tea.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/tea.png") }}');"></div>
 
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Tea</p>
+              <p class="card-text text-center fs-4 fw-bold title">Tea</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$3.78</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Coffee & Tea</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Coffee & Tea</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-3">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/salmon.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/salmon.png") }}');"></div>
 
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Fish</p>
+              <p class="card-text text-center fs-4 fw-bold title">Fish</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$11.54</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Meat & Seafood</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Meat & Seafood</span></div>
               </div>
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card mb-3">
-            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/pie.png") }}'); height: 130px; background-size: cover; background-position: center center;"></div>
+            <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/pie.png") }}');"></div>
 
             <div class="card-body">
-              <p class="card-text text-center fs-4 fw-bold">Frozen Meals</p>
+              <p class="card-text text-center fs-4 fw-bold title">Frozen Meals</p>
               <div class="row">
                 <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">5</span></div>
                 <div class="col-6 text-end ps-0 fs-5">$3.48</div>
-                <div class="col-12 fw-bold">Category : <span class="fw-normal">Frozen</span></div>
+                <div class="col-12 fw-bold category">Category : <span class="fw-normal">Frozen</span></div>
               </div>
             </div>
           </div>
@@ -229,7 +234,7 @@
     </div>
 
 
-    <div class="col-4 rounded" style="background-color: #99CCFF">
+    <div class="col-4 rounded right-side" style="background-color: #99CCFF">
       <p class="fs-1 fw-bold text-center" style="padding-top: 20px">ORDER LIST</p>
       <p class="fs-5 text-end">Order ID : 123456</p>
 
@@ -252,6 +257,45 @@
             <p class="item-ttl fs-3 fw-bold mb-0">$10.00</p>
           </div>
         </div>
+
+        <div class="order-item rounded px-3 py-2 mb-3" style="background-color: #F2F2F2">
+          <p class="item-name fs-4 fw-bold mb-1">Peach</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <p class="fs-5 me-3 mb-0">QTY</p>
+              <div class="form-group">
+                <select class="form-control text-center fw-bold" id="exampleFormSelect1" style="background-color: #fff;">
+                  <option selected>4</option>
+                  <option value="1">2</option>
+                  <option value="2">3</option>
+                  <option value="3">4</option>
+                </select>
+              </div>
+            </div>
+
+            <p class="item-ttl fs-3 fw-bold mb-0">$10.00</p>
+          </div>
+        </div>
+
+        <div class="order-item rounded px-3 py-2 mb-3" style="background-color: #F2F2F2">
+          <p class="item-name fs-4 fw-bold mb-1">Peach</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <p class="fs-5 me-3 mb-0">QTY</p>
+              <div class="form-group">
+                <select class="form-control text-center fw-bold" id="exampleFormSelect1" style="background-color: #fff;">
+                  <option selected>4</option>
+                  <option value="1">2</option>
+                  <option value="2">3</option>
+                  <option value="3">4</option>
+                </select>
+              </div>
+            </div>
+
+            <p class="item-ttl fs-3 fw-bold mb-0">$10.00</p>
+          </div>
+        </div>
+
         <div class="order-item rounded px-3 py-2 mb-3" style="background-color: #F2F2F2">
           <p class="item-name fs-4 fw-bold mb-1">Apple</p>
           <div class="d-flex justify-content-between align-items-center">
@@ -270,7 +314,7 @@
             <p class="item-ttl fs-3 fw-bold mb-0">$20.00</p>
           </div>
         </div>
-      </div>
+      </div>{{-- //.order-item-area --}}
 
       <div class="d-flex justify-content-between fs-4">
         <p class="">SUBTOTAL</p>
@@ -285,11 +329,26 @@
         <p class="">$37.00</p>
       </div>
       <div class="d-flex justify-content-between">
-        <button class="btn btn-primary btn-lg fw-bold fs-3" style="">SEND ORDER</button>
-        <button class="btn btn-primary btn-lg btn-light fw-bold fs-3" style="">CANCEL</button>
+        <button class="btn fw-bold send-btn" data-bs-toggle="modal" data-bs-target="#sendOrder">SEND ORDER</button>
+        <button class="btn btn-light fw-bold cxl-btn">CANCEL</button>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="sendOrder" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+              Your order has been completed!
+            </div>
+              
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  </div>
+</div>
 
 @endsection
