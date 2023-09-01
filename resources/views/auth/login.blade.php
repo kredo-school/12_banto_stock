@@ -4,6 +4,8 @@
 @endsection
 @section('content')
 
+@include('layouts.modals.login-forget')
+
 
 <div class="container-fluid custom-bg-color"  style="height: 100vh;">
 
@@ -11,7 +13,7 @@
         <div class="col-md-1"></div>
         <div class="col-md-10">
             <div class="card-group">
-                <div class="card mt-5 shadow" style="height: 75vh;">
+                <div class="card mt-5 shadow" style="height: 80vh;">
                     {{-- <div class="card-header">{{ __('LOGIN') }}</div> --}}
 
                     <div class="card-body">
@@ -77,7 +79,7 @@
                                     {{-- link of pop up forgot password page --}}
                                     {{-- @if (Route::has('password.request')) --}}
 
-                                        <a class="btn btn-link text-end" data-bs-toggle="login-forget" data-target="#login-forget">
+                                        <a class="btn btn-link text-end" data-bs-toggle="modal" data-bs-target="#login-forget">
                                         {{-- href="{{ route('password.request') }}"> --}}
                                         {{ __('Forgot Password?') }}
                                         </a>
@@ -87,7 +89,7 @@
                                 </div>
                             </div>
                         </form>
-@include('layouts.modal.login-forget')
+
                         <div class="row text-center mt-4">
                             <div class="col"></div>
                             <div class="col">
@@ -102,7 +104,6 @@
                 <div class="card mt-5 shadow right-section">
                         <div class="text-center">
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
