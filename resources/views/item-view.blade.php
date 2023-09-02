@@ -26,9 +26,12 @@
           <div class="form-group">
             <select class="form-control text-center fw-bold" id="exampleFormSelect1" style="background-color: #99CCFF; color: #fff;">
               <option selected>Category</option>
-              <option value="1">Category 1</option>
-              <option value="2">Category 2</option>
-              <option value="3">Category 3</option>
+              <option value="meatSeafood">Meat & Seafood</option>
+              <option value="bakery">Bakery & Bread</option>
+              <option value="dairy">Dairy & Eggs</option>
+              <option value="snaks">Snacks</option>
+              <option value="drinks">Coffee & Tea</option>
+              <option value="frozen">Frozen</option>
             </select>
           </div>
         </div>
@@ -36,9 +39,9 @@
           <div class="form-group">
             <select class="form-control text-center fw-bold" id="exampleFormSelect1" style="background-color: #99CCFF; color: #fff;">
               <option selected>Sort By</option>
-              <option value="1">Price High to Low</option>
-              <option value="2">Name</option>
-              <option value="3">Stock Few</option>
+              <option value="priceHtL">Price High to Low</option>
+              <option value="name">Name</option>
+              <option value="stock">Stock Few</option>
             </select>
           </div>
         </div>
