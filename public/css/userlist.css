@@ -1,0 +1,27 @@
+.body {
+  font-style: Poppins;
+  text-decoration-color: black;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+.pagination {
+  border-radius: 4px;
+}
+
+.page-link {
+  color: black;
+  background-color: #f2f3f5;
+}
+
+.pagination .page-link:hover {
+  color: white;
+  background-color: #003366;
+}

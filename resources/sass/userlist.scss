@@ -1,0 +1,34 @@
+.body{
+    font-style: Poppins;
+    text-decoration-color: black !important;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+// .table {
+//     table-layout: fixed;
+//     width: 100%;
+// }
+
+
+// end table
+// pagination start
+.pagination{
+    border-radius: 4px;
+}
+.page-link{
+    text-decoration: none;
+    color: black;
+    background-color: #f2f3f5;
+    }
+
+.pagination .page-link:hover {
+        color: white;
+        background-color:#003366;
+    }
+    
+// pagination
