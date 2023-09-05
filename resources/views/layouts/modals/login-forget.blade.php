@@ -2,49 +2,54 @@
 <link rel="stylesheet" href="{{ mix('/css/login-forget.css') }}">
 @endsection --}}
 
-{{-- <style>
-    /* .modal-dialog {
-        width:50%;
-        max-width: none;
-        height:50%;
-        max-height: none; */
-    /* } */
-</style> --}}
+<style>
+    .resend-color {
+        background-color:#ccccff;
+        border-radius: 0.5vw;
+    }
+    .btn-color1 {
+        background-color:#003366;
+    }
+</style>
 
 <div id="login-forget" class="modal fade" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered modal">
         <div class="modal-content">
-                <div class="modal-header">
-                    <h3 class="modal-title">Forgot Password?</h3>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <a>No worries, we'll send you reset instructions</a>
-                    <div class="">
+                <div class="modal-body container-fluid">
+                    <div class="row text-center">
+                        <h3 class="modal-title">Forgot Password?</h3>
+                    </div>
+                    <div class="row text-center">
+                        <a>No worries, we'll send you reset instructions</a>
+                    </div>
+                    <div class="row text-email ms-4">
                         <label for="email" class="email">Enter your email</label>
                     </div>
-                    <input type="text" class="form-control">
-                    <div class="reset-email-alert">
-                        We ca'nt seem to find the right email address for<br> you.
-                        resend the email that you have registreted
+                    <div class="row mx-4">
+                        <input type="email" id="email" class="form-control form-control-xl">
                     </div>
-                    <div class="reset-button">
-                        <button type="submit" class="btn btn-secondary shadow mt-3">
+                    <div class="row resend-color text-center mx-4">
+                        <p class="">
+                            !  &nbsp;We ca'nt seem to find the right email address for<br>
+                            &nbsp;&nbsp;&nbsp;you.resend the email that you have registreted
+                        </p>
+                    </div>
+                    <div class="d-grid gap-2 col-11 mx-auto">
+                        <button type="submit" class="btn btn-color1 shadow mt-4">
                             <a href="#" class="text-white">Reset Password</a>
                         </button>
-                    </div>
-                    <div class="back-login">
                         <button class="btn btn-white mt-1 shadow">
                             <a href="#" class="">Back to Login</a>
                         </button>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <span>Don't have account?</span>
-                    <a href="#" class="">Sign Up</a>
+                <div class="row sing-up mx-auto">
+                    <div class="col">
+                        <span>Don't have account?</span>
+                        &nbsp;&nbsp;
+                        <a href="#" class="text-dark">Sign Up</a>
+                    </div>
                 </div>
-            </div>
         </div>
-
     </div>
 </div>
