@@ -39,24 +39,26 @@
 #dashboard .container .dashboard-middle {
   margin-bottom: 20px;
 }
-#dashboard .container .dashboard-middle .col-3 {
+#dashboard .container .dashboard-middle .col {
   border: 1px solid #D4D2D2;
   padding: 30px;
 }
-#dashboard .container .dashboard-middle .col-3 .value {
+#dashboard .container .dashboard-middle .col .value {
   text-align: center;
   font-size: 45px;
   font-weight: bold;
   margin-top: 30px;
 }
-#dashboard .container .dashboard-middle .col-3 .rate {
+#dashboard .container .dashboard-middle .col .rate {
   text-align: center;
   margin-top: 10px;
 }
-#dashboard .container .dashboard-middle .col-3 .vs {
+#dashboard .container .dashboard-middle .col .vs {
   text-align: center;
   margin-top: 10px;
 }
-#dashboard .container .dashboard-bottom .col-6 {
+#dashboard .container .dashboard-bottom .col {
   border: 1px solid #D4D2D2;
+  padding: 20px;
+  width: 50%;
 }

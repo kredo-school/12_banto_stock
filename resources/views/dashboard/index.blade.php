@@ -15,8 +15,8 @@
 
     <h1>Dashboard</h1>
 
-    <div class="row dashboard-top g-3">
-      <div class="col date-range rounded">
+    <div class="row dashboard-top">
+      <div class="col date-range rounded me-1">
           <p class="title">Auto date range</p>
         <div class="form-group">
           <select class="form-control text-center fw-bold" id="FormSelect1">
@@ -27,7 +27,7 @@
           </select>
         </div>
       </div>
-      <div class="col service rounded">
+      <div class="col service rounded mx-1">
         <p class="title">Services</p>
         <div class="form-group">
           <select class="form-control text-center fw-bold" id="FormSelect2">
@@ -38,7 +38,7 @@
           </select>
         </div>
       </div>
-      <div class="col post rounded">
+      <div class="col post rounded ms-1">
         <p class="title">Post</p>
         <div class="form-group">
           <select class="form-control text-center fw-bold" id="FormSelect3">
@@ -51,29 +51,29 @@
       </div>
     </div>{{-- dashboard-top --}}
 
-    <div class="row dashboard-middle g-2">
-      <div class="col-3 rounded">
+    <div class="row dashboard-middle">
+      <div class="col rounded me-1">
         <p class="title">Total Accounts</p>
         <p class="value">2,104</p>
         <p class="rate"><span class="arrow up">↑</span>20%</p>
         <p class="vs">vs previous 30 days</p>
       </div>
 
-      <div class="col-3 rounded">
+      <div class="col rounded mx-1">
         <p class="title">Orders per Month</p>
         <p class="value">37</p>
         <p class="rate"><span class="arrow up">↑</span>20</p>
         <p class="vs">vs previous 30 days</p>
       </div>
 
-      <div class="col-3 rounded">
+      <div class="col rounded mx-1">
         <p class="title">Average</p>
         <p class="value">1,104</p>
         <p class="rate"><span class="arrow up">↑</span>7.5%</p>
         <p class="vs">vs previous 30 days</p>
       </div>
 
-      <div class="col-3 rounded">
+      <div class="col rounded ms-1">
         <p class="title">Growth Rate</p>
         <p class="value">5.45%</p>
         <p class="rate"><span class="arrow up">↑</span>2.0%</p>
@@ -82,9 +82,9 @@
 
     </div>
 
-    <div class="row dashboard-bottom g-3">
+    <div class="row dashboard-bottom gx-3">
       
-      <div class="col-6 rounded">
+      <div class="col rounded me-1">
         <p class="">Sales Growth by Market Segment</p>
           
         
@@ -93,7 +93,7 @@
 
 
       </div>
-      <div class="col-6 rounded">
+      <div class="col rounded ms-1">
         <p class="">Sales per  Rep</p>
         
         <div class="container" style="width:100%">

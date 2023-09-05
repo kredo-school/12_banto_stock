@@ -52,7 +52,7 @@
 
     .dashboard-middle {
       margin-bottom: 20px;
-      .col-3 {
+      .col {
         border: 1px solid #D4D2D2;
         padding: 30px;
 
@@ -78,9 +78,10 @@
 
     .dashboard-bottom {
 
-      .col-6 {
+      .col {
         border: 1px solid #D4D2D2;
         padding: 20px;
+        width: 50%;
       }//.col-6
     }//.dashboard-bottom
 
