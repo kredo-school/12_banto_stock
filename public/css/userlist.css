@@ -1,15 +1,10 @@
 .body {
   font-style: Poppins;
-  text-decoration-color: black;
+  text-decoration-color: black !important;
   text-anchor: middle;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-}
-
-.table {
-  table-layout: fixed;
-  width: 100%;
 }
 
 .pagination {
@@ -17,6 +12,7 @@
 }
 
 .page-link {
+  text-decoration: none;
   color: black;
   background-color: #f2f3f5;
 }

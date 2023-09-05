@@ -14,8 +14,7 @@
         integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"></script>
-    <script src={{ asset('.js/userlist.js') }}></script>
+    {{-- <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.min.js"></script> --}}
 </head>
 
 <body>
@@ -72,35 +71,8 @@
                     </div>
                 </div>
             </div>
-            <!-- You can find the library code from below link  -->
-            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-            <!-- end of library link  -->
 
-            <script>
-                new Chart(document.getElementById('pie-chart'), {
-                    type: 'pie',
-                    data: {
-                        labels: ["A", "B", "C", "D", ],
-                        datasets: [{
-                            backgroundColor: ["#003366", "#336699",
-                                "#99ccff", "#ccccff", "#f2f3f5"
-                            ],
-                            data: [9,7,2,4]
-                        }]
-                    },
-                    options: {
-                        plugins: {
-                            legend: {
-                                display: true,
-                                position: 'right',
-                                labels: {
-                                    color: 'rgb(0, 0, 0)'
-                                }
-                            }
-                        }
-                    }
-                });
-            </script>
+
             {{-- test --}}
         </div>
     </div>
@@ -204,6 +176,8 @@
 
 
         </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ mix('js/userlist.js') }}"></script>
 </body>
 
 </html>
