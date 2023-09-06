@@ -1,0 +1,68 @@
+#item-list {
+  font-family: "Poppins", sans-serif;
+}
+#item-list .item-container .row .col .card .card-img-top {
+  height: 197px;
+  background-size: cover;
+  background-position: center center;
+}
+#item-list .item-container .row .col .card .card-body .title {
+  margin-bottom: 10px;
+}
+#item-list .item-container .row .col .card .card-body .category {
+  font-size: 12px;
+}
+
+#item-view {
+  font-family: "Poppins", sans-serif;
+}
+#item-view .item-container .col .card .card-img-top {
+  height: 197px;
+  background-size: cover;
+  background-position: center center;
+}
+#item-view .item-container .col .card .card-body .title {
+  margin-bottom: 10px;
+}
+#item-view .item-container .col .card .card-body .category {
+  font-size: 11px;
+}
+#item-view .right-side .order-item-area {
+  height: 320px;
+  overflow-y: scroll;
+}
+#item-view .right-side .send-btn {
+  width: 60%;
+  background-color: #336699;
+  color: #fff;
+  height: 80px;
+  font-size: 27px;
+}
+#item-view .right-side .send-btn:hover {
+  background-color: #CCCCFF;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  color: #336699;
+}
+#item-view .right-side .cxl-btn {
+  height: 80px;
+  width: 35%;
+  background-color: #fff;
+  color: #797979;
+  font-size: 24px;
+}
+#item-view .right-side .cxl-btn:hover {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+#item-view .right-side .modal .modal-dialog {
+  max-width: 70%;
+  margin-top: 300px;
+  border: 3px solid #336699;
+}
+#item-view .right-side .modal .modal-dialog .modal-content .modal-header {
+  border-bottom: none;
+  padding: 10px 10px 0 10px;
+}
+#item-view .right-side .modal .modal-dialog .modal-content .modal-body {
+  padding-bottom: 40px;
+  font-size: 30px;
+}
