@@ -6,7 +6,33 @@
 
 @include('layouts.modals.login-forget')
 
+<style>
+    .custom-bg-color {
+  background-color: #99ccff;
+}
 
+.btn-color-change {
+  background-color: #003366;
+}
+
+.right-section {
+  height: 80vh;
+  background-image: url("/storage/images/login-image1.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text-account {
+  font-size: 1.1vw;
+}
+
+.text-sign-up {
+  font-size: 1.1vw;
+  font-weight: bold;
+}
+
+
+</style>
 <div class="container-fluid custom-bg-color"  style="height: 100vh;">
 
     <div class="row">
@@ -90,7 +116,7 @@
                             </div>
                         </form>
 
-                        <div class="row text-center mt-4">
+                        <div class="row text-center mt-5">
                             <div class="col"></div>
                             <div class="col">
                                 <p class="text-account text-muted">Don't have account?</p>
