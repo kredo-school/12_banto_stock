@@ -1,0 +1,43 @@
+#firstname::placeholder,  
+    #lastname::placeholder,
+    #username::placeholder,
+    #email::placeholder,
+    #password::placeholder,
+    #password-confirm::placeholder {
+       
+        opacity: 0.3;
+    }
+
+     #password::placeholder {
+        font-family: "FontAwesome";
+        content: "\f023";           /* ICON lock*/
+        opacity: 0.15;
+    }
+
+    #password-confirm::placeholder {
+        font-family: "FontAwesome";
+        content: "\f023";           /* ICON lock*/
+        opacity: 0.15;
+    }
+
+    .use_icon {
+	    font-family: FontAwesome;  /* F.A */
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #99ccff;
+    }
+    
+    .btn-color-change {
+        background-color: #003366;
+    }
+
+    .card {
+        margin-top: 0; 
+    }
+
+    .banto-img {
+        max-width: 100%;
+    }
