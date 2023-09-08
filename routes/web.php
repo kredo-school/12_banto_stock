@@ -1,6 +1,10 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ItemController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,4 +23,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+    
+    Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
+    route::get('/item/edit', [ItemController::class, 'index'])->name('item.edit');
+
+    route::get('/category/edit', [CategoryController::class, 'index'])->name('category.edit');
+
