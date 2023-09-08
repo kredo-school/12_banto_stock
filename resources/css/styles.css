@@ -1,0 +1,19 @@
+/* Apply Poppins Font Globally */
+body, h1, h2, h3, h4, h5, h6, p, a, ul, li, button {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Align navigation bar menu to the right */
+.navbar-nav {
+  margin-left: auto;
+}
+
+.card-total-products {
+  background-color: #003366;
+  color: #336699;
+}
+
+.table.table-hover.btn-I {
+
+  color: #6699cc;
+}

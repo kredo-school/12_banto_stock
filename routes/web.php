@@ -27,4 +27,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::get('/transaction', [TransactionController::class, 'index'])->name('index');
+
+Route::get('/header', [HeaderController::class, 'index'])->name('index');
+
+Route::get('/inventory', [InventoryController::class, 'index'])->name('index');
+
 
