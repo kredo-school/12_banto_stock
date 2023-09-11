@@ -1,3 +1,4 @@
+
 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
     <!--[2] Footer Section-->
     <footer class="footer text-center">
@@ -24,19 +25,19 @@
             <div class="col-4 auto">
               <h6>Inquiries:</h6>
               <p>Feel free to contact us.</p>
-              <button class="btn btn-primary">You can also use our inquiry form.</button>
+              <button class="btn" style="background-color: #99CCFF; color: #fff;">You can also use our inquiry form.</button>
             </div>
             <div class="col-4 auto">
               <h6>SNS:</h6>
-              <ul class="list-unstyled">
-                <li><a href="#"><i class="fi fi-brands-google"></i>Google</a></li>
+              <ul class="list-unstyled ">
+                <li><a href="#" ><i class="fi fi-brands-google"></i>Google</a></li>
                 <li><a href="#"><i class="fi fi-brands-facebook"></i> Facebook</a></li>
                 <li><a href="#"><i class="fi fi-brands-instagram"></i> Instagram</a></li>
               </ul>
             </div>
           </div>
   
-          <p class="text-primary">&copy; 2023 BANTO STOCK. All Rights Reserved.</p>
+          <p class="text" style="background-color: #99CCFF; color: #fff;">&copy; 2023 BANTO STOCK. All Rights Reserved.</p>
   
         </div>
   

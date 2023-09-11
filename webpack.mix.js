@@ -13,16 +13,9 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
-<<<<<<< HEAD
     .sass('resources/sass/items.scss', 'public/css')
-=======
     .sass('resources/sass/login.scss', 'public/css')
     .sass('resources/sass/login-forget.scss', 'public/css')
->>>>>>> 4065789710be5f31fee6263fb70abccac3593448
     .sass('resources/sass/register.scss', 'public/css')
-    .sourceMaps();
-
-    mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/styles.scss', 'public/css')
     .sourceMaps();
