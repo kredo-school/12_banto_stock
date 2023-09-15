@@ -18,4 +18,5 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/login-forget.scss', 'public/css')
     .sass('resources/sass/register.scss', 'public/css')
     .sass('resources/sass/styles.scss', 'public/css')
+    .sass('resources/sass/dashboard.scss', 'public/css')
     .sourceMaps();
