@@ -49,7 +49,7 @@
                     <div class="col">
                         <span>Don't have account?</span>
                         &nbsp;&nbsp;
-                        <a href="#" class="text-dark">Sign Up</a>
+                        <a href="{{ route('register')}}" class="text-dark">Sign Up</a>
                     </div>
                 <div class="row">&nbsp;</div>
                 </div>

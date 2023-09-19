@@ -96,10 +96,8 @@
 
                             <div class="row mt-5 px-5">
                                 <div class="d-grid gap-2">
-                                    <button type="submit" class="btn btn-color-change btn-lg shadow">
-                                    <a href="#" class="text-white">
+                                    <button type="submit" class="btn btn-color-change btn-lg shadow text-white">
                                             {{ __('LOGIN') }}
-                                    </a>
                                     </button>
 
                                     {{-- link of pop up forgot password page --}}
@@ -122,7 +120,7 @@
                                 <p class="text-account text-muted">Don't have account?</p>
                             </div>
                             <div class="text-sign-up col m-0">
-                                <a href="#" class="text-sign-up text-dark">Sign Up</a>
+                                <a href="{{ route('register')}}" class="text-sign-up text-dark">Sign Up</a>
                             </div>
                         </div>
                     </div>
