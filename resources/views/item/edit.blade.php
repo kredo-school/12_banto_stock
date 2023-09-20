@@ -55,22 +55,12 @@
                         <label for="category" class="form-label"></label>
                         <select name="category" id="category" class="form-select" form="form1">
                             <option value="choose Category">Choose Category</option>
-                            <option value="cheese">cheese</option>
-                            <option value="milk">milk</option>
-                            <option value="eggs">eggs</option>
-                            <option value="bread">bread</option>
-                            <option value="cakes">cakes</option>
-                            <option value="white sandwith">white sandwith</option>
-                            <option value="chocolate cake">chocolate cake</option>
-                            <option value="cookies">cookies</option>
-                            <option value="Chips">Chips</option>
-                            <option value="coffee">coffee</option>
-                            <option value="tea">tea</option>
-                            <option value="beer">beer</option>
-                            <option value="flavored beer">flavored beer</option>
-                            <option value="beef">beef</option>
-                            <option value="fish">fish</option>
-                            <option value="frozen meals">frozen meals</option>
+
+                            {{-- @if ($all_categories->isNotEmpty())
+                                @foreach ($all_categories as $category)
+                                    <option value="{{$category->id}}">{{old('name', $category->name)}}</option>
+                                @endforeach
+                            @endif --}}
                         </select>
                     </div>
                     {{-- some buttons  close, save ,delete --}}

@@ -21,14 +21,51 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+
 
 
     
-    Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
-    route::get('/item/edit', [ItemController::class, 'index'])->name('item.edit');
 
-    route::get('/category/edit', [CategoryController::class, 'index'])->name('category.edit');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Auth::routes();
+
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
+Route::get('/item/edit', [ItemController::class, 'index'])->name('item.edit');
+
+Route::get('/category/edit', [CategoryController::class, 'index'])->name('category.edit');
 
