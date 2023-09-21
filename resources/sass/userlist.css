@@ -20,6 +20,6 @@
 
 .pagination .page-link:hover {
   color: white;
-  background-color: #003366;
+  background-color: #003366 !important;
 }
 /*# sourceMappingURL=userlist.css.map */
