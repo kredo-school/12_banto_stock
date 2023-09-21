@@ -14,10 +14,17 @@ class AddColumnsToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('username')->unique();
+            $table->string('username')->after('name');
+            $table->enum('status', ['active', 'inactive'])->after('password')->default('active');
+            $table->foreignId('role_id')->constrained()->after('status')->nullable();
+            $table->string('address')->after('role_id')->nullable();
+            $table->string('phone_number')->after('address')->nullable();
+            $table->string('image')->after('phone_number')->nullable();
+
         });
+
+
+
     }
 
     /**
@@ -28,9 +35,14 @@ class AddColumnsToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('firstname');
-            $table->dropColumn('lastname');
             $table->dropColumn('username');
+            $table->dropColumn('status');
+            $table->dropColumn('role_id');
+            $table->dropColumn('address');
+            $table->dropColumn('phone_number');
+            $table->dropColumn('image');
+
+            $table->dropForeign(['role_id']);
         });
     }
 }
