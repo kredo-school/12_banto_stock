@@ -15,13 +15,10 @@ class CreateCartsTable extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('item_id');
+            $table->unsignedBigInteger('item_id')->unsigned();
             $table->double('item_price');
             $table->integer('qly');
-            $table->timestamps('updated_id');
-            $table->timestamps('create_id');
-
-            $table->foreign('cart_id')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -32,6 +29,7 @@ class CreateCartsTable extends Migration
      */
     public function down()
     {
-        Schema::table('carts');
+        Schema::dropIfExists('carts');
     }
+
 }

@@ -22,8 +22,10 @@ class CreateTransactionsTable extends Migration
             $table->double('paid_amount');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('branch_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('cart_id')->references('id')->on('users')->onDelete('cascade');
+
+            $table->foreign('branch_id')->references('id')->on('branches')->onDelete('cascade');
+            $table->foreign('cart_id')->references('id')->on('carts')->onDelete('cascade');
+
 
         });
     }

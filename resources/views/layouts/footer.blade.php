@@ -30,9 +30,9 @@
             <div class="col-4 auto">
               <h6>SNS:</h6>
               <ul class="list-unstyled ">
-                <li><a href="#" ><i class="fi fi-brands-google"></i>Google</a></li>
-                <li><a href="#"><i class="fi fi-brands-facebook"></i> Facebook</a></li>
-                <li><a href="#"><i class="fi fi-brands-instagram"></i> Instagram</a></li>
+                <li><a href="https://business.google.com/" ><i class="fi fi-brands-google"></i>Google</a></li>
+                <li><a href="https://business.facebook.com/"><i class="fi fi-brands-facebook"></i> Facebook</a></li>
+                <li><a href="https://business.instagram.com/"><i class="fi fi-brands-instagram"></i> Instagram</a></li>
               </ul>
             </div>
           </div>

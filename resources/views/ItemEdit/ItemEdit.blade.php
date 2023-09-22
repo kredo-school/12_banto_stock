@@ -6,98 +6,6 @@
     
 @section('content')
 
-    <style>
-    .container{
-        background-color: rgb(153,204,255);
-        font-family: poppins;
-    }
-    .card{
-        margin-left: 40px;
-    }
-    .card-body{
-        background-image: url('../images/carrot.jpg');
-        background-size: cover;
-        height: 250px;
-        border-radius: 15px 15px 0px 0px;
-    }
-    .upload-box{
-        width: 100%;
-        height: 250px;
-        border-radius: 15px 15px 0px 0px;
-        border: 2px dashed #333;
-        display: flex;
-        justify-content: center;
-        opacity: 0;
-    }
-    .card-footer{
-        border-radius: 0px 0px 15px 15px;
-    }
-    .col-4{
-        margin-top: 75px;
-    }
-    .input{
-        background-color:transparent; 
-        border-color:black; 
-        height:50px;
-        margin-top: 30px;
-    }
-    .close-button{
-        color:white;
-        background-color: rgb(102,153,204);
-        border-radius: 10px;
-        padding: 7px 32px;
-        text-align: center;
-        text-decoration: none;
-        font-size: 16px;
-    }
-    .save-button,.delete-button{
-        color:white;
-        background-color: rgb(102,153,204);
-        border-radius: 10px;
-        padding: 7px 32px;
-        text-align: center;
-        text-decoration: none;
-        font-size: 16px;
-    }
-    select{
-        background-color:transparent; 
-        border-color:black; 
-        height:50px;
-        margin-top: 30px;
-        text-align: center;
-    }
-
-    .sort{
-        background-color: rgb(235,245,251);
-        border-color: rgb(204,204,255);
-        border-radius: 10px;
-        margin-top: auto;
-        padding: 15px
-    }  
-    .inventory-text{
-        padding-left: 105px;
-    }
-    .inventory{
-        margin-top: 50px;
-    }
-    table{
-        background-color: rgb(51,102,153);
-        border-radius: 10px;
-        margin-bottom: 30px;
-    }
-    th ,td{
-        color: white;
-        width: 40px;
-        padding-left: 40px;
-        padding-top: 20px;
-    }
-    .nav{
-        padding-left: 570px;
-    }
-    .text-margin{
-        margin-left: 50px;
-    }
-    </style>
 
     <div class="container">
         <div class="row justify-content-center">
@@ -280,8 +188,6 @@
             <button data-bs-toggle="modal" data-bs-target="#save-item" class="delete-button btn btn-lg">save</button>
         </div>
     </div>
-    @include('ItemEdit.modal.delete')
-    @include('ItemEdit.modal.save')
 
 @endsection
 

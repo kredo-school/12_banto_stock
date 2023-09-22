@@ -16,9 +16,8 @@ class CreateBranchesTable extends Migration
         Schema::create('branches', function (Blueprint $table) {
             $table->id();
             $table->enum('status', ['active', 'inactive']);
-            $table->string('branches name');
+            $table->string('branch_name');
             $table->string('address');
-
         });
     }
 
@@ -32,3 +31,4 @@ class CreateBranchesTable extends Migration
         Schema::dropIfExists('branches');
     }
 }
+
