@@ -12,16 +12,16 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fi fi-sr-home" style="margin-right: 5px;"></i>HOME</a>
+                <a class="nav-link" href="{{ route('home') }}"><i class="fi fi-sr-home" style="margin-right: 5px;"></i>HOME</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#"><i class="fi fi-sr-layout-fluid" style="margin-right: 5px;"></i>Item List</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fi fi-sr-edit" style="margin-right: 5px;"></i>Edite item</a>
+                <a class="nav-link" href="item.edit"><i class="fi fi-sr-edit" style="margin-right: 5px;"></i>Edite item</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fi fi-sr-home" style="margin-right: 5px;"></i>Categories</a>
+                <a class="nav-link" href="category.edit"><i class="fi fi-sr-home" style="margin-right: 5px;"></i>Categories</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#"><i class="fi fi-sr-chart-histogram" style="margin-right: 5px;"></i>Dashboard</a>
@@ -30,17 +30,20 @@
                 <a class="nav-link" href="#"><i class="fi-sr-users-alt" style="margin-right: 5px;"></i>Casher register</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fi fi-sr-ballot" style="margin-right: 5px;"></i>Transaction</a>
+                <a class="nav-link" href="{{ route('transaction.index') }}"><i class="fi fi-sr-ballot" style="margin-right: 5px;"></i>Transaction</a>
               </li>
-              <a class="dropdown-item" href="{{ route('logout') }}"
-                onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();">
-                {{ __('Logout') }}
-              </a>
-
-              <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                  @csrf
-              </form>
+              <li class="nav-item" style="display: flex; align-items: center;">
+                <i class="fi fi-sr-exit" style="margin-right: 2x;"></i>
+                <a class="dropdown-item" href="{{ route('logout') }}"
+                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                   {{ __('Logout') }}
+                </a>
+            
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+            </li>
+            
             </ul>
           </div>
         </div>

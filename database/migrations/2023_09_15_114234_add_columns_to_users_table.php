@@ -18,7 +18,7 @@ class AddColumnsToUsersTable extends Migration
             $table->enum('status', ['active', 'inactive'])->after('password')->default('active');
             $table->foreignId('role_id')->nullable()->constrained()->after('status');
             $table->string('address')->after('role_id')->nullable();
-            $table->string('phone_number')->after('address')->nullable();
+            $table->longText('image')->after('phone_number')->nullable();
             $table->string('image')->after('phone_number')->nullable();
 
         });
