@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +36,7 @@ Route::get('/register',[UserController::class, 'register'])->name('register');
 Route::get('/transaction', [TransactionController::class, 'index'])->name('index');
 
 Route::get('/inventory', [InventoryController::class, 'index'])->name('index');
+
+// Route::post('/login', [LoginController::class, 'login'])->name('login');
+
+Route::post('/auth/items',[LoginController::class, 'login'])->name('auth.items');
