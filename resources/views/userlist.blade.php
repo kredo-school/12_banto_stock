@@ -239,7 +239,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="Birthday">Birthday</label>
+                                <label for="Birthday">Birth Date</label>
                                 <div class="input-group date" id="datepicker">
                                     <input type="text" class="form-control" id="date" />
                                     <span class="input-group-append">
@@ -278,7 +278,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="{{ mix('js/userlist.js') }}"></script>
+    {{-- <script src="{{ mix('js/userlist.js') }}"></script> --}}
 </body>
 
 </html>
