@@ -1,5 +1,11 @@
 {
     "/js/app.js": "/js/app.js",
+    "/js/dashboard.js": "/js/dashboard.js",
+    "/css/styles.css": "/css/styles.css",
     "/css/app.css": "/css/app.css",
-    "/css/register.css": "/css/register.css"
+    "/css/register.css": "/css/register.css",
+    "/css/login-forget.css": "/css/login-forget.css",
+    "/css/login.css": "/css/login.css",
+    "/css/items.css": "/css/items.css",
+    "/css/dashboard.css": "/css/dashboard.css"
 }
