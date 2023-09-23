@@ -8,7 +8,7 @@
               <h6>Company Information:</h6>
               <img src="{{ asset('images/BANTO.jpg') }}" alt="Company Logo" width="50">
               <table>
-                
+
                 <tbody>
                   <tr>
                     <td>Address</td>
@@ -20,7 +20,7 @@
                   </tr>
                 </tbody>
               </table>
-  
+
             </div>
             <div class="col-4 auto">
               <h6>Inquiries:</h6>
@@ -36,10 +36,10 @@
               </ul>
             </div>
           </div>
-  
+
           <p class="text" style="background-color: #99CCFF; color: #fff;">&copy; 2023 BANTO STOCK. All Rights Reserved.</p>
-  
+
         </div>
-  
+
     </footer>
 </div>
