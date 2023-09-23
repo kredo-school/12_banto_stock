@@ -7,6 +7,7 @@ use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\DashboardController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,4 +40,3 @@ Route::get('/inventory', [InventoryController::class, 'index'])->name('index');
 
 
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('home');
-
