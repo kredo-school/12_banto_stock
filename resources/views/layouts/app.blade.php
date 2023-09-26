@@ -30,7 +30,11 @@
 <body>
     <header>
         <!-- 共通のヘッダー内容はここに記述 -->
-        @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register')
+        @php
+            $currentRouteName = Route::currentRouteName();
+            $routeLists = array('register', 'login', 'password.request')
+        @endphp
+        @if(!in_array($currentRouteName, $routeLists))
         {{-- if分により、ヘッダーが出現しない --}}
             @include('layouts.header')
         @endif
@@ -41,7 +45,7 @@
     </main>
     <footer>
         <!-- 共通のフッター内容はここに記述 -->
-        @if(Route::currentRouteName() != 'login' && Route::currentRouteName() != 'register')
+        @if(!in_array($currentRouteName, $routeLists))
             @include('layouts.footer')
         @endif
     </footer>
