@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryItem;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\TransactionController;
@@ -34,7 +35,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/transaction', [TransactionController::class, 'index'])->name('index');
 
 Route::get('/inventory', [InventoryController::class, 'index'])->name('index');
-
+Route::get('/categoryitem/categoryitemlist',[CategoryItemListController::class,'index'])->name('categoryitem.categoryitemlist');
 
 Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('home');
 
