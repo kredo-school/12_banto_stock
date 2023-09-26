@@ -42,5 +42,4 @@ Route::get('/item/edit', [ItemController::class, 'index'])->name('item.edit');
 Route::get('/category/edit', [CategoryController::class, 'index'])->name('category.edit');
 
 Route::get('/userlist', [UserController::class, 'index'])->name('userlist.index');
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('home');
-
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');

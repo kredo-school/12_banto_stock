@@ -21,7 +21,7 @@ class CreateItemsTable extends Migration
             $table->integer('inventory');
             $table->string('image');
             $table->enum('status', ['active', 'inactive']);
-            $table->unsignedBiginteger('category_id');
+            $table->unsignedBigInteger('category_id');
             
             $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('category_id')->references('id')->on('users')->onDelete('cascade');

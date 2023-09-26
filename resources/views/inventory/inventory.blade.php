@@ -40,7 +40,7 @@
     <h1>Inventory Summary</h1>
     <div class="top-content">
 
-        <div class="row">
+        <div class="row auto align-items-center">
             
             <!-- Total Products Card -->
             <div class="col mb-3 h-100">
@@ -377,16 +377,3 @@
     </div>
 </div>
 @endsection
-
-
-
-
-
-<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#test-modal">
-    <div class="card">
-        <div class="card-body" style="background-color: #003366; color: #fff;">
-            <h3 class="card-title"><i class="fi fi-sr-box"></i>Total Stock Products</h3>
-            <p class="card-text h2">12</p>
-        </div>
-    </div>
-</button>

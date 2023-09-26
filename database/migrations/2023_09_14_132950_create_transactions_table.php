@@ -15,8 +15,8 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('branch_id');
-            $table->unsignedBigInteger('cart_id');
+            $table->unsignedBigInteger('branch_id')->nullable();
+            $table->unsignedBigInteger('cart_id')->nullable();
             $table->double('total');
             $table->enum('status', ['ongoing', 'cancelled', 'completed']);
             $table->double('paid_amount');
@@ -25,6 +25,8 @@ class CreateTransactionsTable extends Migration
 
             $table->foreign('branch_id')->references('id')->on('branches')->onDelete('cascade');
             $table->foreign('cart_id')->references('id')->on('carts')->onDelete('cascade');
+
+            $table->timestamps();
 
 
         });
