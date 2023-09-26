@@ -17,7 +17,7 @@
 
 .right-section {
   height: 80vh;
-  background-image: url("/storage/images/login-image1.png");
+  background-image: url("/images/login-image1.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -45,7 +45,7 @@
                     <div class="card-body">
                         {{--insert LOGO--}}
                         <div class="text-center mb-4">
-                            <img src="{{ asset('/storage/images/banto-logo.jpeg')}}" alt="Logo" class="img-fluid">
+                            <img src="{{ asset('/images/banto-logo.jpeg')}}" alt="Logo" class="img-fluid">
                         </div>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
