@@ -16,17 +16,16 @@ class AddColumnsToUsersTable extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->string('username')->after('name');
             $table->enum('status', ['active', 'inactive'])->after('password')->default('active');
-            $table->string('role_id')->after('status')->nullable();
+            $table->foreignId('role_id')->nullable()->constrained()->after('status');
             $table->string('address')->after('role_id')->nullable();
-            $table->string('phone_number')->after('address')->nullable();
-            $table->string('image')->after('phone_number')->nullable();
-
+            $table->longText('image')->nullable();
         });
 
 
 
-    }
-    /**
+    } 
+
+/**
      * Reverse the migrations.
      *
      * @return void
@@ -44,4 +43,4 @@ class AddColumnsToUsersTable extends Migration
             $table->dropForeign(['role_id']);
         });
     }
-}
+} 
