@@ -13,7 +13,7 @@ class TransactionController extends Controller
         // すべてのトランザクションデータを取得
         $transactions = Transaction::all();
 
-        return view('transaction.index', compact('transactions'));
+        return view('transaction.transaction', compact('transactions'));
     }
 }
 
