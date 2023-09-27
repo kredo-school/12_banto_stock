@@ -54,7 +54,10 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+<<<<<<< HEAD
             'username' => ['required', 'string', 'max:255', 'unique:users'],
+=======
+>>>>>>> 834dc2bca9f1ac8a6564f5c4f99bedd1f2cfb4ea
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -71,10 +74,16 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
+<<<<<<< HEAD
         'name' => $data['name'], // フルネームを格納
         'username' => $data['username'],
         'email' => $data['email'],
         'password' => bcrypt($data['password']),
+=======
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password']),
+>>>>>>> 834dc2bca9f1ac8a6564f5c4f99bedd1f2cfb4ea
         ]);
     }
 

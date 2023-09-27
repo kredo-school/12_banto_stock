@@ -17,7 +17,7 @@
 
 .right-section {
   height: 80vh;
-  background-image: url("/storage/images/login-image1.png");
+  background-image: url("/images/login-image1.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -45,7 +45,7 @@
                     <div class="card-body">
                         {{--insert LOGO--}}
                         <div class="text-center mb-4">
-                            <img src="{{ asset('/storage/images/banto-logo.jpeg')}}" alt="Logo" class="img-fluid">
+                            <img src="{{ asset('/images/banto-logo.jpeg')}}" alt="Logo" class="img-fluid">
                         </div>
                         <form method="POST" action="{{ route('login') }}">
                             @csrf
@@ -97,8 +97,8 @@
 
                             <div class="row mt-5 px-5">
                                 <div class="d-grid gap-2">
-                                    <button type="submit" class="btn btn-color-change btn-lg shadow">
-                                        {{ __('LOGIN') }}
+                                    <button type="submit" class="btn btn-color-change btn-lg shadow text-white">
+                                            {{ __('LOGIN') }}
                                     </button>
                                     
 
@@ -120,7 +120,7 @@
                                 <p class="text-account text-muted">Don't have account?</p>
                             </div>
                             <div class="text-sign-up col m-0">
-                                <a href="http://127.0.0.1:8000/register" class="text-sign-up text-dark">Sign Up</a>
+                                <a href="{{ route('register')}}" class="text-sign-up text-dark">Sign Up</a>
                             </div>
                         </div>
                     </div>
