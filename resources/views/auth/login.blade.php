@@ -17,7 +17,7 @@
 
 .right-section {
   height: 80vh;
-  background-image: url("/storage/images/login-image1.png");
+  background-image: url("/images/login-image1.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -45,9 +45,9 @@
                     <div class="card-body">
                         {{--insert LOGO--}}
                         <div class="text-center mb-4">
-                            <img src="{{ asset('/storage/images/banto-logo.jpeg')}}" alt="Logo" class="img-fluid">
+                            <img src="{{ asset('/images/banto-logo.jpeg')}}" alt="Logo" class="img-fluid">
                         </div>
-                        <form method="POST" action="{{ route('auth.items') }}">
+                        <form method="POST" action="{{ route('login') }}">
                             @csrf
 
                             <div class="row ps-5">
@@ -82,6 +82,17 @@
                                 </div>
                             </div>
 
+                            {{-- <div class="row mb-3">
+                                <div class="col-md-6 offset-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input text-end" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                        <label class="form-check-label" for="remember">
+                                            {{ __('Remember Me') }}
+                                        </label>
+                                    </div>
+                                </div>
+                            </div> --}}
 
                             <div class="row mt-5 px-5">
                                 <div class="d-grid gap-2">
