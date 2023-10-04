@@ -40,7 +40,7 @@
     <h1>Inventory Summary</h1>
     <div class="top-content">
 
-        <div class="row">
+        <div class="row auto align-items-center">
             
             <!-- Total Products Card -->
             <div class="col mb-3 h-100">

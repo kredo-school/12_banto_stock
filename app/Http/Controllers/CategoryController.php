@@ -6,10 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 
-class UserController extends Controller
+class CategoryController extends Controller
 {
-    public function index()
-    {
-        return view('userlist');
+    public function index(){
+        return view('category.edit');
     }
 }
