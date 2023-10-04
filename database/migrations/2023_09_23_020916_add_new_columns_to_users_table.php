@@ -23,6 +23,7 @@ class AddNewColumnsToUsersTable extends Migration
 
 
     }
+
     /**
      * Reverse the migrations.
      *

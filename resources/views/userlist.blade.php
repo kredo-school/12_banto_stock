@@ -12,6 +12,8 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    {{-- <link rel="stylesheet" href="/resources/sass/userlist.css.map"> --}}
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 
 <body>
@@ -19,7 +21,6 @@
         <div class="row">
             <div class="col-12">
                 <h3 class="font-poppins-bold">Hello Administration
-                    {{-- put name after Hello --}}
                     <i class="fa-solid fa-hands fa-sm"></i>,
                 </h3>
             </div>
@@ -68,33 +69,80 @@
                     </div>
                 </div>
             </div>
-
-
-            {{-- test --}}
         </div>
     </div>
 
-    </div>
-    </div>
-    </div>
 
-    </div>
+
     <div class="container mt-5">
         <div class="row justify-content-between">
             <div class="col-3">
-                <h3>All Cashers</h3>
+                <h3>All Cashers,</h3>
             </div>
+            {{-- search start --}}
+            <div class="col-md-12">
+                <div class="card mt-4">
+                    <div class="card-body">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Full Name</th>
+                                    <th>Employee Number</th> 
+                                    <th>Branch</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php 
+                                    $con = mysqli_connect("localhost","root","","12_banto_stock");
+                                    if(isset($_GET['search']))
+                                    {
+                                        $filtervalues = $_GET['search'];
+                                        $query = "SELECT * FROM users WHERE CONCAT(name,username) LIKE '%$filtervalues%'";
+                                        $query_run = mysqli_query($con, $query);
+                                        if(mysqli_num_rows($query_run) > 0)
+                                        {
+                                            foreach($query_run as $items)
+                                            {
+                                                ?>
+                                                <tr>
+                                                    <td><?= $items['id'];?></td>
+                                                    <td><?= $items['name'];?></td>
+                                                    <td><?= $items['username'];?></td>
+                                                </tr>
+                                                <?php
+                                            }
+                                        }
+                                        else
+                                        
+                                        {
+                                            ?>
+                                                <tr>
+                                                    <td colspan="4">No Record Found</td>
+                                                </tr>
+                                            <?php
+                                        }
+                                    }
+                                ?>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        <!--search -->
+            
             <div class="col-3">
-                <form action="" method="get">
+                <form action="searched.php" method="get">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Search"
+                        <input type="text" class="form-control" placeholder="Search Name"
                             aria-label="Recipient's username" aria-describedby="button-addon2">
                         <span class="input-group-text">
                             <i class="fa fa-search"></i>
                         </span>
                     </div>
                 </form>
-            </div>
+            </div> 
+        </div>
             <table class="table table-hover">
                 <thead class="table-header">
                     <tr>
@@ -106,6 +154,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {{-- @foreeach ($user as $item) --}}
                     <tr>
                         <th scope="row">Adam</th>
                         <td>123457666</td>
@@ -152,7 +201,7 @@
             </table>
             <div class="container">
                 <p class="table-footer text-start">Showing data 1 to 10 of 100k entries</p>
-                {{-- page nav start --}}
+                {{-- page nav start --}} 
                 <nav aria-label="Page navigation" class="pagination-container float-right">
                     <ul class="pagination">
                         <li class="page-item">
@@ -169,6 +218,20 @@
                             </a>
                         </li>
                 </nav>
+                {{-- <div class="container">
+                    <div class="pagination">
+                        <button class="btn1">prev</button>
+                            <ul>
+                                <li class="link" value="1">1</li>
+                                <li class="link" value="2">2</li>
+                                <li class="link" value="3">3</li>
+                                <li class="link" value="4">4</li>
+                                <li class="link" value="5">5</li>
+                            </ul>
+                        <button class="btn1">next</button>
+                    </div>
+                </div> --}}
+                {{-- page end --}}
             </div>
         </div>
 {{-- modal start --}}

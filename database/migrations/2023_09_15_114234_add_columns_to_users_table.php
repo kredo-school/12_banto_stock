@@ -23,9 +23,9 @@ class AddColumnsToUsersTable extends Migration
 
 
 
-    } 
+    }
 
-/**
+    /**
      * Reverse the migrations.
      *
      * @return void
@@ -43,4 +43,4 @@ class AddColumnsToUsersTable extends Migration
             $table->dropForeign(['role_id']);
         });
     }
-} 
+}
