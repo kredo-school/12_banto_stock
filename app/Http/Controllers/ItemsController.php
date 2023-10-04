@@ -1,14 +1,23 @@
 <?php
+// ItemsController.php
 
 namespace App\Http\Controllers;
 
+use App\Models\Item;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Traits\ItemTrait;
 
 class ItemsController extends Controller
 {
+    use ItemTrait;
+
     public function index()
     {
-        return view('items');
+        $items = Item::paginate(10); // 10個ずつページネーションする
+
+        return view('items', ['items' => $items]);
+
     }
 }
+
+

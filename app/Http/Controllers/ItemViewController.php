@@ -1,14 +1,22 @@
 <?php
 
+// ItemViewController.php
+
 namespace App\Http\Controllers;
 
+use App\Models\Item;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Traits\ItemTrait;
 
 class ItemViewController extends Controller
 {
+    use ItemTrait;
+
     public function index()
     {
-        return view('item-view'); // item-view.blade.php ビューを表示
+        $items = Item::paginate(10);
+
+        return view('item-view', ['items' => $items]);
     }
 }
+

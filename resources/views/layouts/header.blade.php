@@ -21,7 +21,7 @@
                 <a class="nav-link" href="{{ route('item.edit.index')}}"><i class="fi fi-sr-edit" style="margin-right: 5px;"></i>Edite item</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ route('category.edit')}}"><i class="fi fi-sr-home" style="margin-right: 5px;"></i>Categories</a>
+                <a class="nav-link" href="{{ route('category.itemcategories')}}"><i class="fi fi-sr-home" style="margin-right: 5px;"></i>Categories</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('dashboard.index') }}"><i class="fi fi-sr-chart-histogram" style="margin-right: 5px;"></i>Dashboard</a>
@@ -31,6 +31,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{{ route('transaction.index') }}"><i class="fi fi-sr-ballot" style="margin-right: 5px;"></i>Transaction</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ route('inventory.index') }}"><i class="fi fi-sr-ballot" style="margin-right: 5px;"></i>Inventory</a>
               </li>
               <li class="nav-item" style="display: flex; align-items: center;">
                 <i class="fi fi-sr-exit" style="margin-right: 2x;"></i>

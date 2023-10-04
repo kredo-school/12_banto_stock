@@ -13,6 +13,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\CategoryItemListController;
 
 
 
@@ -47,6 +48,7 @@ Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->na
 
 Route::get('/transaction', [TransactionController::class, 'index'])->name('transaction.index');
 
+
 Route::get('/inventory', [InventoryController::class, 'index'])->name('inventory.index');
 
 Route::get('/item/edit', [ItemEditController::class, 'index'])->name('item.edit.index');
@@ -59,7 +61,7 @@ Route::get('/userlist', [UserController::class, 'index'])->name('userlist.index'
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
 
-Route::get('/categoryitem/categoryitemlist',[CategoryItemListController::class,'index'])->name('categoryitem.categoryitemlist');
+Route::get('/category/itemcategories', [CategoryItemListController::class, 'index'])->name('category.itemcategories');
 
 Route::get('/items', [ItemsController::class, 'index'])->name('items.index');
 Route::get('/item-view', [ItemViewController::class, 'index'])->name('item-view.index');

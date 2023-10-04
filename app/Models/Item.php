@@ -2,8 +2,8 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Item extends Model
 {
@@ -14,4 +14,12 @@ class Item extends Model
     {
         return $this->belongsTo(User::class, 'item_id');
     }
+
+    public $timestamps = false;
+
+    protected $fillable = [
+        'name', 'price', 'detail', 'inventory', 'image', 'status', 'category_id',
+    ];
 }
+
+

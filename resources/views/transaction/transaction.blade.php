@@ -43,6 +43,30 @@
             <input type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="basic-addon1">
           </div>
         </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              const searchInput = document.querySelector('.form-control');
+              const itemsToSearch = []; // 検索対象のアイテムのリストをここに追加
+          
+              searchInput.addEventListener('input', function() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const results = [];
+          
+                for (const item of itemsToSearch) {
+                  if (item.textContent.toLowerCase().includes(searchTerm)) {
+                    results.push(item);
+                  }
+                }
+          
+                // 検索結果を表示するための処理を追加する
+          
+                // 例: 検索結果を表示するコード
+                // results を使って結果を表示する処理を追加する
+              });
+            });
+          </script>
+          
        
         <div class="col-auto">
             <div class="form-group">
@@ -55,6 +79,30 @@
             </div>
         </div>
       </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          const selectElement = document.getElementById('exampleFormSelect1');
+          const itemsToSort = []; // 並べ替え対象のアイテムのリストをここに追加
+      
+          selectElement.addEventListener('change', function() {
+            const selectedValue = selectElement.value;
+      
+            if (selectedValue === 'priceHtL') {
+              // 価格を高い順に並べ替える処理を追加する
+            } else if (selectedValue === 'name') {
+              // 名前順に並べ替える処理を追加する
+            } else if (selectedValue === 'stock') {
+              // 在庫が少ない順に並べ替える処理を追加する
+            }
+      
+            // 並べ替えた結果を表示する処理を追加する
+          });
+        });
+      </script>
+      
+
+
 
     <div class="row">
         <table class="table table-hover align-middle border">
@@ -79,7 +127,7 @@
                         <td>{{ $transaction->status }}</td>
                         <td>{{ $transaction->branch_id }}</td>
                         <td>{{ $transaction->cart_id }}</td>
-                        <td>{{ $transaction->date }}</td>
+                        <td></td>
                         <td>{{ $transaction->paid_amount }}</td>
                         <td>
                             <div class="text-center col-xs-12">
@@ -145,56 +193,53 @@
 
     <div class="row mt-5">
         <nav aria-label="Page navigation example">
-          <ul class="pagination justify-content-center">
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Previous">
-              <span aria-hidden="true">&laquo;</span>
-            </a>
-          </li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-              <a class="page-link" href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-              </a>
-            </li>
-          </ul>
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="{{ $transactions->previousPageUrl() }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                @for ($page = 1; $page <= $transactions->lastPage(); $page++)
+                    <li class="page-item {{ $page == $transactions->currentPage() ? 'active' : '' }}">
+                        <a class="page-link" href="{{ $transactions->url($page) }}">{{ $page }}</a>
+                    </li>
+                @endfor
+                <li class="page-item">
+                    <a class="page-link" href="{{ $transactions->nextPageUrl() }}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
         </nav>
     </div>
 
+    <script>
+        $(document).ready(function () {
+            // ページネーション要素を取得
+            var pagination = $('#pagination');
 
+            // ページネーションリンクがクリックされたときの処理
+            pagination.on('click', 'li.page-item a.page-link', function (e) {
+                e.preventDefault(); // リンクのデフォルト動作を無効化
 
+                var targetPage = $(this).text(); // クリックされたページ番号を取得
 
-
-  <script>
-  $(document).ready(function () {
-      
-      var tableData = [
-          { userId: 5, total: 24, status: 'ongoing', branchId: 8, cartId: 4, date: '2023/08/29', paidAmount: 200 },
-          
-      ];
-
-      
-      var dataTable = $('#dataTable').DataTable({
-          data: tableData,
-          columns: [
-              { data: 'userId' },
-              { data: 'total' },
-              { data: 'status' },
-              { data: 'branchId' },
-              { data: 'cartId' },
-              { data: 'date' },
-              { data: 'paidAmount' }
-          ]
-      });
-
-      $('#sortButton').click(function () {
-          var sortOrder = dataTable.column('userId:name').order()[0][1];
-          sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
-          dataTable.column('userId:name').order(sortOrder).draw();
-      });
-  });
-  </script>
+                // Previousボタンがクリックされた場合
+                if ($(this).attr('aria-label') === 'Previous') {
+                    // 前のページに移動する処理をここに記述
+                }
+                // Nextボタンがクリックされた場合
+                else if ($(this).attr('aria-label') === 'Next') {
+                    // 次のページに移動する処理をここに記述
+                }
+                // ページ番号がクリックされた場合
+                else {
+                    // クリックされたページに移動する処理をここに記述
+                    // targetPageにクリックされたページ番号が格納されています
+                    // 例: クリックされたページが3なら、アイテムの表示を10件から20件までに更新するなど
+                }
+            });
+        });
+    </script>
 
 @endsection

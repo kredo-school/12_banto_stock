@@ -12,13 +12,20 @@ class Transaction extends Model
     use HasFactory;
     protected $table = 'transactions';
 
+    protected $fillable = [
+        'date',
+        // 他のカラム
+    ];
+
     // 他のモデルとのリレーションシップを定義することもできます
     public function user()
     {
         return $this->belongsTo(User::class, 'user_id');
     }
     // 他のリレーションシップも同様に定義できます
+
 }
+
 
 
 
