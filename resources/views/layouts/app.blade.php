@@ -30,7 +30,14 @@
 <body>
     <header>
         <!-- 共通のヘッダー内容はここに記述 -->
-        @include('layouts.header')
+        @php
+            $currentRouteName = Route::currentRouteName();
+            $routeLists = array('register', 'login', 'password.request')
+        @endphp
+        @if(!in_array($currentRouteName, $routeLists))
+        {{-- if分により、ヘッダーが出現しない --}}
+            @include('layouts.header')
+        @endif
     </header>
     <main>
         <!-- メインコンテンツはここに表示されます -->
@@ -38,7 +45,9 @@
     </main>
     <footer>
         <!-- 共通のフッター内容はここに記述 -->
-        @include('layouts.footer')
+        @if(!in_array($currentRouteName, $routeLists))
+            @include('layouts.footer')
+        @endif
     </footer>
 </body>
 </html>
