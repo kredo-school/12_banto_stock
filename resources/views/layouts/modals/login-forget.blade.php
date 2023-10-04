@@ -41,7 +41,7 @@
                             {{-- デフォルトで実装されているpasswordのreset.blade.phpへの password.request --}}
                             <a href="{{ route('password.request') }}" class="text-white">Reset Password</a>
                         </button>
-                        <button class="btn btn-white mt-1 shadow">
+                        <button class="btn button-close btn-white mt-1 shadow" data-bs-dismiss="modal">
                             <a href="#" class="">Back to Login</a>
                         </button>
                     </div>

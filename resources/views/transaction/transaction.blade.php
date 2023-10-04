@@ -24,7 +24,7 @@
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
- 
+
  <!-- Font Awesome icons -->
  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
  <!-- Styles -->
@@ -32,7 +32,7 @@
 
 
 <div class="container">
- 
+
     {{-- Sorting button --}}
     <div class="row auto align-items-center">
         <div class="col-auto">
@@ -43,7 +43,7 @@
             <input type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="basic-addon1">
           </div>
         </div>
-       
+
         <div class="col-auto">
             <div class="form-group">
               <select class="form-control text-center fw-bold" id="exampleFormSelect1" style="background-color: #336699; color: #fff;">
@@ -85,7 +85,7 @@
                                 <i class="fi fi-sr-rectangle-list"></i> 2 Items
                             </button>
                         </div>
-                    
+
                         <div id="test-modal" class="modal fade" tabindex="-1" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -111,7 +111,7 @@
                                                 <td>200</td>
                                                 <td>2</td>
                                             </tr>
-                                    
+
                                             <!-- item2 -->
                                             <tr>
                                                 <td><img src="{{ asset('images/sarada.jpg') }}" alt="sarada" width="50"></td>
@@ -119,9 +119,10 @@
                                                 <td>200</td>
                                                 <td>2</td>
                                             </tr>
-                                    
+
+
                                             <!-- other items -->
-                                    
+
                                         </tbody>
                                      </table>
                                     </div>
@@ -149,7 +150,7 @@
                                 <i class="fi fi-sr-rectangle-list"></i> 2 Items
                             </button>
                         </div>
-                    
+
                         <div id="test-modal" class="modal fade" tabindex="-1" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -175,7 +176,7 @@
                                                 <td>200</td>
                                                 <td>2</td>
                                             </tr>
-                                    
+
                                             <!-- item2 -->
                                             <tr>
                                                 <td><img src="{{ asset('images/sarada.jpg') }}" alt="sarada" width="50"></td>
@@ -183,9 +184,9 @@
                                                 <td>200</td>
                                                 <td>2</td>
                                             </tr>
-                                    
+
                                             <!-- other items -->
-                                    
+
                                         </tbody>
                                      </table>
                                     </div>
@@ -207,78 +208,14 @@
                     <td>4</td>
                     <td>2023/08/29</td>
                     <td>200</td>
-                    
-                    <td>
-                        <div class="text-center col-md">
-                            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#test-modal" style="background-color: #6699cc; color: #fff;">
-                                <i class="fi fi-sr-rectangle-list"></i> 2 Items
-                            </button>
-                        </div>
-                    
-                        <div id="test-modal" class="modal fade" tabindex="-1" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title">2 Items</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                     <table class="table table-bordered table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th scope="col-3"></th>
-                                                <th scope="col-3">item name</th>
-                                                <th scope="col-3">price</th>
-                                                <th scope="col-3">quantity</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <!-- item1 -->
-                                            <tr>
-                                                <td><img src="{{ asset('images/chikin.jpeg') }}" alt="chikin" width="50"></td>
-                                                <td>chikin</td>
-                                                <td>200</td>
-                                                <td>2</td>
-                                            </tr>
-                                    
-                                            <!-- item2 -->
-                                            <tr>
-                                                <td><img src="{{ asset('images/sarada.jpg') }}" alt="sarada" width="50"></td>
-                                                <td>sarada</td>
-                                                <td>200</td>
-                                                <td>2</td>
-                                            </tr>
-                                    
-                                            <!-- other items -->
-                                    
-                                        </tbody>
-                                     </table>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
 
-                <tr>
-                    <td>5</td>
-                    <td>24</td>
-                    <td>ongoing</td>
-                    <td>8</td>
-                    <td>4</td>
-                    <td>2023/08/29</td>
-                    <td>200</td>
                     <td>
                         <div class="text-center col-md">
                             <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#test-modal" style="background-color: #6699cc; color: #fff;">
                                 <i class="fi fi-sr-rectangle-list"></i> 2 Items
                             </button>
                         </div>
-                    
+
                         <div id="test-modal" class="modal fade" tabindex="-1" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -304,7 +241,7 @@
                                                 <td>200</td>
                                                 <td>2</td>
                                             </tr>
-                                    
+
                                             <!-- item2 -->
                                             <tr>
                                                 <td><img src="{{ asset('images/sarada.jpg') }}" alt="sarada" width="50"></td>
@@ -312,9 +249,9 @@
                                                 <td>200</td>
                                                 <td>2</td>
                                             </tr>
-                                    
+
                                             <!-- other items -->
-                                    
+
                                         </tbody>
                                      </table>
                                     </div>
@@ -342,7 +279,7 @@
                                 <i class="fi fi-sr-rectangle-list"></i> 2 Items
                             </button>
                         </div>
-                    
+
                         <div id="test-modal" class="modal fade" tabindex="-1" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -368,7 +305,7 @@
                                                 <td>200</td>
                                                 <td>2</td>
                                             </tr>
-                                    
+
                                             <!-- item2 -->
                                             <tr>
                                                 <td><img src="{{ asset('images/sarada.jpg') }}" alt="sarada" width="50"></td>
@@ -376,9 +313,9 @@
                                                 <td>200</td>
                                                 <td>2</td>
                                             </tr>
-                                    
+
                                             <!-- other items -->
-                                    
+
                                         </tbody>
                                      </table>
                                     </div>
@@ -406,7 +343,7 @@
                                 <i class="fi fi-sr-rectangle-list"></i> 2 Items
                             </button>
                         </div>
-                    
+
                         <div id="test-modal" class="modal fade" tabindex="-1" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -432,7 +369,7 @@
                                                 <td>200</td>
                                                 <td>2</td>
                                             </tr>
-                                    
+
                                             <!-- item2 -->
                                             <tr>
                                                 <td><img src="{{ asset('images/sarada.jpg') }}" alt="sarada" width="50"></td>
@@ -440,9 +377,9 @@
                                                 <td>200</td>
                                                 <td>2</td>
                                             </tr>
-                                    
+
                                             <!-- other items -->
-                                    
+
                                         </tbody>
                                      </table>
                                     </div>
@@ -456,7 +393,71 @@
                     </td>
                 </tr>
 
-          
+                <tr>
+                    <td>5</td>
+                    <td>24</td>
+                    <td>ongoing</td>
+                    <td>8</td>
+                    <td>4</td>
+                    <td>2023/08/29</td>
+                    <td>200</td>
+                    <td>
+                        <div class="text-center col-md">
+                            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#test-modal" style="background-color: #6699cc; color: #fff;">
+                                <i class="fi fi-sr-rectangle-list"></i> 2 Items
+                            </button>
+                        </div>
+
+                        <div id="test-modal" class="modal fade" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">2 Items</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                     <table class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col-3"></th>
+                                                <th scope="col-3">item name</th>
+                                                <th scope="col-3">price</th>
+                                                <th scope="col-3">quantity</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <!-- item1 -->
+                                            <tr>
+                                                <td><img src="{{ asset('images/chikin.jpeg') }}" alt="chikin" width="50"></td>
+                                                <td>chikin</td>
+                                                <td>200</td>
+                                                <td>2</td>
+                                            </tr>
+
+                                            <!-- item2 -->
+                                            <tr>
+                                                <td><img src="{{ asset('images/sarada.jpg') }}" alt="sarada" width="50"></td>
+                                                <td>sarada</td>
+                                                <td>200</td>
+                                                <td>2</td>
+                                            </tr>
+
+                                            <!-- other items -->
+
+                                        </tbody>
+                                     </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+
             </tbody>
         </table>
     </div>
@@ -487,13 +488,13 @@
 
   <script>
   $(document).ready(function () {
-      
+
       var tableData = [
           { userId: 5, total: 24, status: 'ongoing', branchId: 8, cartId: 4, date: '2023/08/29', paidAmount: 200 },
-          
+
       ];
 
-      
+
       var dataTable = $('#dataTable').DataTable({
           data: tableData,
           columns: [

@@ -83,11 +83,11 @@
     </div>
 
     <div class="row dashboard-bottom gx-3">
-      
+
       <div class="col rounded me-1">
         <p class="">Sales Growth by Market Segment</p>
-          
-        
+
+
 
         <canvas id="myLine2Chart" width="800" height="400"></canvas>
 
@@ -95,7 +95,7 @@
       </div>
       <div class="col rounded ms-1">
         <p class="">Sales per  Rep</p>
-        
+
         <div class="container" style="width:100%">
           <canvas id="canvas"></canvas>
         </div>
@@ -106,7 +106,7 @@
 
 
   </div>
-  
+
 </div>
 
 
