@@ -9,6 +9,8 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
+use Illuminate\Http\Request;
+
 class RegisterController extends Controller
 {
     /*
@@ -31,6 +33,7 @@ class RegisterController extends Controller
      */
     protected $redirectTo = RouteServiceProvider::HOME;
 
+
     /**
      * Create a new controller instance.
      *
@@ -51,10 +54,13 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255', 'unique:users'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
+
+    
 
     /**
      * Create a new user instance after a valid registration.
@@ -65,9 +71,28 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
+        'name' => $data['name'], // フルネームを格納
+        'username' => $data['username'],
+        'email' => $data['email'],
+        'password' => bcrypt($data['password']),
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
     }
+
+
+    // ...
+
+    /**
+     * 登録フォームを表示します。
+     *
+     * @return \Illuminate\View\View
+     */
+    public function showRegistrationForm()
+    {
+        return view('auth.register');
+    }
+
 }
+
