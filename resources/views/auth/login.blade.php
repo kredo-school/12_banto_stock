@@ -56,7 +56,7 @@
                             <div class="row mb-3">
                                 <div class="input-group px-5">
                                     <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
-                                    <input id="username" type="username" class="form-control form-control-lg text-center @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" placeholder="ENTER USERNAME" required>
+                                    <input id="username" type="username" class="form-control form-control-lg text-center @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" placeholder="ENTER USERNAME">
 
                                     @error('username')
                                         <span class="invalid-feedback" role="alert">
@@ -65,6 +65,7 @@
                                     @enderror
                                 </div>
                             </div>
+                            
 
                             <div class="row ps-5">
                                 <label for="password" class="col-md-4 col-form-label text-md-start">{{ __('PASSWORD') }}</label>
@@ -72,7 +73,7 @@
                             <div class="row">
                                 <div class="input-group px-5">
                                     <span class="input-group-text"><i class="fa-solid fa-key"></i></span>
-                                    <input id="password" type="password" class="form-control form-control-lg text-center @error('password') is-invalid @enderror" name="password" placeholder="ENTER PASSWORD" required autocomplete="current-password" required>
+                                    <input id="password" type="password" class="form-control form-control-lg text-center @error('password') is-invalid @enderror" name="password" placeholder="ENTER PASSWORD" autocomplete="current-password">
 
                                     @error('password')
                                         <span class="invalid-feedback" role="alert">
@@ -99,16 +100,15 @@
                                     <button type="submit" class="btn btn-color-change btn-lg shadow text-white">
                                             {{ __('LOGIN') }}
                                     </button>
+                                    
 
                                     {{-- link of pop up forgot password page --}}
                                     {{-- @if (Route::has('password.request')) --}}
 
                                         <a class="btn btn-link text-end" data-bs-toggle="modal" data-bs-target="#login-forget">
-                                        {{-- href="{{ route('password.request') }}"> --}}
-                                        {{ __('Forgot Password?') }}
+                                            {{ __('Forgot Password?') }}
                                         </a>
-
-
+                                        
                                     {{-- @endif --}}
                                 </div>
                             </div>
@@ -125,6 +125,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="card mt-5 shadow right-section">
                         <div class="text-center">
                         </div>
