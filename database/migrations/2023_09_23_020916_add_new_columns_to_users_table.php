@@ -18,6 +18,7 @@ class AddNewColumnsToUsersTable extends Migration
             $table->integer('employee_number')->nullable();
             $table->enum('gender', ['male', 'female'])->nullable();
             $table->timestamp('birthdate')->nullable();
+            $table->string('name')->after('id');
         });
 
 

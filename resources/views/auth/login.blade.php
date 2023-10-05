@@ -65,7 +65,7 @@
                                     @enderror
                                 </div>
                             </div>
-                            
+
 
                             <div class="row ps-5">
                                 <label for="password" class="col-md-4 col-form-label text-md-start">{{ __('PASSWORD') }}</label>
@@ -83,14 +83,14 @@
                                 </div>
                             </div>
 
-                    
+
 
                             <div class="row mt-5 px-5">
                                 <div class="d-grid gap-2">
                                     <button type="submit" class="btn btn-color-change btn-lg shadow text-white">
                                             {{ __('LOGIN') }}
                                     </button>
-                                    
+
 
                                     {{-- link of pop up forgot password page --}}
                                     {{-- @if (Route::has('password.request')) --}}
@@ -98,7 +98,7 @@
                                         <a class="btn btn-link text-end" data-bs-toggle="modal" data-bs-target="#login-forget">
                                             {{ __('Forgot Password?') }}
                                         </a>
-                                        
+
                                     {{-- @endif --}}
                                 </div>
                             </div>
@@ -115,7 +115,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="card mt-5 shadow right-section">
                         <div class="text-center">
                         </div>

@@ -54,7 +54,7 @@
     <div class="row dashboard-middle">
       <div class="col rounded me-1">
         <p class="title">Total Accounts</p>
-        <p class="value">2,104</p>
+        <p class="value">{{ number_format($totalItemPrice) }}</p>
         <p class="rate"><span class="arrow up">↑</span>20%</p>
         <p class="vs">vs previous 30 days</p>
       </div>
