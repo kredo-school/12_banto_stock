@@ -19,7 +19,7 @@ class AddColumnsToUsersTable extends Migration
             $table->foreignId('role_id')->constrained()->after('status')->nullable();
             $table->string('address')->after('role_id')->nullable();
             $table->string('phone_number')->after('address')->nullable();
-            $table->string('image')->after('phone_number')->nullable();
+            $table->longText('image')->after('phone_number')->nullable();
 
         });
 
