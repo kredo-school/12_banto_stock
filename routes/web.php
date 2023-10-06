@@ -12,7 +12,6 @@ use App\Http\Controllers\ItemViewController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\TransactionController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CategoryItemListController;
 
@@ -67,8 +66,4 @@ Route::get('/items', [ItemsController::class, 'index'])->name('items.index');
 Route::get('/item-view', [ItemViewController::class, 'index'])->name('item-view.index');
 
 
-Route::get('/inventory', [InventoryController::class, 'index'])->name('index');
-
-
-Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('home');
 
