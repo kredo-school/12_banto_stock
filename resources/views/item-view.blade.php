@@ -8,6 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
 
+<!-- <script src="{{ asset('js/components/pizza.js')}}"></script> -->
+
 <div class="container" id="item-view">
   <div class="row">
 
@@ -49,23 +51,23 @@
       <div class="container mt-5 item-container">
         <div class="row row-cols-5">
             @foreach($items as $item)
-                <div class="col">
+                <div class="col" id="item-{{$item->id}}">
                     <div class="card mb-3">
                         <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/{$item->image}") }}')"></div>
                         <div class="card-body">
                             <p class="card-text text-center fs-4 fw-bold title">{{ $item->name }}</p>
                             <div class="row">
                               <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">{{ $item->inventory }}</span></div>
-                              <div class="col-6 text-end ps-0 fs-5">{{ $item->pricei }}</div>
+                              <div class="col-6 text-end ps-0 fs-5">{{ $item->price }}</div>
                               <div class="col-12 fw-bold category">Category : <span class="fw-normal">{{ $item->category_id}}</span></div>
                               <div class="col-12 mt-2">
-                                <button class="btn btn add-to-order" style="background-color: #99CCFF; color: #fff;" 
+                                <a href="{{route('item-view.index', ['items' => $items, 'id' => $items->id])}}" class="btn btn add-to-order" style="background-color: #99CCFF; color: #fff;"
                                   data-id="{{ $item->id }}" 
                                   data-name="{{ $item->name }}" 
                                   data-price="{{ $item->price }}"
                                   data-stock="{{ $item->inventory }}"> <!-- こちらを追加 -->
                                     Add to Order
-                                </button>
+                                </a>
 
                               </div>
                             
@@ -193,33 +195,6 @@
   </div>
 </div>
 
-
-<!-- JavaScriptを追加 -->
-<script>
-  $(document).ready(function () {
-      // ページネーション要素を取得
-      var pagination = $('#pagination');
-      // ページネーションリンクがクリックされたときの処理
-      pagination.on('click', 'li.page-item a.page-link', function (e) {
-          e.preventDefault(); // リンクのデフォルト動作を無効化
-          var targetPage = $(this).text(); // クリックされたページ番号を取得
-          // Previousボタンがクリックされた場合
-          if ($(this).attr('aria-label') === 'Previous') {
-              // 前のページに移動する処理をここに記述
-          }
-          // Nextボタンがクリックされた場合
-          else if ($(this).attr('aria-label') === 'Next') {
-              // 次のページに移動する処理をここに記述
-          }
-          // ページ番号がクリックされた場合
-          else {
-              // クリックされたページに移動する処理をここに記述
-              // targetPageにクリックされたページ番号が格納されています
-              // 例: クリックされたページが3なら、アイテムの表示を10件から20件までに更新するなど
-          }
-      });
-  });
-</script>
 
 
 <script>
