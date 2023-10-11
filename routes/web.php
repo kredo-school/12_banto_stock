@@ -68,3 +68,5 @@ Route::get('/item-view', [ItemViewController::class, 'index'])->name('item-view.
 Route::get('/item-add', [ItemAddController::class, 'index'])->name('item-add.index');
 
 
+
+

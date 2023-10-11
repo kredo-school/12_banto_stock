@@ -18,6 +18,9 @@
                 <a class="nav-link" href="{{ route('item-view.index') }}"><i class="fi fi-sr-layout-fluid" style="margin-right: 5px;"></i>Item List</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="{{ route('item-view.index') }}"><i class="fi fi-sr-layout-fluid" style="margin-right: 5px;"></i>Item Details</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="{{ route('item.edit.index')}}"><i class="fi fi-sr-edit" style="margin-right: 5px;"></i>Edite item</a>
               </li>
               <li class="nav-item">

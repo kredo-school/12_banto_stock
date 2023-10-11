@@ -61,13 +61,14 @@
                               <div class="col-6 text-end ps-0 fs-5">{{ $item->price }}</div>
                               <div class="col-12 fw-bold category">Category : <span class="fw-normal">{{ $item->category_id}}</span></div>
                               <div class="col-12 mt-2">
-                                <a href="{{route('item-view.index', ['items' => $items, 'id' => $items->id])}}" class="btn btn add-to-order" style="background-color: #99CCFF; color: #fff;"
+                                <a href="{{ route('item-view.index', ['id' => $item->id]) }}" class="btn btn add-to-order" style="background-color: #99CCFF; color: #fff;"
                                   data-id="{{ $item->id }}" 
                                   data-name="{{ $item->name }}" 
                                   data-price="{{ $item->price }}"
-                                  data-stock="{{ $item->inventory }}"> <!-- こちらを追加 -->
-                                    Add to Order
-                                </a>
+                                  data-stock="{{ $item->inventory }}">
+                                  Add to Order
+                              </a>
+                              
 
                               </div>
                             
@@ -112,6 +113,25 @@
 
       <div class="order-item-area mb-5" style="">
         <!-- オーダーアイテムを追加するためのフォーム -->
+        <div class="order-item rounded px-3 py-2 mb-3" style="background-color: #F2F2F2">
+          <p class="item-name fs-4 fw-bold mb-1">NAME:{{ $item->name }} image:{{ asset("/storage/images/{$item->image}") }}</p>
+          <div class="d-flex justify-content-between align-items-center">
+              <div class="d-flex align-items-center">
+                  <p class="fs-5 me-3 mb-0">QTY</p>
+                  <div class="form-group">
+                      <select class="form-control text-center fw-bold order-quantity" style="background-color: #fff;">
+                          @for ($i = 1; $i <= 10; $i++)
+                              <option value="{{ $i }}">{{ $i }}</option>
+                          @endfor
+                      </select>
+                  </div>
+              </div>
+              <p class="item-ttl fs-3 fw-bold item-price">PRICE:{{ $item->price }}</p>
+              <i class="fas fa-trash-alt delete-icon" data-item-id="{{ $item->id }}"></i> <!-- ここでごみ箱のアイコンを追加 -->
+              
+          </div>
+      </div>
+      
         <form id="order-form">
           @foreach ($items as $item)
               <div class="order-item rounded px-3 py-2 mb-3" style="background-color: #F2F2F2">
@@ -129,6 +149,7 @@
                       </div>
 
                       <p class="item-ttl fs-3 fw-bold item-price">{{ $item->price }}</p>
+                      <i class="fas fa-trash-alt delete-icon" data-item-id="{{ $item->id }}"></i> <!-- ここでごみ箱のアイコンを追加 -->
                   </div>
               </div>
           @endforeach
@@ -279,8 +300,12 @@
     // 該当するアイテムをリストから削除
     $(this).closest('.order-item').remove();
 
-    // 合計金額を再計算
-    calculateTotal();
+    $(document).on('click', '.delete-icon', function() {
+    const itemIdToDelete = $(this).data('item-id');
+    $(`[data-id="${itemIdToDelete}"]`).remove(); // 商品を削除
+    calculateTotal(); // 合計金額を再計算
+});
+
 });
 
 
