@@ -12,6 +12,8 @@ use App\Http\Controllers\ItemViewController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\TransactionController;
+// added 0927
+use App\Http\Controllers\UserlistController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CategoryItemListController;
 
@@ -32,6 +34,13 @@ use App\Http\Controllers\CategoryItemListController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/userlist', function () {
+    return view('userlist');
+});
+
+Route::get('userlist', [UserlistController::class, 'index']);
 
 
 Auth::routes();
