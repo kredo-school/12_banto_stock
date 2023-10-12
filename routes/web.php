@@ -67,6 +67,4 @@ Route::get('/items', [ItemsController::class, 'index'])->name('items.index');
 Route::get('/item-view', [ItemViewController::class, 'index'])->name('item-view.index');
 Route::get('/item-add', [ItemAddController::class, 'index'])->name('item-add.index');
 
-
-
-
+Route::get('/item-view/{id}/{orderedItems}', [ItemViewController::class, 'addOrder'])->name('item-view.add-order');

@@ -47,7 +47,7 @@
           </div>
         </div>
       </div>
-
+      
       <div class="container mt-5 item-container">
         <div class="row row-cols-5">
             @foreach($items as $item)
@@ -61,7 +61,7 @@
                               <div class="col-6 text-end ps-0 fs-5">{{ $item->price }}</div>
                               <div class="col-12 fw-bold category">Category : <span class="fw-normal">{{ $item->category_id}}</span></div>
                               <div class="col-12 mt-2">
-                                <a href="{{ route('item-view.index', ['id' => $item->id]) }}" class="btn btn add-to-order" style="background-color: #99CCFF; color: #fff;"
+                                <a href="{{ route('item-view.add-order', ['id' => $item->id, 'orderedItems' => json_encode($orderedItems)]) }}" class="btn btn add-to-order" style="background-color: #99CCFF; color: #fff;"
                                   data-id="{{ $item->id }}" 
                                   data-name="{{ $item->name }}" 
                                   data-price="{{ $item->price }}"
@@ -78,7 +78,6 @@
                 </div>
             @endforeach
         </div>
-
 
         <div class="row mt-5">
           <nav aria-label="Page navigation example">
@@ -113,66 +112,34 @@
 
       <div class="order-item-area mb-5" style="">
         <!-- オーダーアイテムを追加するためのフォーム -->
-        <div class="order-item rounded px-3 py-2 mb-3" style="background-color: #F2F2F2">
-          <p class="item-name fs-4 fw-bold mb-1">NAME:{{ $item->name }} image:{{ asset("/storage/images/{$item->image}") }}</p>
-          <div class="d-flex justify-content-between align-items-center">
-              <div class="d-flex align-items-center">
-                  <p class="fs-5 me-3 mb-0">QTY</p>
-                  <div class="form-group">
-                      <select class="form-control text-center fw-bold order-quantity" style="background-color: #fff;">
-                          @for ($i = 1; $i <= 10; $i++)
-                              <option value="{{ $i }}">{{ $i }}</option>
-                          @endfor
-                      </select>
-                  </div>
-              </div>
-              <p class="item-ttl fs-3 fw-bold item-price">PRICE:{{ $item->price }}</p>
-              <i class="fas fa-trash-alt delete-icon" data-item-id="{{ $item->id }}"></i> <!-- ここでごみ箱のアイコンを追加 -->
-              
-          </div>
-      </div>
-      
         <form id="order-form">
           @foreach ($items as $item)
-              <div class="order-item rounded px-3 py-2 mb-3" style="background-color: #F2F2F2">
-                  <p class="item-name fs-4 fw-bold mb-1">{{ $item->name }}</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                      <div class="d-flex align-items-center">
-                          <p class="fs-5 me-3 mb-0">QTY</p>
-                          <div class="form-group">
-                              <select class="form-control text-center fw-bold order-quantity" style="background-color: #fff;">
-                                  @for ($i = 1; $i <= 10; $i++)
-                                      <option value="{{ $i }}">{{ $i }}</option>
-                                  @endfor
-                              </select>
+            @foreach ($orderedItems as $orderedItemID)
+              @if($item->id == $orderedItemID)
+                <div class="order-item rounded px-3 py-2 mb-3" style="background-color: #F2F2F2">
+                      <p class="item-name fs-4 fw-bold mb-1">{{ $item->name }}</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                          <div class="d-flex align-items-center">
+                              <p class="fs-5 me-3 mb-0">QTY</p>
+                              <div class="form-group">
+                                  <select class="form-control text-center fw-bold order-quantity" style="background-color: #fff;">
+                                      @for ($i = 1; $i <= 10; $i++)
+                                          <option value="{{ $i }}">{{ $i }}</option>
+                                      @endfor
+                                  </select>
+                              </div>
                           </div>
-                      </div>
 
-                      <p class="item-ttl fs-3 fw-bold item-price">{{ $item->price }}</p>
-                      <i class="fas fa-trash-alt delete-icon" data-item-id="{{ $item->id }}"></i> <!-- ここでごみ箱のアイコンを追加 -->
-                  </div>
-              </div>
+                          <p class="item-ttl fs-3 fw-bold item-price">{{ $item->price }}</p>
+                          <i class="fas fa-trash-alt delete-icon" data-item-id="{{ $item->id }}"></i> <!-- ここでごみ箱のアイコンを追加 -->
+                      </div>
+                </div>
+              @endif
+            @endforeach
           @endforeach
         </form>
 
-        <div class="order-item rounded px-3 py-2 mb-3" style="background-color: #F2F2F2">
-          <p class="item-name fs-4 fw-bold mb-1">Apple</p>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center">
-              <p class="fs-5 me-3 mb-0">QTY</p>
-              <div class="form-group">
-                <select class="form-control text-center fw-bold" id="exampleFormSelect1" style="background-color: #fff;">
-                  <option selected>1</option>
-                  <option value="1">2</option>
-                  <option value="2">3</option>
-                  <option value="3">4</option>
-                </select>
-              </div>
-            </div>
-
-            <p class="item-ttl fs-3 fw-bold mb-0">$20.00</p>
-          </div>
-        </div>
+        
       </div>{{-- //.order-item-area --}}
 
       <div class="d-flex justify-content-between fs-4">
