@@ -18,6 +18,7 @@ class Category extends Model
     ];
     public function item()
     {
-        return $this->belongsToMany(Item::class,'categories_items','category_id','item_id');
+        return $this->belongsToMany(Item::class,'categories_items','category_id','item_id')
+                                        ->withPivot('category_id');
     }
 }

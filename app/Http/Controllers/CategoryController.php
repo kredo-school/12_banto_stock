@@ -51,8 +51,8 @@ class CategoryController extends Controller
 
     public function update(Request $request, $id)
     {
-        $category = $this->category->findOrFail($id);
-        $validatedData = $request->validate([
+        $category = Category::find($id);
+        $request->validate([
             'name' => 'required|string|max:255',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);

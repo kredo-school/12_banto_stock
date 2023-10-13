@@ -63,11 +63,13 @@ Route::get('item/index', [ItemController::class, 'index'])->name('item.index');
 route::get('item/create', [ItemController::class, 'create'])->name('item.create');
 route::get('/item/{id}/edit', [ItemController::class, 'edit'])->name('item.edit');
 route::post('item/store', [ItemController::class, 'store'])->name('item.store');
-route::patch('item/{id}/update', [ItemController::class, 'update'])->name('item.update');
-route::delete('item/{id}/destroy', [ItemController::class, 'destroy'])->name('item.destroy');
+route::patch('/item/{id}/update', [ItemController::class, 'update'])->name('item.update');
+Route::delete('item/{id}/destroy', [ItemController::class, 'destroy'])->name('item.destroy');
+
 
 route::get('category/index', [CategoryController::class, 'index'])->name('category.index');
 route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
+Route::get('/category/categoryitemlist/{id}', [CategoryController::class, 'itemindex'])->name('category.categoryitemlist');
 route::get('/category/{id}/edit', [CategoryController::class, 'edit'])->name('category.edit');
 route::patch('/category/{id}/update', [CategoryController::class, 'update'])->name('category.update');
 
@@ -112,8 +114,4 @@ Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-
-Route::get('/item/edit', [ItemController::class, 'index'])->name('item.edit');
-
-Route::get('/category/edit', [CategoryController::class, 'index'])->name('category.edit');
 

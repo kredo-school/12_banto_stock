@@ -59,7 +59,7 @@
                 </div>
                 <div class="row mt-3">
                     <div class="text-center">
-                        <a href="#" class="cancel-button">Cancel</a>
+                        <a href="{{route('category.index')}}" class="cancel-button">Cancel</a>
                     </div>
                 </div>
             </div>
