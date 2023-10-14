@@ -12,4 +12,19 @@ class UserController extends Controller
     {
         return view('userlist');
     }
+
+
+
+
+
+
+
+
+
+
+
+    public function login()
+    {
+        return view('auth.login');
+    }
 }

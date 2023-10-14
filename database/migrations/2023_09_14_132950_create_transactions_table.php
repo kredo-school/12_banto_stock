@@ -17,7 +17,7 @@ class CreateTransactionsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('branch_id')->nullable();
             $table->unsignedBigInteger('cart_id')->nullable();
-            $table->double('total');
+            // $table->double('total');
             $table->enum('status', ['ongoing', 'cancelled', 'completed']);
             $table->double('paid_amount');
 

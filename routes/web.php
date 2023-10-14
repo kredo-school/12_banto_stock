@@ -68,3 +68,17 @@ Route::get('/item-view', [ItemViewController::class, 'index'])->name('item-view.
 
 
 
+
+
+// dashboardのcontroller
+Route::post('/getTotalPrice', [DashboardController::class, 'getTotalPrice']);
+
+
+
+
+
+
+
+
+// login-forget.blade.phpのback to loginのroute
+Route::get('/login',[UserController::class, 'login'])->name('login');
