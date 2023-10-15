@@ -2,8 +2,8 @@
 
 namespace Database\Factories;
 
-use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Category;
 
 class ItemFactory extends Factory
 {
@@ -14,18 +14,14 @@ class ItemFactory extends Factory
      */
     public function definition()
     {
-
-        $category_id = Category::pluck('id')->toArray();
-
         return [
-            'name'=> $this->faker->randomDigit,
-            'price'=> $this->faker->randomDigit,
-            'detail'=> $this->faker->randomDigit,
-            'inventory'=> $this->faker->randomDigit,
-            'image'=> $this->faker->randomDigit,
+            'name' => $this->faker->word,
+            'price' => $this->faker->randomNumber(2),
+            'detail' => $this->faker->sentence,
+            'inventory' => $this->faker->numberBetween(0, 100),
+            'image' => $this->faker->imageUrl(),
             'status' => $this->faker->randomElement(['active', 'inactive']),
-            'category_id'=> $this->faker->randomElement($category_id),
+            'category_id' => Category::factory(),
         ];
     }
 }
-

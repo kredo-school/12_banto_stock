@@ -37,15 +37,10 @@ class CreateTransactionsTable extends Migration
      *
      * @return void
      */
-    public function down()
+
+     public function down()
     {
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->dropColumn('user_id');
-            $table->dropColumn('total');
-            $table->dropColumn('status');
-            $table->dropColumn('branch_id');
-            $table->dropColumn('cart_id');
-            $table->dropColumn('paid_amount');
-        });
+        Schema::dropIfExists('transactions');
     }
+
 }

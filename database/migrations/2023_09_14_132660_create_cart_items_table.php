@@ -21,18 +21,21 @@ class CreateCartItemsTable extends Migration
          */
     public function up()
     {
-        Schema::create('cart_itms', function (Blueprint $table) {
+        Schema::create('cart_items', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('cart_id')->nullable();
-            $table->unsignedBigInteger('item_id')->unsigned();
+            $table->unsignedBigInteger('cart_id');
+            $table->unsignedBigInteger('item_id');
             $table->double('item_price');
             $table->integer('qty');
+            $table->timestamps();
 
-            
             $table->foreign('cart_id')->references('id')->on('carts')->onDelete('cascade');
             $table->foreign('item_id')->references('id')->on('items')->onDelete('cascade');
 
-            $table->timestamps();
+            
+            // create_cart_items_table.php (マイグレーションファイル)
+
+
         });
     }
 
@@ -43,6 +46,8 @@ class CreateCartItemsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cart_itms');
+        Schema::dropIfExists('cart_items');
     }
 }
+
+

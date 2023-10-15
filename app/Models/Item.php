@@ -9,11 +9,15 @@ class Item extends Model
 {
     use HasFactory;
     protected $table = 'items';
-    
 
-    public function user()
+    public function category()
     {
-        return $this->belongsTo(User::class, 'item_id');
+        return $this->belongsTo(Category::class);
+    }
+
+    public function transactions()
+    {
+        return $this->belongsToMany(Transaction::class)->withPivot('quantity', 'price')->withTimestamps();
     }
 
     public $timestamps = false;
@@ -21,8 +25,5 @@ class Item extends Model
     protected $fillable = [
         'name', 'price', 'detail', 'inventory', 'image', 'status', 'category_id',
     ];
-
-    
 }
-
 

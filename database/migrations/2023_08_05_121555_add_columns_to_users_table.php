@@ -23,15 +23,22 @@ class AddColumnsToUsersTable extends Migration
             // From AddColumnsToUsersTable migration
             $table->string('username')->after('name');
             $table->longText('image')->nullable();
+            
             $table->foreignId('role_id')->nullable()->after('image');
-            $table->string('role_name');
+            $table->string('role_name')->nullable()->default(null);
+
             $table->foreignId('branch_id')->nullable();
-            $table->string('branch_name');
+            $table->string('branch_name')->nullable()->default(null);
+            
             $table->integer('employee_number')->nullable();
             $table->enum('gender', ['male', 'female'])->nullable();
             $table->string('address')->nullable();
             $table->timestamp('birthdate')->nullable();
-        });
+
+
+    });
+
+    
 
     }
 
@@ -47,9 +54,12 @@ class AddColumnsToUsersTable extends Migration
                 'gender',
                 'birthdate',
                 'role_id',
+                'role_name',
                 'branch_id',
+                'branch_neme',
+
             ]);
+
         });
     }
 }
-
