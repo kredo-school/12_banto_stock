@@ -117,12 +117,16 @@
       <div class="order-item-area mb-5" style="">
         <!-- オーダーアイテムを追加するためのフォーム -->
         <form id="order-form">
-          @foreach ($items as $item)
-            @if(in_array($item->id, $orderedItems))
+          @foreach ($orderedItems->items as $items)
+          @php 
+          $cartItem = \App\Models\CartItem::with('item')->find($items->item_id);
+          $item = ($cartItem) ? $cartItem->item : [];
+          @endphp
+          @if (!empty($item)):
                 <div class="order-item rounded px-3 py-2 mb-3" style="background-color: #F2F2F2">
                     <p class="item-name fs-4 fw-bold mb-1">NAME:{{ $item->name }} </p>
                     @php 
-                      $image = "/storage/images/" . $item->image;;
+                      $image = "/storage/images/" . $item->image;
                     @endphp
                     <img src="{{ $image }}" alt="">
                     <div class="d-flex justify-content-between align-items-center">
@@ -141,7 +145,7 @@
                         <i class="fas fa-trash-alt delete-icon" data-item-id="{{ $item->id }}"></i> <!-- ここでごみ箱のアイコンを追加 -->
                     </div>
                 </div>
-            @endif
+              @endif
           @endforeach
         </form>
 
