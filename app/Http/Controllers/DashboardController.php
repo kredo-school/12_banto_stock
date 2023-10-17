@@ -20,7 +20,7 @@ class DashboardController extends Controller
                 'totalPrice' => $totalPrice,
                 'totalOrders' => $totalOrders,
                 'averageUnit' => $averageUnit,
-                // 'branches'    => $branches
+                'branches'    => $branches
             ]);
         }
 
