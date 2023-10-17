@@ -109,7 +109,6 @@
             <thead class="small">
                 <tr>
                     <th>USER ID</th>
-                    <th>TOTAL</th>
                     <th>STATUS</th>
                     <th>BRANCH ID</th>
                     <th>CART ID</th>
@@ -123,7 +122,6 @@
                 @foreach ($transactions as $transaction)
                     <tr>
                         <td>{{ $transaction->user_id }}</td>
-                        <td>{{ $transaction->total }}</td>
                         <td>{{ $transaction->status }}</td>
                         <td>{{ $transaction->branch_id }}</td>
                         <td>{{ $transaction->cart_id }}</td>
