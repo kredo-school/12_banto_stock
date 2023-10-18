@@ -21,24 +21,27 @@ class AddColumnsToUsersTable extends Migration
             }
 
             // From AddColumnsToUsersTable migration
-            $table->string('username');
-            //$table->enum('status', ['active', 'inactive'])->after('password')->default('active');
-            $table->foreignId('role_id')->nullable()->constrained()->after('status');
-            $table->string('address')->after('role_id')->nullable();
+            $table->string('username')->after('name');
             $table->longText('image')->nullable();
             
-            // From AddNewColumnsToUsersTable migration
-            $table->foreignId('branch_id')->nullable()->constrained()->after('role_id');
+            $table->foreignId('role_id')->nullable()->after('image');
+            $table->string('role_name')->nullable()->default(null);
+
+            $table->foreignId('branch_id')->nullable();
+            $table->string('branch_name')->nullable()->default(null);
+            
             $table->integer('employee_number')->nullable();
             $table->enum('gender', ['male', 'female'])->nullable();
+            $table->string('address')->nullable();
             $table->timestamp('birthdate')->nullable();
-        });
+
+
+    });
+
+    
+
     }
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
@@ -51,12 +54,12 @@ class AddColumnsToUsersTable extends Migration
                 'gender',
                 'birthdate',
                 'role_id',
+                'role_name',
                 'branch_id',
+                'branch_neme',
+
             ]);
 
-            $table->dropForeign(['role_id']);
-            $table->dropForeign(['branch_id']);
-           
         });
     }
 }

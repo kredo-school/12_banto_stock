@@ -24,7 +24,7 @@
         <a href="{{ route('category.edit')}}" class="btn btn-ml fw-bold" style="width: 100%; background-color: #99CCFF; color: #fff;">Add Category</a>
       </div>
       <div class="col-sm">
-        <a href="#" class="btn btn-ml fw-bold" style="width: 100%; background-color: #99CCFF; color: #fff;">Add Item</a>
+        <a href="{{ route('item-add.index') }}" class="btn btn-ml fw-bold" style="width: 100%; background-color: #99CCFF; color: #fff;">Add Item</a>
       </div>
       <div class="col-sm">
         <div class="form-group">

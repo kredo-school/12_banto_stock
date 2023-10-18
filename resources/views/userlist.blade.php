@@ -14,7 +14,7 @@
     <div class="container mx-auto mt-5">
             <div class="row">
                 <div class="col-12">
-                    <h3 class="font-poppins-bold">Hello Administration   
+                    <h3 class="font-poppins-bold">Hello Administration
                       {{-- put name after Hello --}}
                       <i class="fa-solid fa-hands fa-sm"></i>,
                     </h3>

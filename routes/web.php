@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ItemsController;
+use App\Http\Controllers\ItemAddController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ItemEditController;
 use App\Http\Controllers\ItemViewController;
@@ -73,6 +74,6 @@ Route::get('/category/itemcategories', [CategoryItemListController::class, 'inde
 
 Route::get('/items', [ItemsController::class, 'index'])->name('items.index');
 Route::get('/item-view', [ItemViewController::class, 'index'])->name('item-view.index');
+Route::get('/item-add', [ItemAddController::class, 'index'])->name('item-add.index');
 
-
-
+Route::get('/item-view/{item}', [ItemViewController::class, 'addOrder'])->name('item-view.add-order');

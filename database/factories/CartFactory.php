@@ -2,6 +2,8 @@
 
 namespace Database\Factories;
 
+
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CartFactory extends Factory
@@ -14,9 +16,9 @@ class CartFactory extends Factory
     public function definition()
     {
         return [
-            'item_id'=> $this->faker->randomDigit,
-            'item_price'=> $this->faker->randomDigit,
-            'qly'=> $this->faker->randomDigit,
+
+            'user_id' => User::factory(),
         ];
     }
 }
+
