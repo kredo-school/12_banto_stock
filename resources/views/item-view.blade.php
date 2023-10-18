@@ -112,65 +112,82 @@
 
     <div class="col-4 rounded right-side" style="background-color: #99CCFF">
       <p class="fs-1 fw-bold text-center" style="padding-top: 20px">ORDER LIST</p>
-      <p class="fs-5 text-end">Order ID : 123456</p>
+      <p class="fs-5 text-end">Order ID : {{ $item->id }}</p>
 
       <div class="order-item-area mb-5" style="">
         <!-- オーダーアイテムを追加するためのフォーム -->
         <form id="order-form">
-          @foreach ($orderedItems->items as $items)
-          @php 
-          $cartItem = \App\Models\CartItem::with('item')->find($items->item_id);
-          $item = ($cartItem) ? $cartItem->item : [];
-          @endphp
-          @if (!empty($item)):
+          @foreach ($orderedItems as $cart_item)
+                @php  
+                  $item = $cart_item->item;
+                  $image = "/storage/images/" . $item->image;
+                @endphp
                 <div class="order-item rounded px-3 py-2 mb-3" style="background-color: #F2F2F2">
                     <p class="item-name fs-4 fw-bold mb-1">NAME:{{ $item->name }} </p>
-                    @php 
-                      $image = "/storage/images/" . $item->image;
-                    @endphp
+                    
                     <img src="{{ $image }}" alt="">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center">
                             <p class="fs-5 me-3 mb-0">QTY</p>
                             <div class="form-group">
-                                <select class="form-control text-center fw-bold order-quantity" style="background-color: #fff;">
+                                <select class="form-control text-center fw-bold order-quantity" style="background-color: #fff;" data-cart-item="{{ $cart_item->id }}">
                                     @for ($i = 1; $i <= $item->inventory; $i++)
-                                        <option value="{{ $i }}">{{ $i }}</option>
+                                     <option <?php echo ($i == $cart_item->qty) ? "selected" : ""; ?> value="{{ $i }}">{{ $i }}</option>
                                     @endfor
                                 </select>
+                                
+                                
                             </div>
                         </div>
 
                         <p class="item-ttl fs-3 fw-bold item-price">PRICE:{{ $item->price }}</p>
-                        <i class="fas fa-trash-alt delete-icon" data-item-id="{{ $item->id }}"></i> <!-- ここでごみ箱のアイコンを追加 -->
+                        <button class="" data-bs-toggle="modal" data-bs-target="#delete-item-{{ $item->id }}">
+                          <i class="fas fa-trash-alt delete-icon" data-item-id="{{ $item->id }}"></i> 
+                        </button>
+                        
                     </div>
                 </div>
-              @endif
+              
           @endforeach
         </form>
-
-
       </div>{{-- //.order-item-area --}}
 
       <div class="d-flex justify-content-between fs-4">
-        <p class="">SUBTOTAL</p>
-        <p class="subtotal">$</p>
+          <p class="">SUBTOTAL</p>
+            @php
+              $subtotal = 0;
+            @endphp
+
+            @foreach ($orderedItems as $cart_item)
+                @php
+                    $item = $cart_item->item;
+                    $subtotal += $item->price * $cart_item->qty;
+                @endphp
+                <!-- ... (アイテムの表示) ... -->
+            @endforeach
+
+          <p class="subtotal">${{ number_format($subtotal, 2) }}</p>
       </div>
       <div class="d-flex justify-content-between fs-4">
-        <p class="">SERVICE CHARGE</p>
-        <p class="">10.0%</p>
+          <p class="">SERVICE CHARGE</p>
+            @php
+                $serviceChargeRate = 0.10; // 10%
+                $serviceCharge = $subtotal * $serviceChargeRate;
+            @endphp
+
+          <p class="">{{ number_format($serviceCharge, 2) }}</p>
       </div>
       <div class="d-flex justify-content-between fw-bold fs-3">
-        <p class="">TOTAL</p>
-        
+          <p class="">TOTAL</p>
+            @php
+              $total = $subtotal + $serviceCharge;
+            @endphp
+
+          <p class="total">${{ number_format($total, 2) }}</p>
       </div>
-
-    
-    
-
-
+      
       <div class="d-flex justify-content-between">
-        <button class="btn fw-bold send-btn" data-bs-toggle="modal" data-bs-target="#sendOrder">SEND ORDER</button>
+        <button class="btn fw-bold send-btn" data-bs-toggle="modal" data-bs-target="#sendOrder-{{ $transaction->cart_id }}">SEND ORDER</button>
         <button class="btn btn-light fw-bold cxl-btn">CANCEL</button>
       </div>
 
@@ -191,13 +208,45 @@
       </div>
     </div>
 
-    
-
   </div>
 </div>
 
 
-
+<script>
+  $(document).ready(function(){
+    $("select").change(function(){
+      let quantity = $(this).val();
+      
+      // in your index-view.blade.php
+      // add data-cart-item attribute to the select field for the quantity field
+      // and set the value to CartItem id
+      
+      let cart_item = $(this).data('cart-item');
+  
+    // in your web routes, you need also to create a /cart-item/{cart_item}/update-quantity endpoint
+      // point that to your controller
+      // in your controller, get the quantity from the request
+    // your controller function should look likethis
+      /**	
+      * public function update(CartItem $cartItem, Request $request) {
+    * 		$quantity = $request->quantity;
+    *		
+    * 		$cartItem->qty = $quantity
+    *		$cartItem->save();
+    * }
+      */
+     $.ajax({
+      url: `/cart-item/${cart_item}/update-quantity`,
+      data: {
+        quantity
+      },
+      success: function(result){
+             $("#div1").html(result);
+         }
+     });
+    });
+  });
+  </script>
 
 
 @endsection

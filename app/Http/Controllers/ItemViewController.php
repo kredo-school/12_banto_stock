@@ -36,7 +36,7 @@ class ItemViewController extends Controller
         }
         $items = Item::paginate(10);
         // todo: add a user_id column in carts table
-        $orderedItems = Cart::find($user->cart->id);
+        $orderedItems = Cart::find($user->cart->id)->items;
         // dd($user->cart);
         // dd($orderedItems->items);
         return view('item-view', ['items' => $items, 'orderedItems' => $orderedItems]);
@@ -86,6 +86,7 @@ class ItemViewController extends Controller
         }
 
         // 他の処理...
+        $item->id->CartItem()->delete();
 
         return redirect()->route('item-view.index'); // または適切なリダイレクト先に変更
     }

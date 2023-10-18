@@ -77,3 +77,5 @@ Route::get('/item-view', [ItemViewController::class, 'index'])->name('item-view.
 Route::get('/item-add', [ItemAddController::class, 'index'])->name('item-add.index');
 
 Route::get('/item-view/{item}', [ItemViewController::class, 'addOrder'])->name('item-view.add-order');
+Route::patch('/item-view/{item}/update', [ItemViewController::class, 'update'])->name('item-view.add-order');
+Route::delete('/item-view/{item}/destroy', [ItemViewController::class, 'destroy'])->name('item-view.add-order');
