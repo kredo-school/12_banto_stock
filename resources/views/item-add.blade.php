@@ -1,10 +1,7 @@
 @extends('layouts.app')
-
-@section('title','Edit Items')
-
-
-    
+@section('title','ADD Items')
 @section('content')
+<link rel="stylesheet" href="{{ asset('/css/item-add.css')  }}" >
 
 
     <div class="container">
@@ -22,7 +19,7 @@
                 @method('DELETE')
             </form>
 
-                <h1 class="text-center">EDIT ITEMS</h1>
+                <h1 class="text-center">ADD ITEMS</h1>
 
 
                 <div class="row">
@@ -190,6 +187,25 @@
     </div>
 
 @endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

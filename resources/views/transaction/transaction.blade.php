@@ -109,7 +109,6 @@
             <thead class="small">
                 <tr>
                     <th>USER ID</th>
-                    <th>TOTAL</th>
                     <th>STATUS</th>
                     <th>BRANCH ID</th>
                     <th>CART ID</th>
@@ -123,7 +122,6 @@
                 @foreach ($transactions as $transaction)
                     <tr>
                         <td>{{ $transaction->user_id }}</td>
-                        <td>{{ $transaction->total }}</td>
                         <td>{{ $transaction->status }}</td>
                         <td>{{ $transaction->branch_id }}</td>
                         <td>{{ $transaction->cart_id }}</td>
@@ -131,20 +129,23 @@
                         <td>{{ $transaction->paid_amount }}</td>
                         <td>
                             <div class="text-center col-xs-12">
-                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#test-modal" style="background-color: #6699cc; color: #fff;">
-                                    <i class="fi fi-sr-rectangle-list"></i> 2 Items
+                                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#test-modal-{{ $transaction->id }}" style="background-color: #6699cc; color: #fff;">
+                                    <i class="fi fi-sr-rectangle-list"></i> {{ count($transaction->items) }} Items
                                 </button>
                             </div>
 
                             <div id="test-modal" class="modal fade" tabindex="-1" aria-hidden="true">
+
+                            <div id="test-modal-{{ $transaction->id }}" class="modal fade" tabindex="-1" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title">2 Items</h5>
+                                            <h5 class="modal-title">{{ count($transaction->items) }} Items</h5>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
                                             <table class="table table-bordered table-striped">
+
                                                 <thead>
                                                     <tr>
                                                         <th scope="col-3"></th>
@@ -154,12 +155,13 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <!-- item1 -->
+                                                <!-- Iterate through the transaction items -->
+                                                @foreach ($transaction->items as $item)
                                                     <tr>
-                                                        <td><img src="{{ asset('images/chikin.jpeg') }}" alt="chikin" width="50"></td>
-                                                        <td>chikin</td>
-                                                        <td>200</td>
-                                                        <td>2</td>
+                                                        <td><img src="{{ asset('images/' . $item->image) }}" alt="{{ $item->name }}" width="50"></td>
+                                                        <td>{{ $item->name }}</td>
+                                                        <td>{{ $item->price }}</td>
+                                                        <td>{{ $item->quantity }}</td>
                                                     </tr>
 
                                                     <!-- item2 -->
@@ -176,8 +178,7 @@
                                             </table>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Back</button>
                                         </div>
                                     </div>
                                 </div>

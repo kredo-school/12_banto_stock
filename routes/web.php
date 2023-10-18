@@ -6,15 +6,17 @@ use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ItemsController;
+use App\Http\Controllers\ItemAddController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ItemEditController;
 use App\Http\Controllers\ItemViewController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\TransactionController;
+// added 0927
+use App\Http\Controllers\UserlistController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CategoryItemListController;
-
 
 
 
@@ -33,6 +35,13 @@ use App\Http\Controllers\CategoryItemListController;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/userlist', function () {
+    return view('userlist');
+});
+
+Route::get('userlist', [UserlistController::class, 'index']);
 
 
 Auth::routes();
@@ -65,6 +74,7 @@ Route::get('/category/itemcategories', [CategoryItemListController::class, 'inde
 
 Route::get('/items', [ItemsController::class, 'index'])->name('items.index');
 Route::get('/item-view', [ItemViewController::class, 'index'])->name('item-view.index');
+Route::get('/item-add', [ItemAddController::class, 'index'])->name('item-add.index');
 
 
 
@@ -82,3 +92,4 @@ Route::post('/getTotalPrice', [DashboardController::class, 'getTotalPrice']);
 
 // login-forget.blade.phpのback to loginのroute
 Route::get('/login',[UserController::class, 'login'])->name('login');
+Route::get('/item-view/{item}', [ItemViewController::class, 'addOrder'])->name('item-view.add-order');

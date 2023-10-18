@@ -17,7 +17,9 @@ class ItemsController extends Controller
 
         return view('items', ['items' => $items]);
 
+
     }
+
 }
 
 

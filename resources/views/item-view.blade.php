@@ -8,6 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
 
 
+<!-- <script src="{{ asset('js/components/pizza.js')}}"></script> -->
+
 <div class="container" id="item-view">
   <div class="row">
 
@@ -45,19 +47,31 @@
           </div>
         </div>
       </div>
-
+      
       <div class="container mt-5 item-container">
         <div class="row row-cols-5">
             @foreach($items as $item)
-                <div class="col">
+                <div class="col" id="item-{{$item->id}}">
                     <div class="card mb-3">
                         <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/{$item->image}") }}')"></div>
                         <div class="card-body">
                             <p class="card-text text-center fs-4 fw-bold title">{{ $item->name }}</p>
                             <div class="row">
                               <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">{{ $item->inventory }}</span></div>
-                              <div class="col-6 text-end ps-0 fs-5">{{ $item->pricei }}</div>
+                              <div class="col-6 text-end ps-0 fs-5">{{ $item->price }}</div>
                               <div class="col-12 fw-bold category">Category : <span class="fw-normal">{{ $item->category_id}}</span></div>
+                              <div class="col-12 mt-2">
+                                <a href="{{ route('item-view.add-order', ['item' => $item->id]) }}" class="btn btn add-to-order" style="background-color: #99CCFF; color: #fff;"
+                                  data-id="{{ $item->id }}" 
+                                  data-name="{{ $item->name }}" 
+                                  data-price="{{ $item->price }}"
+                                  data-stock="{{ $item->inventory }}">
+                                  Add to Order
+                                </a>
+                              
+
+                              </div>
+                            
                             </div>
                         </div>
                     </div>
@@ -65,6 +79,9 @@
             @endforeach
         </div>
 
+
+        
+      
 
         <div class="row mt-5">
           <nav aria-label="Page navigation example">
@@ -87,36 +104,9 @@
               </ul>
           </nav>
         </div>
-        <script>
-            $(document).ready(function () {
-                // ページネーション要素を取得
-                var pagination = $('#pagination');
-                // ページネーションリンクがクリックされたときの処理
-                pagination.on('click', 'li.page-item a.page-link', function (e) {
-                    e.preventDefault(); // リンクのデフォルト動作を無効化
-                    var targetPage = $(this).text(); // クリックされたページ番号を取得
-                    // Previousボタンがクリックされた場合
-                    if ($(this).attr('aria-label') === 'Previous') {
-                        // 前のページに移動する処理をここに記述
-                    }
-                    // Nextボタンがクリックされた場合
-                    else if ($(this).attr('aria-label') === 'Next') {
-                        // 次のページに移動する処理をここに記述
-                    }
-                    // ページ番号がクリックされた場合
-                    else {
-                        // クリックされたページに移動する処理をここに記述
-                        // targetPageにクリックされたページ番号が格納されています
-                        // 例: クリックされたページが3なら、アイテムの表示を10件から20件までに更新するなど
-                    }
-                });
-            });
-        </script>
+        
       </div>
 
-      
-
-      
     </div>
 
 
@@ -127,50 +117,44 @@
       <div class="order-item-area mb-5" style="">
         <!-- オーダーアイテムを追加するためのフォーム -->
         <form id="order-form">
-          @foreach ($items as $item)
-              <div class="order-item rounded px-3 py-2 mb-3" style="background-color: #F2F2F2">
-                  <p class="item-name fs-4 fw-bold mb-1">{{ $item->name }}</p>
-                  <div class="d-flex justify-content-between align-items-center">
-                      <div class="d-flex align-items-center">
-                          <p class="fs-5 me-3 mb-0">QTY</p>
-                          <div class="form-group">
-                              <select class="form-control text-center fw-bold order-quantity" style="background-color: #fff;">
-                                  @for ($i = 1; $i <= 10; $i++)
-                                      <option value="{{ $i }}">{{ $i }}</option>
-                                  @endfor
-                              </select>
-                          </div>
-                      </div>
+          @foreach ($orderedItems->items as $items)
+          @php 
+          $cartItem = \App\Models\CartItem::with('item')->find($items->item_id);
+          $item = ($cartItem) ? $cartItem->item : [];
+          @endphp
+          @if (!empty($item)):
+                <div class="order-item rounded px-3 py-2 mb-3" style="background-color: #F2F2F2">
+                    <p class="item-name fs-4 fw-bold mb-1">NAME:{{ $item->name }} </p>
+                    @php 
+                      $image = "/storage/images/" . $item->image;
+                    @endphp
+                    <img src="{{ $image }}" alt="">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                            <p class="fs-5 me-3 mb-0">QTY</p>
+                            <div class="form-group">
+                                <select class="form-control text-center fw-bold order-quantity" style="background-color: #fff;">
+                                    @for ($i = 1; $i <= $item->inventory; $i++)
+                                        <option value="{{ $i }}">{{ $i }}</option>
+                                    @endfor
+                                </select>
+                            </div>
+                        </div>
 
-                      <p class="item-ttl fs-3 fw-bold item-price">{{ $item->price }}</p>
-                  </div>
-              </div>
+                        <p class="item-ttl fs-3 fw-bold item-price">PRICE:{{ $item->price }}</p>
+                        <i class="fas fa-trash-alt delete-icon" data-item-id="{{ $item->id }}"></i> <!-- ここでごみ箱のアイコンを追加 -->
+                    </div>
+                </div>
+              @endif
           @endforeach
         </form>
 
-        <div class="order-item rounded px-3 py-2 mb-3" style="background-color: #F2F2F2">
-          <p class="item-name fs-4 fw-bold mb-1">Apple</p>
-          <div class="d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center">
-              <p class="fs-5 me-3 mb-0">QTY</p>
-              <div class="form-group">
-                <select class="form-control text-center fw-bold" id="exampleFormSelect1" style="background-color: #fff;">
-                  <option selected>1</option>
-                  <option value="1">2</option>
-                  <option value="2">3</option>
-                  <option value="3">4</option>
-                </select>
-              </div>
-            </div>
 
-            <p class="item-ttl fs-3 fw-bold mb-0">$20.00</p>
-          </div>
-        </div>
       </div>{{-- //.order-item-area --}}
 
       <div class="d-flex justify-content-between fs-4">
         <p class="">SUBTOTAL</p>
-        <p class="">$10.00</p>
+        <p class="subtotal">$</p>
       </div>
       <div class="d-flex justify-content-between fs-4">
         <p class="">SERVICE CHARGE</p>
@@ -178,43 +162,19 @@
       </div>
       <div class="d-flex justify-content-between fw-bold fs-3">
         <p class="">TOTAL</p>
-        <p class="">$37.00</p>
+        
       </div>
+
+    
+    
+
 
       <div class="d-flex justify-content-between">
         <button class="btn fw-bold send-btn" data-bs-toggle="modal" data-bs-target="#sendOrder">SEND ORDER</button>
         <button class="btn btn-light fw-bold cxl-btn">CANCEL</button>
       </div>
 
-      <!-- JavaScriptを追加 -->
-      <script>
-          // オーダーアイテムの合計金額と税込み金額を計算する関数
-          function calculateTotal() {
-              let subtotal = 0;
-              let total = 0;
-
-              $('.order-item').each(function() {
-                  const quantity = parseInt($(this).find('.order-quantity').val());
-                  const price = parseFloat($(this).find('.item-price').text().substring(1)); // 価格から"$"を削除して浮動小数点に変換
-                  const itemTotal = quantity * price;
-                  subtotal += itemTotal;
-              });
-
-              total = subtotal * 1.1; // 10%のサービスチャージを加える
-
-              $('.subtotal').text('$' + subtotal.toFixed(2)); // 2つの小数点以下の桁を表示
-              $('.total').text('$' + total.toFixed(2));
-          }
-
-          // オーダーアイテムの数量が変更されたときに合計を再計算
-          $('.order-quantity').change(function() {
-              calculateTotal();
-          });
-
-          // ページ読み込み時にも初回の計算を実行
-          calculateTotal();
-      </script>
-
+      
       <!-- Modal -->
       <div class="modal fade" id="sendOrder" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -235,5 +195,9 @@
 
   </div>
 </div>
+
+
+
+
 
 @endsection
