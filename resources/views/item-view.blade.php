@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 @section('title', 'Item View')
 @section('content')
@@ -58,8 +59,8 @@
                             <p class="card-text text-center fs-4 fw-bold title">{{ $item->name }}</p>
                             <div class="row">
                               <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">{{ $item->inventory }}</span></div>
-                              <div class="col-6 text-end ps-0 fs-5">{{ $item->price }}</div>
-                              <div class="col-12 fw-bold category">Category : <span class="fw-normal">{{ $item->category_id}}</span></div>
+                              <div class="col-6 text-end ps-0 fs-5">price : <span class="fw-normal">{{ $item->price }}</span></div>
+                              <div class="col-12 fw-bold">Category : <span class="fw-normal">{{ $item->category_id}}</span></div>
                               <div class="col-12 mt-2">
                                 <a href="{{ route('item-view.add-order', ['item' => $item->id]) }}" class="btn btn add-to-order" style="background-color: #99CCFF; color: #fff;"
                                   data-id="{{ $item->id }}" 
@@ -111,44 +112,48 @@
 
 
     <div class="col-4 rounded right-side" style="background-color: #99CCFF">
-      <p class="fs-1 fw-bold text-center" style="padding-top: 20px">ORDER LIST</p>
-      <p class="fs-5 text-end">Order ID : {{ $item->id }}</p>
 
+      <p class="fs-1 fw-bold text-center" style="padding-top: 20px">ORDER LIST</p>
+      <p class="fs-5 text-end">Order ID : {{ $cart->id }}</p>
+
+      <form id="send-order-form" action="{{ route('send-order') }}" method="POST">
+      @csrf
+      <!-- ここにオーダー情報のフィールドを追加します -->
       <div class="order-item-area mb-5" style="">
         <!-- オーダーアイテムを追加するためのフォーム -->
         <form id="order-form">
           @foreach ($orderedItems as $cart_item)
-                @php  
-                  $item = $cart_item->item;
-                  $image = "/storage/images/" . $item->image;
-                @endphp
-                <div class="order-item rounded px-3 py-2 mb-3" style="background-color: #F2F2F2">
-                    <p class="item-name fs-4 fw-bold mb-1">NAME:{{ $item->name }} </p>
-                    
-                    <img src="{{ $image }}" alt="">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="d-flex align-items-center">
-                            <p class="fs-5 me-3 mb-0">QTY</p>
-                            <div class="form-group">
-                                <select class="form-control text-center fw-bold order-quantity" style="background-color: #fff;" data-cart-item="{{ $cart_item->id }}">
-                                    @for ($i = 1; $i <= $item->inventory; $i++)
-                                     <option <?php echo ($i == $cart_item->qty) ? "selected" : ""; ?> value="{{ $i }}">{{ $i }}</option>
-                                    @endfor
-                                </select>
-                                
-                                
-                            </div>
+            @php  
+                $item = $cart_item->item;
+                $image = "/storage/images/" . $item->image;
+            @endphp
+            <div class="order-item rounded px-3 py-2 mb-3" style="background-color: #F2F2F2">
+                <p class="item-name fs-4 fw-bold mb-1">NAME:{{ $item->name }} </p>
+                
+                <img src="{{ $image }}" alt="">
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center">
+                        <p class="fs-5 me-3 mb-0">QTY</p>
+                        <div class="form-group">
+                            <select class="form-control text-center fw-bold order-quantity" style="background-color: #fff;" data-cart-item="{{ $cart_item->id }}">
+                                @for ($i = 1; $i <= $item->inventory; $i++)
+                                    <option <?php echo ($i == $cart_item->qty) ? "selected" : ""; ?> value="{{ $i }}">{{ $i }}</option>
+                                @endfor
+                            </select>
                         </div>
-
-                        <p class="item-ttl fs-3 fw-bold item-price">PRICE:{{ $item->price }}</p>
-                        <button class="" data-bs-toggle="modal" data-bs-target="#delete-item-{{ $item->id }}">
-                          <i class="fas fa-trash-alt delete-icon" data-item-id="{{ $item->id }}"></i> 
-                        </button>
-                        
                     </div>
+
+                    <p class="item-ttl fs-3 fw-bold item-price">PRICE:{{ $item->price }}</p>
+                    <!-- アイテムを削除するフォーム -->
+                    <form action="{{ route('item-view.delete-item', ['cart_item' => $cart_item->id]) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn"><i class="fas fa-trash-alt delete-icon"></i></button>
+                    </form>
                 </div>
-              
+            </div>
           @endforeach
+
         </form>
       </div>{{-- //.order-item-area --}}
 
@@ -187,7 +192,7 @@
       </div>
       
       <div class="d-flex justify-content-between">
-        <button class="btn fw-bold send-btn" data-bs-toggle="modal" data-bs-target="#sendOrder-{{ $transaction->cart_id }}">SEND ORDER</button>
+        <button class="btn fw-bold send-btn" data-bs-toggle="modal" data-bs-target="#sendOrder-#">SEND ORDER</button>
         <button class="btn btn-light fw-bold cxl-btn">CANCEL</button>
       </div>
 
@@ -207,6 +212,14 @@
         </div>
       </div>
     </div>
+      <button type="submit" class="btn fw-bold send-btn">SEND ORDER</button>
+    </form>
+      
+
+      
+    
+    
+    
 
   </div>
 </div>
@@ -221,7 +234,7 @@
       // add data-cart-item attribute to the select field for the quantity field
       // and set the value to CartItem id
       
-      let cart_item = $(this).data('cart-item');
+      let cart_item = $(this).data('cart_items');
   
     // in your web routes, you need also to create a /cart-item/{cart_item}/update-quantity endpoint
       // point that to your controller
@@ -236,7 +249,7 @@
     * }
       */
      $.ajax({
-      url: `/cart-item/${cart_item}/update-quantity`,
+      url: `/cart-item/${cart_items}/update-quantity`,
       data: {
         quantity
       },
@@ -247,6 +260,32 @@
     });
   });
   </script>
+
+  <script>
+    $(document).ready(function() {
+      $("#send-order-form").submit(function(event) {
+        event.preventDefault(); // ページ遷移を防ぐ
+
+        $.ajax({
+          type: "POST",
+          url: $(this).attr('action'),
+          data: $(this).serialize(), // フォームデータをシリアライズして送信
+          success: function(response) {
+            // オーダーが正常に送信された場合の処理
+            // 例: オーダー完了メッセージを表示
+            $('#sendOrder').modal('show'); // モーダルを表示
+          },
+          error: function() {
+            // オーダーが送信できなかった場合の処理
+            alert('オーダーの送信に失敗しました。');
+          }
+        });
+      });
+   });
+  </script>
+
+
+
 
 
 @endsection

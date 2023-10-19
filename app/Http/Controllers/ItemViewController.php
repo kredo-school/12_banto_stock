@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cart;
 use App\Models\Item;
 use App\Models\CartItem;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Traits\ItemTrait;
@@ -39,11 +40,8 @@ class ItemViewController extends Controller
         $orderedItems = Cart::find($user->cart->id)->items;
         // dd($user->cart);
         // dd($orderedItems->items);
-        return view('item-view', ['items' => $items, 'orderedItems' => $orderedItems]);
+        return view('item-view', ['cart' => $cart, 'items' => $items, 'orderedItems' => $orderedItems]);
     }
-
-
-
 
     public function addOrder(Item $item)
     {
@@ -66,8 +64,6 @@ class ItemViewController extends Controller
             ]);
         }
 
-        // カートアイテムを追加
-
         // Check if the item already exists in the cart
         $existingCartItem = $cart->items()->where('item_id', $item->id)->first();
 
@@ -78,18 +74,61 @@ class ItemViewController extends Controller
             ]);
         } else {
             // If the item doesn't exist, create a new cart item
-            $cart->items()->create([
+            $cartItem = new CartItem([
                 'item_id' => $item->id,
                 'item_price' => $item->price,
                 'qty' => 1,
             ]);
+            $cart->items()->save($cartItem);
         }
 
         // 他の処理...
-        $item->id->CartItem()->delete();
 
         return redirect()->route('item-view.index'); // または適切なリダイレクト先に変更
     }
+
+    public function updateQuantity(CartItem $cartItem, Request $request)
+    {
+        $cartItem->qty = $request->qty; // cart_itemsのqtyを更新
+
+        // カートアイテムの数量を更新
+        $cartItem->save();
+
+        // 必要なレスポンスを返す（例: 更新後のHTMLを返す）
+        // ここではHTMLを返す仮定で、実際のレスポンスを返すロジックに置き換えてください
+
+        return response()->json(['message' => 'Quantity updated successfully']);
+    }
+
+    public function deleteItem(CartItem $cart_item)
+    {
+        $user = Auth::user();
+
+        // ユーザーがログインしているか確認
+        if (!$user) {
+            // ユーザーがログインしていない場合の処理
+            // 例: ログインページにリダイレクトするなど
+            return redirect()->route('login');
+        }
+
+        // ユーザーのカートを取得
+        $cart = $user->cart;
+
+        if ($cart) {
+            // カートアイテムが存在する場合、削除
+            $cart_item->delete();
+        }
+
+        // 削除が完了したらリダイレクトなどの適切な処理を行う
+        return redirect()->route('item-view.index');
+    }
+
+
+
+
+    
+
+
 }
 
      /*public function addOrder(Item $item)

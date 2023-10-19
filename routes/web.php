@@ -6,15 +6,16 @@ use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ItemsController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ItemAddController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ItemEditController;
 use App\Http\Controllers\ItemViewController;
+use App\Http\Controllers\UserlistController;
 use App\Http\Controllers\DashboardController;
+// added 0927
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\TransactionController;
-// added 0927
-use App\Http\Controllers\UserlistController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CategoryItemListController;
 
@@ -77,5 +78,19 @@ Route::get('/item-view', [ItemViewController::class, 'index'])->name('item-view.
 Route::get('/item-add', [ItemAddController::class, 'index'])->name('item-add.index');
 
 Route::get('/item-view/{item}', [ItemViewController::class, 'addOrder'])->name('item-view.add-order');
-Route::patch('/item-view/{item}/update', [ItemViewController::class, 'update'])->name('item-view.add-order');
-Route::delete('/item-view/{item}/destroy', [ItemViewController::class, 'destroy'])->name('item-view.add-order');
+//Route::patch('/item-view/{item}/update', [ItemViewController::class, 'update'])->name('item-view.add-order');
+
+
+Route::post('/item-view/{cart_item}', [ItemViewController::class, 'deleteItem'])->name('item-view.delete-item');
+Route::delete('/item-view/{cart_item}', [ItemViewController::class, 'deleteItem'])->name('item-view.delete-item');
+
+
+
+
+
+Route::patch('/cart-item/{cartItem}/update-quantity', [ItemViewController::class, 'updateQuantity'])->name('cart-item.update-quantity');
+
+Route::post('/send-order',  [OrderController::class, 'updateQuantity'])->name('send-order');
+Route::patch('/send-order', [OrderController::class, 'updateQuantity'])->name('send-order');
+
+
