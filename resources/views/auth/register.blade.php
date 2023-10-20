@@ -4,7 +4,7 @@
 @section('title','Register')
 
 @section('styles')
-<link rel="stylesheet" href="{{ mix('/css/register.css') }}">
+{{-- <link rel="stylesheet" href="{{ mix('/css/register.css') }}"> --}}
 <style>
 
     #firstname::placeholder,
