@@ -16,7 +16,7 @@ use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserlistController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CategoryItemListController;
-
+use App\Http\Controllers\EditProfileController;
 
 
 
@@ -36,10 +36,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+// admin login 
 Route::get('/userlist', function () {
     return view('userlist');
 });
+
+Route::get('/editProfile', function () 
+{
+    return view('editProfile');
+});
+// admin login
 
 Route::get('userlist', [UserlistController::class, 'index']);
 
@@ -66,7 +72,7 @@ Route::get('/item/edit', [ItemEditController::class, 'index'])->name('item.edit.
 Route::get('/category/edit', [CategoryController::class, 'index'])->name('category.edit');
 
 Route::get('/userlist', [UserController::class, 'index'])->name('userlist.index');
-
+Route::get('userlist/{id}', [UserController::class, 'setStatus'])->name('userlist.set-status');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
 
@@ -75,5 +81,5 @@ Route::get('/category/itemcategories', [CategoryItemListController::class, 'inde
 Route::get('/items', [ItemsController::class, 'index'])->name('items.index');
 Route::get('/item-view', [ItemViewController::class, 'index'])->name('item-view.index');
 
-
+Route::get('/editProfile', [EditProfileController::class, 'index'])->name('EditProfile.index');
 
