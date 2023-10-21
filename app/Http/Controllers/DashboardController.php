@@ -4,18 +4,19 @@ namespace App\Http\Controllers;
 use DateTime;
 
 use App\Models\Cart;
-use App\Models\Branch;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
     public function index()
         {
-            $ordersFromDate= Cart::whereBetween('created_at', [date('Y-m-01'), date('Y-m-t')]);
-            $totalPrice = $ordersFromDate->sum('item_price');
+            $ordersFromDate= Transaction::whereBetween('created_at', [date('Y-m-01'), date('Y-m-t')]);
+
+            $totalPrice = $ordersFromDate->sum('paid_amount');
             $totalOrders = $ordersFromDate->get()->count();
             $averageUnit = $ordersFromDate->count() > 0 ? $totalPrice / $ordersFromDate->count() : 0;
-            $branches = Branch::where('status', 'active')->get();
+            $branches = Transaction::where('status', 'active')->pluck('branch_id');
             return view('dashboard.index', [
                 'totalPrice' => $totalPrice,
                 'totalOrders' => $totalOrders,
@@ -28,10 +29,13 @@ class DashboardController extends Controller
         {
             $startDate =  date('Y-m-d 00:00:00', strtotime($request->input('start_date')));
             $endDate = date('Y-m-d 23:59:59', strtotime($request->input('end_date') . ' + 1 day - 1 second'));
+            $branchId = $request->input('branch_id');
 
-            // Cartテーブルから指定された日付範囲内のアイテム価格の合計を計算
-            $ordersFromDate = Cart::whereBetween('created_at', [$startDate, $endDate]);
-            $totalPrice = $ordersFromDate->sum('item_price');
+
+            $ordersFromDate = Transaction::whereBetween('created_at', [$startDate, $endDate])
+            ->where('branch_id' , $branchId);
+
+            $totalPrice = $ordersFromDate->sum('paid_amount');
             $totalOrders = $ordersFromDate->get()->count();
             $averageUnit = $ordersFromDate->count() > 0 ? $totalPrice / $ordersFromDate->count() : 0;
 
