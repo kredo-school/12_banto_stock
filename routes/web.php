@@ -81,16 +81,13 @@ Route::get('/item-view/{item}', [ItemViewController::class, 'addOrder'])->name('
 //Route::patch('/item-view/{item}/update', [ItemViewController::class, 'update'])->name('item-view.add-order');
 
 
-Route::post('/item-view/{cart_item}', [ItemViewController::class, 'deleteItem'])->name('item-view.delete-item');
-Route::delete('/item-view/{cart_item}', [ItemViewController::class, 'deleteItem'])->name('item-view.delete-item');
+Route::post('/item-view/{cart_item}', [ItemViewController::class, 'deleteOrder'])->name('item-view.delete-item');
 
 
+Route::get('/cart-item/{cartItem}/update-quantity/{quantity}', [ItemViewController::class, 'updateQuantity'])->name('cart-item.update-quantity');
 
+//Route::post('/send-order',  [OrderController::class, 'sendOrder'])->name('send-order');
+//Route::patch('/send-order', [OrderController::class, 'sendOrder'])->name('send-order');
 
-
-Route::patch('/cart-item/{cartItem}/update-quantity', [ItemViewController::class, 'updateQuantity'])->name('cart-item.update-quantity');
-
-Route::post('/send-order',  [OrderController::class, 'updateQuantity'])->name('send-order');
-Route::patch('/send-order', [OrderController::class, 'updateQuantity'])->name('send-order');
 
 

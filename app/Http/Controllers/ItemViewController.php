@@ -40,8 +40,9 @@ class ItemViewController extends Controller
         $orderedItems = Cart::find($user->cart->id)->items;
         // dd($user->cart);
         // dd($orderedItems->items);
-        return view('item-view', ['cart' => $cart, 'items' => $items, 'orderedItems' => $orderedItems]);
+        return view('item-view', ['cart' => $cart, 'items' => $items, 'orderedItems' => $orderedItems,]);
     }
+
 
     public function addOrder(Item $item)
     {
@@ -87,48 +88,26 @@ class ItemViewController extends Controller
         return redirect()->route('item-view.index'); // または適切なリダイレクト先に変更
     }
 
-    public function updateQuantity(CartItem $cartItem, Request $request)
+    public function updateQuantity(CartItem $cartItem, $quantity)
     {
-        $cartItem->qty = $request->qty; // cart_itemsのqtyを更新
-
+        $cartItem->qty = $quantity;
         // カートアイテムの数量を更新
         $cartItem->save();
 
         // 必要なレスポンスを返す（例: 更新後のHTMLを返す）
         // ここではHTMLを返す仮定で、実際のレスポンスを返すロジックに置き換えてください
-
-        return response()->json(['message' => 'Quantity updated successfully']);
+        return redirect()->back();
     }
 
-    public function deleteItem(CartItem $cart_item)
+    public function deleteOrder(CartItem $cartItem)
     {
-        $user = Auth::user();
+        // $cart_item はルートパラメーターから受け取ります
+        //$item = CartItem::find($cartItem);
+        $cartItem->delete();
 
-        // ユーザーがログインしているか確認
-        if (!$user) {
-            // ユーザーがログインしていない場合の処理
-            // 例: ログインページにリダイレクトするなど
-            return redirect()->route('login');
-        }
+        return redirect()->route('item-view.index'); // または適切なリダイレクト先に変更
 
-        // ユーザーのカートを取得
-        $cart = $user->cart;
-
-        if ($cart) {
-            // カートアイテムが存在する場合、削除
-            $cart_item->delete();
-        }
-
-        // 削除が完了したらリダイレクトなどの適切な処理を行う
-        return redirect()->route('item-view.index');
     }
-
-
-
-
-    
-
-
 }
 
      /*public function addOrder(Item $item)
