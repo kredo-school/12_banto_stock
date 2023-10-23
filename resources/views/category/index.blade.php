@@ -9,7 +9,7 @@
     </div>
     <div class="row mt-3">
         <div class="col-12 text-end">
-            <a href="#"><button type="button" class="btn btn-danger">CLOSE</button></a> {{--Return TOP VIEW--}}
+            <a href="{{route()}}"><button type="button" class="btn btn-danger">CLOSE</button></a> {{--Return TOP VIEW--}}
         </div>
     </div>
     <div class="row mt-3">
@@ -20,13 +20,15 @@
 
 
             <div class="card h-100 rounded mx-1" style="width: 100%;">
-                <a href="{{ route('category.categoryitemlist', $category->id) }}">
+                <div class="card-header">
+                    <a href="{{ route('category.categoryitemlist', $category->id) }}">
                     
-                    <h3 class="flex-grow-1 fw-bolder ms-2 mt-1">{{ $category->name }}</h3>
-                </a>
-                <img src="{{$category->image}}"
-                        alt="Category Image"
-                        class="card-img-top mb-1 rounded" style="height: 180px; object-fit: cover;">
+                        <h3 class="flex-grow-1 fw-bolder ms-2 mt-1">{{ $category->name }}</h3>
+                    </a>
+                    <img src="{{$category->image}}"
+                            alt="Category Image"
+                            class="card-img-top mb-1 rounded" style="height: 180px; object-fit: cover;">
+                </div>
                         
 
 

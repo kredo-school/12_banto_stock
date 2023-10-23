@@ -15,7 +15,7 @@
         <div class="col-md-3 mt-3">
             <div class="card h-100 rounded">
                 <a href="{{ route('item.edit', $item->id) }}">
-                    <img src="{{ asset('images/' . $item->image) }}" alt="{{ $item->name }}" class="card-img-top rounded"style="height: 200px; object-fit: cover;">
+                    <img src="{{$item->image}}" alt="{{ $item->name }}" class="card-img-top rounded"style="height: 200px; object-fit: cover;">
                 </a>
                 <div class="card-body d-flex flex-column">
                     <h5 class="mt-1 flex-grow-1">Name: {{ $item->name }}</h5>
