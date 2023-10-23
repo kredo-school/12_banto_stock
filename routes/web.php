@@ -6,7 +6,6 @@ use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ItemsController;
-use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ItemAddController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ItemEditController;
@@ -55,14 +54,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 //Route::get('/register',[RegisterController::class, 'register'])->name('register');
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 
-
-Route::get('/transaction', [TransactionController::class, 'index'])->name('transaction.index');
-
-
-Route::get('/inventory', [InventoryController::class, 'index'])->name('inventory.index');
-
 Route::get('/item/edit', [ItemEditController::class, 'index'])->name('item.edit.index');
-
 
 Route::get('/category/edit', [CategoryController::class, 'index'])->name('category.edit');
 
@@ -73,21 +65,24 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard
 
 Route::get('/category/itemcategories', [CategoryItemListController::class, 'index'])->name('category.itemcategories');
 
+
+
 Route::get('/items', [ItemsController::class, 'index'])->name('items.index');
 Route::get('/item-view', [ItemViewController::class, 'index'])->name('item-view.index');
 Route::get('/item-add', [ItemAddController::class, 'index'])->name('item-add.index');
 
 Route::get('/item-view/{item}', [ItemViewController::class, 'addOrder'])->name('item-view.add-order');
-//Route::patch('/item-view/{item}/update', [ItemViewController::class, 'update'])->name('item-view.add-order');
-
 
 Route::post('/item-view/{cart_item}', [ItemViewController::class, 'deleteOrder'])->name('item-view.delete-item');
 
-
 Route::get('/cart-item/{cartItem}/update-quantity/{quantity}', [ItemViewController::class, 'updateQuantity'])->name('cart-item.update-quantity');
 
-//Route::post('/send-order',  [OrderController::class, 'sendOrder'])->name('send-order');
-//Route::patch('/send-order', [OrderController::class, 'sendOrder'])->name('send-order');
+Route::post('/item-view-send-order', [ItemViewController::class, 'sendOrder'])->name('item-view.send-order');
 
+
+
+Route::get('/transaction', [TransactionController::class, 'index'])->name('transaction.index');
+
+Route::get('/inventory', [InventoryController::class, 'index'])->name('inventory.index');
 
 

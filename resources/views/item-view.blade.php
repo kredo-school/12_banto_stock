@@ -119,126 +119,126 @@
       <p class="fs-1 fw-bold text-center" style="padding-top: 20px">ORDER LIST</p>
       <p class="fs-5 text-end">Order ID : {{ $cart->id }}</p>
 
-      {{-- ORDER LIST --}}
-      <div class="order-item-area mb-5" style="">
-        
-       
-
-          @foreach ($orderedItems as $cart_item)
-              @php  
-                  $item = $cart_item->item;
-                  $image = "/storage/images/" . $item->image;
-              @endphp
-              <div class="order-item rounded px-3 py-2 mb-3" style="background-color: #F2F2F2">
-                  <p class="item-name fs-4 fw-bold mb-1">NAME:{{ $item->name }} </p>
-                  
-                  <img src="{{ $image }}" alt="">
-                  <div class="d-flex justify-content-between align-items-center">
-                      <div class="d-flex align-items-center">
-                          <p class="fs-5 me-3 mb-0">QTY</p>
-                          <div class="form-group"> 
-                              <select class="form-control text-center fw-bold order-quantity" style="background-color: #fff;" data-cart-item="{{ $cart_item->id }}">
-                                  @for ($i = 1; $i <= $item->inventory; $i++)
-                                      <option <?php echo ($i == $cart_item->qty) ? "selected" : ""; ?> value="{{ $i }}">{{ $i }}</option>
-                                  @endfor
-                              </select>
-                          </div>
-                      </div>
-
-                      <p class="item-ttl fs-3 fw-bold item-price">PRICE:{{ $item->price }}</p>
-
-                      <!-- Form to delete items -->
-                      <form action="{{ route('item-view.delete-item', ['cart_item' => $cart_item->id]) }}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn delete-button">
-                            <i class="fas fa-trash-alt"></i>
-                        </button>
-                      </form>
-                    
-
-                      {{-- <form action="{{ route('item-view.delete-item', ['cart_item' => $cart_item->id]) }}">
-                          @csrf
-                          @method('DELETE')
-                          <button type="submit" class="btn" data-bs-toggle="modal" data-bs-target="#delete-item-{{ $cart_item->id }}">
-                            <i class="fas fa-trash-alt delete-icon" data-item-id="{{ $cart_item->id }}"></i> 
-                          </button>
-                          </form>
-                       --}}
-
-                      
-                  </div>
-              </div>
-          @endforeach
-
-
-        
-
-      </div>
-
-      {{-- Calculate order list --}}
-      <div class="d-flex justify-content-between fs-4">
-          <p class="">SUBTOTAL</p>
-            @php
-              $subtotal = 0;
-            @endphp
-
+        {{-- ORDER LIST --}}
+        <div class="order-item-area mb-5" style="">
+          
             @foreach ($orderedItems as $cart_item)
-                @php
+                @php  
                     $item = $cart_item->item;
-                    $subtotal += $item->price * $cart_item->qty;
+                    $image = "/storage/images/" . $item->image;
                 @endphp
-                <!-- ... (アイテムの表示) ... -->
+                <div class="order-item rounded px-3 py-2 mb-3" style="background-color: #F2F2F2">
+                    <p class="item-name fs-4 fw-bold mb-1">NAME:{{ $item->name }} </p>
+                    
+                    <img src="{{ $image }}" alt="">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                            <p class="fs-5 me-3 mb-0">QTY</p>
+                            <div class="form-group"> 
+                                <select class="form-control text-center fw-bold order-quantity" style="background-color: #fff;" data-cart-item="{{ $cart_item->id }}">
+                                    @for ($i = 1; $i <= $item->inventory; $i++)
+                                        <option <?php echo ($i == $cart_item->qty) ? "selected" : ""; ?> value="{{ $i }}">{{ $i }}</option>
+                                    @endfor
+                                </select>
+                            </div>
+                        </div>
+
+                        <p class="item-ttl fs-3 fw-bold item-price">PRICE:{{ $item->price }}</p>
+
+                        <!-- Form to delete items -->
+                        <form action="{{ route('item-view.delete-item', ['cart_item' => $cart_item->id]) }}" method="POST">
+                          @csrf
+                          <button type="submit" class="btn delete-button">
+                              <i class="fas fa-trash-alt"></i>
+                          </button>
+                        </form>
+                      
+
+                        {{-- <form action="{{ route('item-view.delete-item', ['cart_item' => $cart_item->id]) }}">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn" data-bs-toggle="modal" data-bs-target="#delete-item-{{ $cart_item->id }}">
+                              <i class="fas fa-trash-alt delete-icon" data-item-id="{{ $cart_item->id }}"></i> 
+                            </button>
+                            </form>
+                        --}}
+
+                        
+                    </div>
+                </div>
             @endforeach
 
-          <p class="subtotal">${{ number_format($subtotal, 2) }}</p>
-      </div>
-      <div class="d-flex justify-content-between fs-4">
-          <p class="">SERVICE CHARGE</p>
-            @php
-                $serviceChargeRate = 0.10; // 10%
-                $serviceCharge = $subtotal * $serviceChargeRate;
-            @endphp
 
-          <p class="">{{ number_format($serviceCharge, 2) }}</p>
-      </div>
-      <div class="d-flex justify-content-between fw-bold fs-3">
-          <p class="">TOTAL</p>
-            @php
-              $total = $subtotal + $serviceCharge;
-            @endphp
+          
 
-          <p class="total">${{ number_format($total, 2) }}</p>
-      </div>
+        </div>
+
+        {{-- Calculate order list --}}
+        <div class="d-flex justify-content-between fs-4">
+            <p class="">SUBTOTAL</p>
+              @php
+                $subtotal = 0;
+              @endphp
+
+              @foreach ($orderedItems as $cart_item)
+                  @php
+                      $item = $cart_item->item;
+                      $subtotal += $item->price * $cart_item->qty;
+                  @endphp
+                  <!-- ... (アイテムの表示) ... -->
+              @endforeach
+
+            <p class="subtotal">${{ number_format($subtotal, 2) }}</p>
+        </div>
+        <div class="d-flex justify-content-between fs-4">
+            <p class="">SERVICE CHARGE</p>
+              @php
+                  $serviceChargeRate = 0.10; // 10%
+                  $serviceCharge = $subtotal * $serviceChargeRate;
+              @endphp
+
+            <p class="">{{ number_format($serviceCharge, 2) }}</p>
+        </div>
+        <div class="d-flex justify-content-between fw-bold fs-3">
+            <p class="">TOTAL</p>
+              @php
+                $total = $subtotal + $serviceCharge;
+              @endphp
+
+            <p class="total">${{ number_format($total, 2) }}</p>
+        </div>
+        
+     
+      <!-- Send order list -->
+      <form id="sendOrderForm" method="POST" action="{{ route('item-view.send-order') }}">
+        @csrf
+        <input type="hidden" name="cart_id" value="{{ $cart->id }}">
+        <input type="hidden" name="total" value="{{ $total }}">
+
+        <div class="d-flex justify-content-between">
+          <button type="submit" class="btn fw-bold send-btn">SEND ORDER</button>
+          <button type="submit" class="btn btn-light fw-bold cxl-btn">CANCEL</button>
+        </div>
+      </form>
+
       
-      <div class="d-flex justify-content-between">
-        <button class="btn fw-bold send-btn" data-bs-toggle="modal" data-bs-target="#sendOrder-#">SEND ORDER</button>
-        <button class="btn btn-light fw-bold cxl-btn">CANCEL</button>
-      </div>
 
-      
+
       <!-- Modal -->
       <div class="modal fade" id="sendOrder" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
+              <!-- 追加: モーダルを閉じるボタン -->
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
               Your order has been completed!
             </div>
-              
           </div>
         </div>
       </div>
-    </div>
-      <button type="submit" class="btn fw-bold send-btn">SEND ORDER</button>
-
       
-
-      
-    
-    
-    
 
   </div>
 </div>
@@ -257,5 +257,14 @@
     });
   });
 </script>
+
+<script>
+  function sendOrder() {
+      // フォームを送信
+      document.getElementById('sendOrderForm').submit();
+  }
+</script>
+
+
 
 @endsection
