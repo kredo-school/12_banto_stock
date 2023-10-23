@@ -16,12 +16,13 @@ class DashboardController extends Controller
             $totalPrice = $ordersFromDate->sum('paid_amount');
             $totalOrders = $ordersFromDate->get()->count();
             $averageUnit = $ordersFromDate->count() > 0 ? $totalPrice / $ordersFromDate->count() : 0;
-            $branches = Transaction::where('status', 'active')->pluck('branch_id');
+            $branchId = Transaction::select('branch_id')->where('branch_id', '!=', 'null')->pluck('branch_id');
+
             return view('dashboard.index', [
                 'totalPrice' => $totalPrice,
                 'totalOrders' => $totalOrders,
                 'averageUnit' => $averageUnit,
-                'branches'    => $branches
+                'branches'    => $branchId,
             ]);
         }
 
@@ -30,7 +31,6 @@ class DashboardController extends Controller
             $startDate =  date('Y-m-d 00:00:00', strtotime($request->input('start_date')));
             $endDate = date('Y-m-d 23:59:59', strtotime($request->input('end_date') . ' + 1 day - 1 second'));
             $branchId = $request->input('branch_id');
-
 
             $ordersFromDate = Transaction::whereBetween('created_at', [$startDate, $endDate])
             ->where('branch_id' , $branchId);
