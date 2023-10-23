@@ -17,6 +17,9 @@
   bottom: 0;
   padding: 0 20px;
 }
+#date-range-pick {
+    width:30vh;
+}
 #dashboard .container .dashboard-top .col .form-group::after {
   pointer-events: none;
   position: absolute;

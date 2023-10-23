@@ -15,12 +15,12 @@
             <div class="row">
                 <div class="col-12">
                     <h3 class="font-poppins-bold">Hello Administration
-                      {{-- put name after Hello --}}
-                      <i class="fa-solid fa-hands fa-sm"></i>,
+                        {{-- put name after Hello --}}
+                        <i class="fa-solid fa-hands fa-sm"></i>,
                     </h3>
                 </div>
             </div>
-        </div>
+
         <div class="row mx-auto">
             <div class="card" style="max-width: 360px; height:160px">
                 <div class="row">
@@ -83,13 +83,13 @@
                             <thead>
                                 <tr>
                                     <th>Full Name</th>
-                                    <th>Employee Number</th> 
+                                    <th>Employee Number</th>
                                     <th>Branch</th>
                                     <th>Status</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php 
+                                <?php
                                     $con = mysqli_connect("localhost","root","","12_banto_stock");
                                     if(isset($_GET['search']))
                                     {
@@ -110,7 +110,7 @@
                                             }
                                         }
                                         else
-                                        
+
                                         {
                                             ?>
                                                 <tr>
@@ -126,7 +126,7 @@
                 </div>
             </div>
         <!--search -->
-            
+
             <div class="col-3">
                 <form action="searched.php" method="get">
                     <div class="input-group mb-3">
@@ -137,7 +137,7 @@
                         </span>
                     </div>
                 </form>
-            </div> 
+            </div>
         </div>
             <table class="table table-hover">
                 <thead class="table-header">
@@ -197,7 +197,7 @@
             </table>
             <div class="container">
                 <p class="table-footer text-start">Showing data 1 to 10 of 100k entries</p>
-                {{-- page nav start --}} 
+                {{-- page nav start --}}
                 <nav aria-label="Page navigation" class="pagination-container float-right">
                     <ul class="pagination">
                         <li class="page-item">
@@ -326,4 +326,6 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset('js/userlist.js') }}"></script>
+
     @endsection

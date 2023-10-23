@@ -76,4 +76,20 @@ Route::get('/items', [ItemsController::class, 'index'])->name('items.index');
 Route::get('/item-view', [ItemViewController::class, 'index'])->name('item-view.index');
 Route::get('/item-add', [ItemAddController::class, 'index'])->name('item-add.index');
 
+
+
+
+
+// dashboardのcontroller
+Route::post('/getTotalPrice', [DashboardController::class, 'getTotalPrice']);
+
+
+
+
+
+
+
+
+// login-forget.blade.phpのback to loginのroute
+Route::get('/login',[UserController::class, 'login'])->name('login');
 Route::get('/item-view/{item}', [ItemViewController::class, 'addOrder'])->name('item-view.add-order');
