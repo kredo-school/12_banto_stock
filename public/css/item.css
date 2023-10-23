@@ -78,7 +78,6 @@ th ,td{
 
     /* everything same css */
     .card-body{
-        background-image: url('../images/carrot.jpg');
         background-size: cover;
         height: 250px;
         border-radius: 20px 20px 0px 0px;
