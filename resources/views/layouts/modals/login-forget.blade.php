@@ -32,16 +32,17 @@
                     </div>
                     <div class="row resend-color text-center mx-4">
                         <p class="opacity-50">
-                            !  &nbsp;We ca'nt seem to find the right email address for<br>
+                            !  &nbsp;We can't seem to find the right email address for<br>
                             &nbsp;&nbsp;&nbsp;you.resend the email that you have registreted
                         </p>
                     </div>
                     <div class="d-grid gap-2 col-11 mx-auto">
                         <button type="submit" class="btn btn-color1 shadow mt-4">
-                            <a href="#" class="text-white">Reset Password</a>
+                            {{-- デフォルトで実装されているpasswordのreset.blade.phpへの password.request --}}
+                            <a href="{{ route('password.request') }}" class="text-white">Reset Password</a>
                         </button>
-                        <button class="btn btn-white mt-1 shadow">
-                            <a href="#" class="">Back to Login</a>
+                        <button class="btn button-close btn-white mt-1 shadow" data-bs-dismiss="modal">
+                            <a href="{{ route('login')}}" class="">Back to Login</a>
                         </button>
                     </div>
                 </div>
@@ -49,7 +50,7 @@
                     <div class="col">
                         <span>Don't have account?</span>
                         &nbsp;&nbsp;
-                        <a href="#" class="text-dark">Sign Up</a>
+                        <a href="{{ route('register')}}" class="text-dark">Sign Up</a>
                     </div>
                 <div class="row">&nbsp;</div>
                 </div>
