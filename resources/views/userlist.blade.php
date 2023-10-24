@@ -74,7 +74,7 @@
                     <h3>All Cashers,</h3>
                 </div>
                 <div class="col-3">
-                    {{-- <form action="searched.php" method="get">
+                    <form action="searched.php" method="get">
                         <div class="input-group mb-3">
                             <input type="text" class="form-control" name="search" placeholder="Search Name"
                                 aria-label="Recipient's username" aria-describedby="button-addon2">
@@ -82,7 +82,7 @@
                                 <i class="fa fa-search"></i>
                             </button>
                         </div>
-                    </form> --}}
+                    </form>
                 </div>
             </div>
             <table class="table table-hover" id="employee-table">
@@ -101,7 +101,7 @@
                     <tr>
                         <td>{{ $user->id }}</td>
                         <td>{{ $user->employee_number }}</td>
-   <td>{{ $user->name }}</td>
+                        <td>{{ $user->name }}</td>
                         <td>{{ $user->branch_name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>

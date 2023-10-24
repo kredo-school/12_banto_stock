@@ -31,7 +31,7 @@
                                         <div class="upload-box">
                                             <input type="file" name="upload_file" id="input_files" >
                                             <span>+</span>
-                                        </div>                                
+                                        </div>
                                     </div>
                                     <div class="card-footer" >
                                         <div class="card-text">
