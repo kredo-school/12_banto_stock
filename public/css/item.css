@@ -57,7 +57,7 @@ select{
 }
 
 /* table css */
-table{
+.table{
     background-color: rgb(51,102,153);
     border-radius: 10px;
     margin-bottom: 30px;
