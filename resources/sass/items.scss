@@ -1,0 +1,99 @@
+#item-list {
+  font-family: 'Poppins', sans-serif;
+
+  .item-container {
+    .row {
+      .col {
+        .card {
+          .card-img-top {
+            height: 197px;
+            background-size: cover;
+            background-position: center center;
+          }
+
+          .card-body {
+            .title {
+              margin-bottom: 10px;
+            }
+            .category {
+              font-size: 12px;
+            }
+          }//.card-body
+        }//.card
+      }
+    }
+  }//.item-container
+}//#item-list
+
+#item-view {
+  font-family: 'Poppins', sans-serif;
+  .item-container {
+    .col {
+      .card {
+        .card-img-top {
+          height: 197px;
+          background-size: cover;
+          background-position: center center;
+        }
+
+        .card-body {
+          .title {
+            margin-bottom: 10px;
+          }
+          .category {
+            font-size: 11px;
+          }
+        }//.card-body
+      }//.card
+    }
+  }//.item-container
+
+  .right-side {
+    .order-item-area {
+      height: 320px;
+      overflow-y: scroll;
+    }//.order-item-area
+
+    .send-btn {
+      width: 60%;
+      background-color: #336699;
+      color: #fff;
+      height: 80px;
+      font-size: 27px;
+      &:hover {
+        background-color: #CCCCFF;
+        box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+        color: #336699;
+      }
+    }//.send-btn
+
+    .cxl-btn {
+      height: 80px;
+      width: 35%;
+      background-color: #fff;
+      color: #797979;
+      font-size: 24px;
+      &:hover {
+        box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+      }
+    }//.cxl-btn
+
+    .modal {
+      .modal-dialog {
+        max-width: 70%;
+        margin-top: 300px;
+        border: 3px solid #336699;
+        .modal-content {
+          .modal-header {
+            border-bottom: none;
+            padding: 10px 10px 0 10px;
+          }
+          .modal-body {
+            padding-bottom: 40px;
+            font-size: 30px;
+          }//.modal-body
+        }
+      }
+    }
+  }//.right-side
+}//#item-view

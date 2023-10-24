@@ -1,5 +1,27 @@
 @extends('layouts.app')
-@section('title', 'Item Categories')
+
+@section('title', 'Item Category')
+
+@section('styles')
+
+<style> 
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #99ccff;
+    }
+    
+    .btn-color-sort {
+        background-color: #FFFFFF;
+    }
+
+    .btn-color-close {
+        background-color: #6699CC;
+    }
+</style>
+
+@endsection
+
 @section('content')
 <div class="container-fluid">
     <div class="row justify-content-center mt-1">

@@ -1,10 +1,25 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\ItemController;
+
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ItemsController;
+use App\Http\Controllers\ItemAddController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ItemEditController;
+use App\Http\Controllers\ItemViewController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InventoryController;
+use App\Http\Controllers\TransactionController;
+// added 0927
+use App\Http\Controllers\UserlistController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\CategoryItemListController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -22,44 +37,48 @@ Route::get('/', function () {
 });
 
 
+Route::get('/userlist', function () {
+    return view('userlist');
+});
 
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Route::get('userlist', [UserlistController::class, 'index']);
 
 
 Auth::routes();
+
+// ログアウトルート（コメントアウト解除）
+// Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+//Route::get('/register',[RegisterController::class, 'register'])->name('register');
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+
+
+Route::get('/transaction', [TransactionController::class, 'index'])->name('transaction.index');
+
+
+Route::get('/inventory', [InventoryController::class, 'index'])->name('inventory.index');
+
+Route::get('/userlist', [UserController::class, 'index'])->name('userlist.index');
+
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+
+
+Route::get('/items', [ItemsController::class, 'index'])->name('items.index');
+Route::get('/item-view', [ItemViewController::class, 'index'])->name('item-view.index');
+Route::get('/item-add', [ItemAddController::class, 'index'])->name('item-add.index');
+
+
+// dashboardのcontroller
+Route::post('/getTotalPrice', [DashboardController::class, 'getTotalPrice']);
+
+
+
+// login-forget.blade.phpのback to loginのroute
+Route::get('/login',[UserController::class, 'login'])->name('login');
+Route::get('/item-view/{item}', [ItemViewController::class, 'addOrder'])->name('item-view.add-order');
+
 
 
 Route::get('item/index', [ItemController::class, 'index'])->name('item.index');
@@ -70,7 +89,7 @@ route::patch('item/{id}/update', [ItemController::class, 'update'])->name('item.
 route::delete('item/{id}/destroy', [ItemController::class, 'destroy'])->name('item.destroy');
 
 
-route::get('category/index', [CategoryController::class, 'index'])->name('category.index');
+Route::get('category/index', [CategoryController::class, 'index'])->name('category.index');
 Route::get('/category/categoryitemlist/{id}', [CategoryController::class, 'itemindex'])->name('category.categoryitemlist');
 route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
 route::get('/category/{id}/edit', [CategoryController::class, 'edit'])->name('category.edit');

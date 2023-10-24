@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Item extends Model
 {
     use HasFactory;
@@ -25,3 +26,4 @@ class Item extends Model
         return $this->belongsToMany(Category::class,'categories_items','item_id','category_id');
     }
 }
+
