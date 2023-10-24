@@ -41,4 +41,3 @@ class CreateCartsTable extends Migration
     }
 
 }
-

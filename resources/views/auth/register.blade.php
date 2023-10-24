@@ -4,16 +4,16 @@
 @section('title','Register')
 
 @section('styles')
-<link rel="stylesheet" href="{{ mix('/css/register.css') }}">
-<style> 
+{{-- <link rel="stylesheet" href="{{ mix('/css/register.css') }}"> --}}
+<style>
 
-    #firstname::placeholder,  
+    #firstname::placeholder,
     #lastname::placeholder,
     #username::placeholder,
     #email::placeholder,
     #password::placeholder,
     #password-confirm::placeholder {
-       
+
         opacity: 0.3;
     }
 
@@ -38,19 +38,19 @@
         padding: 0;
         background-color: #99ccff;
     }
-    
+
     .btn-color-change {
         background-color: #003366;
     }
 
     .card {
-        margin-top: 0; 
+        margin-top: 0;
     }
 
     .banto-img {
         max-width: 100%;
     }
-    
+
 </style>
 @endsection
 
