@@ -10,11 +10,11 @@ use App\Http\Controllers\ItemAddController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ItemEditController;
 use App\Http\Controllers\ItemViewController;
+use App\Http\Controllers\UserlistController;
 use App\Http\Controllers\DashboardController;
+// added 0927
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\TransactionController;
-// added 0927
-use App\Http\Controllers\UserlistController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CategoryItemListController;
 
@@ -54,20 +54,26 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 //Route::get('/register',[RegisterController::class, 'register'])->name('register');
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 
+// login-forget.blade.phpのback to loginのroute
+Route::get('/login',[UserController::class, 'login'])->name('login');
 
-Route::get('/transaction', [TransactionController::class, 'index'])->name('transaction.index');
+Route::get('/item/edit', [ItemEditController::class, 'index'])->name('item.edit.index');
 
-
-Route::get('/inventory', [InventoryController::class, 'index'])->name('inventory.index');
+Route::get('/category/edit', [CategoryController::class, 'index'])->name('category.edit');
 
 Route::get('/userlist', [UserController::class, 'index'])->name('userlist.index');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
 
+Route::get('/category/itemcategories', [CategoryItemListController::class, 'index'])->name('category.itemcategories');
+
 Route::get('/items', [ItemsController::class, 'index'])->name('items.index');
 Route::get('/item-view', [ItemViewController::class, 'index'])->name('item-view.index');
 Route::get('/item-add', [ItemAddController::class, 'index'])->name('item-add.index');
+
+
+
 
 
 // dashboardのcontroller
@@ -75,9 +81,26 @@ Route::post('/getTotalPrice', [DashboardController::class, 'getTotalPrice']);
 
 
 
+
+
+
+
+
 // login-forget.blade.phpのback to loginのroute
 Route::get('/login',[UserController::class, 'login'])->name('login');
 Route::get('/item-view/{item}', [ItemViewController::class, 'addOrder'])->name('item-view.add-order');
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -94,4 +117,29 @@ Route::get('/category/categoryitemlist/{id}', [CategoryController::class, 'itemi
 route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
 route::get('/category/{id}/edit', [CategoryController::class, 'edit'])->name('category.edit');
 route::patch('/category/{id}/update', [CategoryController::class, 'update'])->name('category.update');
+
+
+
+
+
+// dashboardのcontroller
+Route::post('/getTotalPrice', [DashboardController::class, 'getTotalPrice']);
+
+//ItemViewController
+//Route::get('/items', [ItemsController::class, 'index'])->name('items.index');
+Route::get('/item-view', [ItemViewController::class, 'index'])->name('item-view.index');
+Route::get('/item-add', [ItemAddController::class, 'index'])->name('item-add.index');
+Route::get('/item-view/{item}', [ItemViewController::class, 'addOrder'])->name('item-view.add-order');
+Route::post('/item-view/{cart_item}', [ItemViewController::class, 'deleteOrder'])->name('item-view.delete-item');
+Route::get('/cart-item/{cartItem}/update-quantity/{quantity}', [ItemViewController::class, 'updateQuantity'])->name('cart-item.update-quantity');
+Route::post('/item-view-send-order', [ItemViewController::class, 'sendOrder'])->name('item-view.send-order');
+
+
+//TransactionController
+Route::get('/transaction', [TransactionController::class, 'index'])->name('transaction.index');
+//InventoryController
+Route::get('/inventory', [InventoryController::class, 'index'])->name('inventory.index');
+
+
+
 
