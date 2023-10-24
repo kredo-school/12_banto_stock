@@ -21,7 +21,7 @@
                     <i class="fa-solid fa-hands fa-sm"></i>,
                 </h3>
             </div>
-        </div>
+
         <div class="row mx-auto">
             <div class="card" style="max-width: 360px; height: 160px">
                 <div class="row">

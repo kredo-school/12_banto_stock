@@ -24,7 +24,7 @@
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
- 
+
  <!-- Font Awesome icons -->
  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
  <!-- Styles -->
@@ -32,7 +32,7 @@
 
 
 <div class="container">
- 
+
     {{-- Sorting button --}}
     <div class="row auto align-items-center">
         <div class="col-auto">
@@ -48,26 +48,26 @@
             document.addEventListener('DOMContentLoaded', function() {
               const searchInput = document.querySelector('.form-control');
               const itemsToSearch = []; // 検索対象のアイテムのリストをここに追加
-          
+
               searchInput.addEventListener('input', function() {
                 const searchTerm = searchInput.value.toLowerCase();
                 const results = [];
-          
+
                 for (const item of itemsToSearch) {
                   if (item.textContent.toLowerCase().includes(searchTerm)) {
                     results.push(item);
                   }
                 }
-          
+
                 // 検索結果を表示するための処理を追加する
-          
+
                 // 例: 検索結果を表示するコード
                 // results を使って結果を表示する処理を追加する
               });
             });
           </script>
-          
-       
+
+
         <div class="col-auto">
             <div class="form-group">
               <select class="form-control text-center fw-bold" id="exampleFormSelect1" style="background-color: #336699; color: #fff;">
@@ -84,10 +84,10 @@
         document.addEventListener('DOMContentLoaded', function() {
           const selectElement = document.getElementById('exampleFormSelect1');
           const itemsToSort = []; // 並べ替え対象のアイテムのリストをここに追加
-      
+
           selectElement.addEventListener('change', function() {
             const selectedValue = selectElement.value;
-      
+
             if (selectedValue === 'priceHtL') {
               // 価格を高い順に並べ替える処理を追加する
             } else if (selectedValue === 'name') {
@@ -95,12 +95,12 @@
             } else if (selectedValue === 'stock') {
               // 在庫が少ない順に並べ替える処理を追加する
             }
-      
+
             // 並べ替えた結果を表示する処理を追加する
           });
         });
       </script>
-      
+
 
 
 
@@ -133,7 +133,9 @@
                                     <i class="fi fi-sr-rectangle-list"></i> {{ count($transaction->items) }} Items
                                 </button>
                             </div>
-                        
+
+                            <div id="test-modal" class="modal fade" tabindex="-1" aria-hidden="true">
+
                             <div id="test-modal-{{ $transaction->id }}" class="modal fade" tabindex="-1" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -143,7 +145,6 @@
                                         </div>
                                         <div class="modal-body">
                                             <table class="table table-bordered table-striped">
-                                                
                                                 <thead>
                                                     <tr>
                                                         <th scope="col-3"></th>
@@ -161,9 +162,17 @@
                                                         <td>{{ $item->price }}</td>
                                                         <td>{{ $item->quantity }}</td>
                                                     </tr>
-                                                @endforeach
 
-                                            
+                                                    <!-- item2 -->
+                                                    <tr>
+                                                        <td><img src="{{ asset('images/sarada.jpg') }}" alt="sarada" width="50"></td>
+                                                        <td>sarada</td>
+                                                        <td>200</td>
+                                                        <td>2</td>
+                                                    </tr>
+
+                                                    <!-- other items -->
+
                                                 </tbody>
                                             </table>
                                         </div>

@@ -20,7 +20,6 @@ use App\Http\Controllers\CategoryItemListController;
 use App\Http\Controllers\EditProfileController;
 
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -84,4 +83,19 @@ Route::get('/item-add', [ItemAddController::class, 'index'])->name('item-add.ind
 
 Route::get('/editProfile', [EditProfileController::class, 'index'])->name('EditProfile.index');
 
+
+
+
+// dashboardのcontroller
+Route::post('/getTotalPrice', [DashboardController::class, 'getTotalPrice']);
+
+
+
+
+
+
+
+
+// login-forget.blade.phpのback to loginのroute
+Route::get('/login',[UserController::class, 'login'])->name('login');
 Route::get('/item-view/{item}', [ItemViewController::class, 'addOrder'])->name('item-view.add-order');

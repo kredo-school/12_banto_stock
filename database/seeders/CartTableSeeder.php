@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use App\Models\Cart; 
 
-class RoleSeeder extends Seeder
+class CartTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -13,6 +14,7 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        //
+
+        Cart::factory()->count(50)->create();
     }
 }
