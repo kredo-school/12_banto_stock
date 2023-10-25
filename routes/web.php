@@ -82,7 +82,7 @@ Route::get('/item-view', [ItemViewController::class, 'index'])->name('item-view.
 Route::get('/item-add', [ItemAddController::class, 'index'])->name('item-add.index');
 
 Route::get('/editProfile', [EditProfileController::class, 'index'])->name('EditProfile.index');
-
+Route::get('editProfile/{id}', [EditProfileController::class, 'edit']);
 
 
 
