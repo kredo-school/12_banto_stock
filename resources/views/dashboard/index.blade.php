@@ -27,9 +27,9 @@
                     <div class="form-group">
                         <select class="form-control text-center fw-bold" id="FormSelect2">
                             <option value="" selected>All</option>
-                            @foreach($branches as $branch)
+                            {{-- @foreach($branches as $branch)
                                 <option value="{{ $branch }}">{{ $branch }}</option>
-                            @endforeach
+                            @endforeach --}}
                         </select>
                     </div>
                 </div>
