@@ -104,13 +104,12 @@ class ItemController extends Controller
         return redirect()->route('item.index' , $item->id)->with('item', $item);
     }
     
-    // public function destroy($id){
-
-    //     $item = $this->item->findOrFail($id);
-    //     $item->forceDelete();
-
-    //     return redirect()->back();
-    // }
+    public function destroy($id){
+        $item = $this->item->findOrFail($id);
+        $item->categories()->detach('category_id');
+        $item->delete();
+        return redirect()->route('item.index');
+    }
 }
 
 

@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
+
     /**
      * Create a new controller instance.
      *
@@ -23,6 +25,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        // ログインページにリダイレクト
         return view('home');
+    }
+
+    public function items()
+    {
+        return view('items');
     }
 }
