@@ -52,7 +52,9 @@ crossorigin="anonymous"></script>
                 
                 {{--  --}}
                     <div>
-                        <form action="{{ url(edit) method="post">
+                        <form action="{{ url('editProfile/'.$users->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
                             <div class="form-group">
                                 <label for="EmployeeNumber">Employee Number</label>
                                 <input type="text" class="form-control" name="EmployeeNumber" value="{{ old('EmployeeNumber')}}">
@@ -76,10 +78,10 @@ crossorigin="anonymous"></script>
                                 </select>
                                 <span style="color: red">@error('BranchName'){{$message}} @enderror</span>
                             </div>
-                            <div class="form-group">
-                                <label for="formFileLg">Upload Photo</label>
-                                <input class="form-control form-control-lg" id="formFileLg" type="file" />
-                            </div>
+                            // <div class="form-group">
+                            //     <label for="formFileLg">Upload Photo</label>
+                            //     <input class="form-control form-control-lg" id="formFileLg" type="file" />
+                            // </div>
                             <div class="form-group">
                                 <label for="gender">Gender</label><br>
                                 <div class="form-check form-check-inline">
@@ -89,10 +91,6 @@ crossorigin="anonymous"></script>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="gender" id="female" value="female">
                                     <label class="form-check-label" for="female">Female</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gender" id="other" value="other">
-                                    <label class="form-check-label" for="other">Other</label>
                                 </div>
                             </div>
                             <div class="form-group">
