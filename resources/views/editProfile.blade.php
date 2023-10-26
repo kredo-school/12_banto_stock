@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'userlist')
+{{-- @section('title', 'userlist') --}}  
 @section('content')
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
@@ -52,23 +52,24 @@ crossorigin="anonymous"></script>
                 
                 {{--  --}}
                     <div>
-                        <form action="{{ url('editProfile/'.$users->id) }}" method="POST">
+                        <form action="{{ route('edit-profile.edit', ['id' => $user->id]) }}" method="post" enctype="multipart/form-data">
                             @csrf
-                            @method('PUT')
                             <div class="form-group">
                                 <label for="EmployeeNumber">Employee Number</label>
-                                <input type="text" class="form-control" name="EmployeeNumber" value="{{ old('EmployeeNumber')}}">
-                                <span style="color: red">@error('EmployeeNumber'){{$message}} @enderror</span>
+                                <input type="text" class="form-control" name="EmployeeNumber" value="{{ $user->employee_number }}"autofocus>
+                                @error('EmployeeNumber')
+                                    <div class="text-danger small">{{ $message }}</div>
+                                @enderror
                             </div>
         
                             <div class="form-group">
                                 <label for="FullName">Full Name</label>
-                                <input type="text" name="name" id="name" class="form-control" placeholder="Last Name, First Name" value="{{ old('name')}}">
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Last Name, First Name" value="{{ $user->name }}">
                                 <span style="color: red">@error('name'){{$message}} @enderror</span>
 
                             </div>
         
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="BranchName">Branch Name</label>
                                 <select class="form-control" id="branch_name" name="BranchName" value="{{ old('BranchName')}}">
                                     <option value="Option1" disabled>Branch Name</option>
@@ -77,11 +78,8 @@ crossorigin="anonymous"></script>
                                     <option value="Option4"></option>
                                 </select>
                                 <span style="color: red">@error('BranchName'){{$message}} @enderror</span>
-                            </div>
-                            // <div class="form-group">
-                            //     <label for="formFileLg">Upload Photo</label>
-                            //     <input class="form-control form-control-lg" id="formFileLg" type="file" />
-                            // </div>
+                            </div> -->
+                
                             <div class="form-group">
                                 <label for="gender">Gender</label><br>
                                 <div class="form-check form-check-inline">
@@ -95,12 +93,12 @@ crossorigin="anonymous"></script>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
-                                <input type="email" class="form-control" id="email" name="email">
+                                <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}">
                             </div>
                             <div class="form-group">
                                 <label for="Birthday">Birth Date</label>
                                 <div class="input-group date" id="birthdate" name="birthdate">
-                                    <input type="text" class="form-control" id="date" />
+                                    <input type="text" class="form-control" id="date" value="{{ $user->birthdate }}" />
                                     <span class="input-group-append">
                                         <span class="input-group-text bg-light d-block">
                                             <i class="fa fa-calendar"></i>
@@ -110,7 +108,7 @@ crossorigin="anonymous"></script>
                             </div>
                             <div class="form-group">
                                 <label for="address">Address</label>
-                                <input type="text" class="form-control" id="address">
+                                <input type="text" class="form-control" id="address" name="address" value="{{ $user->address }}">
                             </div>
                         </div>
 

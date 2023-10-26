@@ -91,9 +91,10 @@
                         <th scope="col">No.</th>
                         <th scope="col">Employee Number</th>
                         <th scope="col">Name</th>
-                        <th scope="col">Branch Name</th>
+                        <th scope="col">Gender</th>
                         <th scope="col">E-mail</th>
                         <th scope="col">Status</th>
+                        <th scope="col">Edit Profile</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -102,7 +103,7 @@
                         <td>{{ $user->id }}</td>
                         <td>{{ $user->employee_number }}</td>
                         <td>{{ $user->name }}</td>
-                        <td>{{ $user->branch_name }}</td>
+                        <td>{{ $user->gender }}</td>
                         <td>{{ $user->email }}</td>
                         <td>
                             @if ($user->status == 'active')
@@ -111,18 +112,20 @@
                                 <a href="{{route('userlist.set-status', $user->id)}}" class="btn btn-secondary btn-sm" role="button">Inactive</a>
                             @endif
                         </td>
+                        <td>
+                        <div class="d-flex">
+                            <a href="{{route('EditProfile.index', ['id' => $user->id ])}}" class="btn btn-secondary-outline active " role="button" aria-pressed="true">
+                                <i class="fa fa-edit" aria-hidden="true"></i>
+                                Edit Profile
+                            </a>
+                        </div>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
             {{ $users->links() }}
             
-        </div>
-        <div class="d-flex justify-content-end">
-            <a href="{{route('EditProfile.index')}}" class="btn btn-secondary active " role="button" aria-pressed="true">
-                <i class="fa fa-edit" aria-hidden="true"></i>
-                Edit Profile
-            </a>
         </div>
     </div>
 @endsection
