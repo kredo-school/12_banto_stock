@@ -1,16 +1,10 @@
 @extends('layouts.app')
-
 @section('title','Edit Items')
-    
 @section('content')
-
     <link rel="stylesheet" href="/css/item.css">
-
     <div class="body">
-        
     <div class="container">
         <div class="row justify-content-center">
-
             {{-- to edit item details --}}
             <form action="{{route('item.update', $item->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
@@ -18,8 +12,6 @@
 
 
                 <h1 class="text-center">EDIT ITEMS</h1>
-
-
                 <div class="row">
                     {{-- Item card --}}
                     <div class="col-4">
@@ -82,7 +74,6 @@
                                 <div class="row mt-1 close-button">
                                     <a href="#" class="close-button text-decoration-none text-center">Close</a>
                                 </div>
-    
                                 <div class="row mt-5 save-button">
                                     <button type="submit"  class="save-button btn btn-lg" >Save</button>
                                 </div>
@@ -97,13 +88,8 @@
                             <div class="col-3"></div>
                         </div>
                     </div>
-
-                    
                 </div>
-
-
             {{-- inventory information --}}
-
             <div class="row align-items-center inventory">
                 <div class="col-2">
                     <button class="sort mx-2">Stock All</button>
@@ -118,9 +104,7 @@
                     <button class="sort py-auto mx-1">Check All Categories</button>
                 </div>
             </div>
-
             {{-- table --}}
-
             <div class="row mt-2">
                 <table>
                     <thead>
@@ -152,7 +136,6 @@
                     </tbody>
                 </table>
             </div>
-
             <nav aria-label="Page navigation example" class="nav">
                 <ul class="pagination">
                   <li class="page-item">
@@ -173,26 +156,46 @@
         </div>
     </div>
     </div>
-    
     @include('item.modal.delete')
     @include('item.modal.save')
-
 @endsection
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+19:53
+@extends('layouts.app')
+@section('title', 'Item index')
+@section('content')
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-12">
+            <h1 class="text-center fw-bolder">Item Index</h1>
+        </div>
+    </div>
+    <div class="row mt-3">
+        @forelse ($all_items as $item)
+        <div class="col-md-3 mt-3">
+            <div class="card h-100 rounded">
+                <a href="{{ route('item.edit', $item->id) }}">
+                    <img src="{{$item->image}}" alt="{{ $item->image }}" class="card-img-top rounded"
+                        style="height: 200px; object-fit: cover;">
+                </a>
+                <div class="card-body d-flex flex-column">
+                    <h5 class="mt-1 flex-grow-1">Name: {{ $item->name }}</h5>
+                    <div class="text-primary">Price: $ {{ $item->price }}</div>
+                    <div class="text-primary">Inventory: {{ $item->inventory }}</div>
+                    <div class="text-dark flex-grow-1">Detail: {{ $item->detail }}</div>
+                </div>
+            </div>
+        </div>
+        @empty
+        <div class="col">
+            <h2 class="text-muted text-center">No stock yet</h2>
+            <p class="text-center">
+                <a href="{{ route('item.create') }}" class="text-decoration-none">Create a new order item</a>
+            </p>
+        </div>
+        @endforelse
+    </div>
+    <div class="d-flex justify-content-center mt-4">
+        {{ $all_items->links() }}
+    </div>
+</div>
+@endsection
