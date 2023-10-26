@@ -9,7 +9,7 @@
     </div>
     <div class="row mt-3">
         <div class="col-12 text-end">
-            <a href="{{route()}}"><button type="button" class="btn btn-danger">CLOSE</button></a> {{--Return TOP VIEW--}}
+            <a href="{{ route('item.index') }}"><button type="button" class="btn btn-danger">CLOSE</button></a> {{--Return TOP VIEW--}}
         </div>
     </div>
     <div class="row mt-3">
