@@ -9,26 +9,22 @@ use App\Models\User;
 
 class EditProfileController extends Controller
 {
-    public function index()
+    public function index($id)
     {
-        $users = User::all();
-        return view('editProfile',compact('users'));
+        $user = User::find($id);
+        return view('editProfile', ['user' => $user]);
     }
-    public function edit($id)
-{
-    return view('editProfile.edit', compact('users'));
-}
-public function update(Request $request, $id)
-{
-    $users = user::find($id);
-    $users-> EmployeeNumber= $request->input('EmployeeNumber');
-    $users-> name = $request->input('name');
-    $users-> BranchName = $request->input('BranchName');
-    $users-> gender= $request->input('gender');
-    $users-> email = $request->input('email');
-    $users-> BirthDate = $request->input('BirthDate');
-    $users-> address = $request->input('address');
-    $users ->update();
-    return redirect()->back()->with('status','Users Updated Successfully');
-}
+    
+    public function update(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->employee_number= $request->input('EmployeeNumber');
+        $user->name = $request->input('name');
+        $user->gender= $request->input('gender');
+        $user->email = $request->input('email');
+        $user->birthdate = $request->input('birthdate');
+        $user->address = $request->input('address');
+        $user->update();
+        return redirect()->back();
+    }
 }
