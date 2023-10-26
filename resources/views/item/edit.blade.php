@@ -9,6 +9,8 @@
             <form action="{{route('item.update', $item->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
+
+
                 <h1 class="text-center">EDIT ITEMS</h1>
                 <div class="row">
                     {{-- Item card --}}
@@ -19,8 +21,9 @@
                                     <div class="card-body">
                                         <img src="{{$item->image}}"
                                         alt="Item Image"
-                                        class="card-img-top mb-1 rounded" style="height: 180px; object-fit: cover;" >
+                                        class="card-img-top mb-1 rounded" style="height: 180px; object-fit: cover;" >   
                                         <div class="upload-box">
+    
                                             <input type="file" name="upload_file" id="input_files">
                                             <span>+</span>
                                         </div>
@@ -40,11 +43,14 @@
                     <div class="col-4">
                         <label for="name" class="form-label"></label>
                         <input type="name" id="name" name="name" class="form-control text-center input" placeholder="Change Item Name" value="{{$item->name}}" >
+
                         <label for="price" class="form-label"></label>
                         <input type="price" step="0.01" name="price" id="price" class="form-control text-center input" placeholder="Change Price" value="{{$item->price}}" >
+
                         <label for="category" class="form-label"></label>
                         {{-- <select name="category" id="category" class="form-select" >
                             <option value="{{$item->category_id}}">Choose Category</option> --}}
+
                             @if ($all_categories->isNotEmpty())
                             @foreach ($all_categories as $category)
                             <div class="form-check form-check-inline">
@@ -52,8 +58,9 @@
                                     <input type="radio" value="{{$category->id}}" name="category" id="{{$item->category_id}}" class="form-check-input" checked>
                                 @else
                                     <input type="radio" value="{{$category->id}}" name="category" id="{{$category->name}}" class="form-check-input">
+                                  
                                 @endif
-                                <label for="{{$category->name}}" class="form-check-line">{{$category->name}}</label>
+                                <label for="{{$category->name}}" class="form-check-line">{{$category->name}}</label> 
                             </div>
                         @endforeach
                         @endif
@@ -70,7 +77,10 @@
                                 <div class="row mt-5 save-button">
                                     <button type="submit"  class="save-button btn btn-lg" >Save</button>
                                 </div>
+
+
             </form>
+        
                                 <div class="row mt-5 delete-button">
                                     <button type="button" data-bs-toggle="modal" data-bs-target="#delete-item" class="delete-button btn btn-lg">Delete</button>
                                 </div>

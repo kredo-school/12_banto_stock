@@ -10,11 +10,12 @@ class Category extends Model
 {
     use HasFactory;
     
+
     protected $fillable = [
         'name',
         'status',
         'image',
-        'category_id'
+        'category_id',
     ];
     public function item()
     {

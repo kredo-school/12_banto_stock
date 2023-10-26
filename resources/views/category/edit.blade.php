@@ -11,28 +11,26 @@
                 <div class="row mt-5">
                     {{-- right side card means you can edit category name and image --}}
                     <div class="col-6 px-5">
-                        <form action="{{route('category.update' , $category->id )}}" method="POST" enctype="multipart/form-data">
-                            
+                        <form action="{{route('category.update' , $category->id )}}" method="POST" enctype="multipart/form-data">                            
                             @csrf
-                            @method('PATCH')
+                            @method('PATCH')              
 
                             <div class="row mt-3">
                                 <div class="card card-radius">
-                                    <img src="{{$category->image}}" alt="Category Image">
-
+                                    <img src="{{$category->image}}"
+                                    alt="Category Image"
+                                    class="card-img-top mb-1 rounded" style="height: 180px; object-fit: cover;">                                
                                     <input type="file" name="image" id="image">
                                 </div>
-                            </div>
-
+                            </div>                                
                                 <label for="name">Category Name</label>
-                                <input type="text" name="name" id="name" class="form-control" value="{{$category->name}}">
-                                
-                            <button type="submit" class="btn btn-primary">Save</button>
+                                <input type="text" name="name" id="name" class="form-control" value="{{$category->name}}">                            
+                                <button type="submit" class="btn btn-primary">Save</button>
                         </form>
                     </div>
                     {{-- left side card means you can create a new category --}}
                     <div class="col-6 px-5">
-                        <form action="{{ route('category.store') }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             <div class="row mt-3">
                                 <div class="card card-radius">
