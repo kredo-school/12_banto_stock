@@ -35,7 +35,6 @@ class AddColumnsToUsersTable extends Migration
             $table->string('address')->nullable();
             $table->timestamp('BirthDate')->nullable();
 
-
     });
 
     

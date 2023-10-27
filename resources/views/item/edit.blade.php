@@ -89,70 +89,7 @@
                         </div>
                     </div>
                 </div>
-            {{-- inventory information --}}
-            <div class="row align-items-center inventory">
-                <div class="col-2">
-                    <button class="sort mx-2">Stock All</button>
-                </div>
-                <div class="col-2">
-                    <button class="sort mx-1">Sell Through All</button>
-                </div>
-                <div class="col-5">
-                    <h1 class="inventory-text">INVENTORY</h1>
-                </div>
-                <div class="col-2">
-                    <button class="sort py-auto mx-1">Check All Categories</button>
-                </div>
-            </div>
-            {{-- table --}}
-            <div class="row mt-2">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>DATE</th>
-                            <th>IN</th>
-                            <th>OUT</th>
-                            <th>ITEM</th>
-                            <th>PRICE</th>
-                            <th>CATEGORY</th>
-                            <th>QTY</th>
-                            <th>TRANSACTION ID</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>xx/xx/2023</td>
-                            <td>xx/xx/2021</td>
-                            <td>xx/xx/2022</td>
-                            <td>xxxxx</td>
-                            <td>$xxxx</td>
-                            <td>xxxxxxxx</td>
-                            <td>xxx</td>
-                            <td>No.xxxxxxxxx</td>
-                        </tr>
-                        <tr>
-                            <td colspan="12" class="text-center py-3">Display 10 results in the same way below.<br>Next page after 10 in pagination</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <nav aria-label="Page navigation example" class="nav">
-                <ul class="pagination">
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                    </a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                    </a>
-                  </li>
-                </ul>
-            </nav>
+
         </div>
     </div>
     </div>

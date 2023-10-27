@@ -163,16 +163,7 @@
                                                         <td>{{ $item->quantity }}</td>
                                                     </tr>
                                                 @endforeach
-                                                    <!-- item2 -->
-                                                    <tr>
-                                                        <td><img src="{{ asset('images/sarada.jpg') }}" alt="sarada" width="50"></td>
-                                                        <td>sarada</td>
-                                                        <td>200</td>
-                                                        <td>2</td>
-                                                    </tr>
 
-                                                    <!-- other items -->
-                                                    @endforeach
                                                 </tbody>
                                             </table>
                                         </div>

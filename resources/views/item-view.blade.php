@@ -58,12 +58,14 @@
                 <div class="col" id="item-{{$item->id}}">
                     <div class="card mb-3">
                         <div class="card-img-top" style="background-image: url('{{ asset("/storage/images/{$item->image}") }}')"></div>
+                        <img src="{{$item->image}}" alt="{{ $item->image }}" class="card-img-top rounded"
+                          style="height: 200px; object-fit: cover;">
                         <div class="card-body">
                             <p class="card-text text-center fs-4 fw-bold title">{{ $item->name }}</p>
                             <div class="row">
-                              <div class="col-6 pe-0 fw-bold">Stock : <span class="fw-normal">{{ $item->inventory }}</span></div>
-                              <div class="col-6 text-end ps-0 fs-5">price : <span class="fw-normal">{{ $item->price }}</span></div>
-                              <div class="col-12 fw-bold">Category : <span class="fw-normal">{{ $item->category_id}}</span></div>
+                              <div class="col-12 pe-0 fw-bold">Stock : <span class="fw-normal">{{ $item->inventory }}</span></div>
+                              <div class="col-12 pe-0 fw-bold">Price : <span class="fw-normal">${{ $item->price }}</span></div>
+                              <div class="col-12 pe-0 fw-bold">Category : <span class="fw-normal">{{ $item->category_id}}</span></div>
                               <div class="col-12 mt-2">
                                 <a href="{{ route('item-view.add-order', ['item' => $item->id]) }}" class="btn btn add-to-order" style="background-color: #99CCFF; color: #fff;"
                                   data-id="{{ $item->id }}" 

@@ -16,12 +16,15 @@
         {{-- Display Categories --}}
         @forelse($all_categories as $category)
         <div class="col-md-3 mt-3 mb-2">
-            {{-- Data from categories table. click photo go to category detail page --}}            <div class="card h-100 rounded mx-1" style="width: 100%;">
-                <a href="{{ route('category.categoryitemlist', $category->id) }}">                    <h3 class="flex-grow-1 fw-bolder ms-2 mt-1">{{ $category->name }}</h3>
+            {{-- Data from categories table. click photo go to category detail page --}}            
+            <div class="card h-100 rounded mx-1" style="width: 100%;">
+                <a href="{{ route('category.categoryitemlist', $category->id) }}">                    
+                    <h3 class="flex-grow-1 fw-bolder ms-2 mt-1">{{ $category->name }}</h3>
                 </a>
                 <img src="{{$category->image}}"
                         alt="Category Image"
-                        class="card-img-top mb-1 rounded" style="height: 180px; object-fit: cover;">                <div class="card-body d-flex flex-column">
+                        class="card-img-top mb-1 rounded" style="height: 180px; object-fit: cover;">                
+                        <div class="card-body d-flex flex-column">
                     {{-- Category name from categories table --}}
                     <div class="text-dark fw-bold">Total Amount: $ {{ $category->item->sum('price') }}</div>
                     {{-- Category total amount from categories table --}}
