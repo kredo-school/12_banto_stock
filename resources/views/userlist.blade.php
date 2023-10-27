@@ -26,7 +26,7 @@
             <div class="card" style="max-width: 360px; height: 160px">
                 <div class="row">
                     <div class="col-md-4">
-                        <img src="{{ url('/storage/images/transaction.png') }}" class="mt-3 img-fluid rounded-start"
+                        <img src="{{ url('/images/transaction.png') }}" class="mt-3 img-fluid rounded-start"
                             alt="transaction">
                     </div>
                     <div class="col-md-8">
@@ -41,7 +41,7 @@
             <div class="card" style="max-width: 360px; height: 160px">
                 <div class="row">
                     <div class="col-md-4">
-                        <img src="{{ url('/storage/images/user.png') }}" class="mt-3 img-fluid rounded-start"
+                        <img src="{{ url('/images/user.png') }}" class="mt-3 img-fluid rounded-start"
                             alt="user">
                     </div>
                     <div class="col-md-8">

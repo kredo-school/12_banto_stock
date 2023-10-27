@@ -2,17 +2,14 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CategoryItemListController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\ItemAddController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ItemEditController;
 use App\Http\Controllers\ItemViewController;
 // added 0927
 use App\Http\Controllers\UserlistController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\DashboardController;
@@ -36,12 +33,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// admin login 
+// admin login
 Route::get('/userlist', function () {
     return view('userlist');
 });
 
-Route::get('/editProfile', function () 
+Route::get('/editProfile', function ()
 {
     return view('editProfile');
 });
@@ -81,7 +78,7 @@ Route::get('/category/itemcategories', [CategoryItemListController::class, 'inde
 
 
 
-// editprofile 
+// editprofile
 Route::get('/edit-profile/{id}', [EditProfileController::class, 'index'])->name('EditProfile.index');
 Route::post('/edit-profile/{id}', [EditProfileController::class, 'update'])->name('edit-profile.edit');
 
