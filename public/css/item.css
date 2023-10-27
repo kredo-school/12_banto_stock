@@ -34,6 +34,7 @@
     text-decoration: none;
     font-size: 16px;
 }
+
 select{
     background-color:transparent; 
     border-color:black; 
@@ -88,9 +89,9 @@ th ,td{
         border-radius: 20px 20px 20px 20px;
     }
 
-    .card-text{
+    /* .card-text{
         background-color: rgb(153,204,255);
-    }
+    } */
 
     /* modal (delete and save) same css */
     .card-modal{
