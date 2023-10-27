@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryItemListController;
 use App\Http\Controllers\HomeController;
-
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ItemAddController;
@@ -15,10 +15,10 @@ use App\Http\Controllers\UserlistController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CategoryItemListController;
-
-
+use App\Http\Controllers\EditProfileController;
 
 
 /*
@@ -36,15 +36,26 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+// admin login 
 Route::get('/userlist', function () {
     return view('userlist');
 });
+
+Route::get('/editProfile', function () 
+{
+    return view('editProfile');
+});
+// admin login
 
 Route::get('userlist', [UserlistController::class, 'index']);
 
 
 Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/categoryitem/categoryitemlist',[CategoryItemListController::class,'index'])->name('categoryitem.categoryitemlist');
 
 // ログアウトルート（コメントアウト解除）
 // Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
@@ -62,13 +73,17 @@ Route::get('/item/edit', [ItemEditController::class, 'index'])->name('item.edit.
 Route::get('/category/edit', [CategoryController::class, 'index'])->name('category.edit');
 
 Route::get('/userlist', [UserController::class, 'index'])->name('userlist.index');
-
+Route::get('userlist/{id}', [UserController::class, 'setStatus'])->name('userlist.set-status');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
 
 Route::get('/category/itemcategories', [CategoryItemListController::class, 'index'])->name('category.itemcategories');
 
 
+
+// editprofile 
+Route::get('/edit-profile/{id}', [EditProfileController::class, 'index'])->name('EditProfile.index');
+Route::post('/edit-profile/{id}', [EditProfileController::class, 'update'])->name('edit-profile.edit');
 
 
 // dashboardのcontroller
@@ -79,11 +94,12 @@ Route::post('/getTotalPrice', [DashboardController::class, 'getTotalPrice']);
 Route::get('/login',[UserController::class, 'login'])->name('login');
 
 
-//ItemController and CategoryController
-//Route::get('/item/index', [ItemController::class, 'index'])->name('item.index');
-// ItemControllerのindexメソッドにアクセスするルートを追加
-Route::get('/item', [ItemController::class, 'index'])->name('item.index');
-route::get('/item/create', [ItemController::class, 'create'])->name('item.create');
+// login-forget.blade.phpのback to loginのroute
+Route::get('/login',[UserController::class, 'login'])->name('login');
+Route::get('/item-view/{item}', [ItemViewController::class, 'addOrder'])->name('item-view.add-order');
+
+Route::get('item/index', [ItemController::class, 'index'])->name('item.index');
+route::get('item/create', [ItemController::class, 'create'])->name('item.create');
 route::get('/item/{id}/edit', [ItemController::class, 'edit'])->name('item.edit');
 route::post('/item/store', [ItemController::class, 'store'])->name('item.store');
 route::patch('/item/{id}/update', [ItemController::class, 'update'])->name('item.update');
@@ -95,10 +111,6 @@ Route::get('/category/categoryitemlist/{id}', [CategoryController::class, 'itemi
 route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
 route::get('/category/{id}/edit', [CategoryController::class, 'edit'])->name('category.edit');
 route::patch('/category/{id}/update', [CategoryController::class, 'update'])->name('category.update');
-
-
-
-
 
 // dashboardのcontroller
 Route::post('/getTotalPrice', [DashboardController::class, 'getTotalPrice']);
@@ -117,7 +129,4 @@ Route::post('/item-view-send-order', [ItemViewController::class, 'sendOrder'])->
 Route::get('/transaction', [TransactionController::class, 'index'])->name('transaction.index');
 //InventoryController
 Route::get('/inventory', [InventoryController::class, 'index'])->name('inventory.index');
-
-
-
 
