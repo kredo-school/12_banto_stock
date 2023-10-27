@@ -17,8 +17,7 @@ use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CategoryItemListController;
-
-
+use App\Http\Controllers\EditProfileController;
 
 
 /*
@@ -36,10 +35,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+// admin login 
 Route::get('/userlist', function () {
     return view('userlist');
 });
+
+Route::get('/editProfile', function () 
+{
+    return view('editProfile');
+});
+// admin login
 
 Route::get('userlist', [UserlistController::class, 'index']);
 
@@ -62,7 +67,7 @@ Route::get('/item/edit', [ItemEditController::class, 'index'])->name('item.edit.
 Route::get('/category/edit', [CategoryController::class, 'index'])->name('category.edit');
 
 Route::get('/userlist', [UserController::class, 'index'])->name('userlist.index');
-
+Route::get('userlist/{id}', [UserController::class, 'setStatus'])->name('userlist.set-status');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 
 
@@ -72,37 +77,16 @@ Route::get('/items', [ItemsController::class, 'index'])->name('items.index');
 Route::get('/item-view', [ItemViewController::class, 'index'])->name('item-view.index');
 Route::get('/item-add', [ItemAddController::class, 'index'])->name('item-add.index');
 
-
-
-
+// editprofile 
+Route::get('/edit-profile/{id}', [EditProfileController::class, 'index'])->name('EditProfile.index');
+Route::post('/edit-profile/{id}', [EditProfileController::class, 'update'])->name('edit-profile.edit');
 
 // dashboardのcontroller
 Route::post('/getTotalPrice', [DashboardController::class, 'getTotalPrice']);
 
-
-
-
-
-
-
-
 // login-forget.blade.phpのback to loginのroute
 Route::get('/login',[UserController::class, 'login'])->name('login');
 Route::get('/item-view/{item}', [ItemViewController::class, 'addOrder'])->name('item-view.add-order');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Route::get('item/index', [ItemController::class, 'index'])->name('item.index');
 route::get('item/create', [ItemController::class, 'create'])->name('item.create');
@@ -117,10 +101,6 @@ Route::get('/category/categoryitemlist/{id}', [CategoryController::class, 'itemi
 route::post('/category/store', [CategoryController::class, 'store'])->name('category.store');
 route::get('/category/{id}/edit', [CategoryController::class, 'edit'])->name('category.edit');
 route::patch('/category/{id}/update', [CategoryController::class, 'update'])->name('category.update');
-
-
-
-
 
 // dashboardのcontroller
 Route::post('/getTotalPrice', [DashboardController::class, 'getTotalPrice']);
