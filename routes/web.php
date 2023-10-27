@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+<<<<<<< HEAD
+use App\Http\Controllers\CategoryItemListController;
+=======
 use App\Http\Controllers\HomeController;
 
 use App\Http\Controllers\UserController;
@@ -15,10 +18,15 @@ use App\Http\Controllers\DashboardController;
 // added 0927
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\TransactionController;
+<<<<<<< HEAD
+use App\Http\Controllers\DashboardController;
+>>>>>>> main
+=======
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CategoryItemListController;
 use App\Http\Controllers\EditProfileController;
 
+>>>>>>> main
 
 /*
 |--------------------------------------------------------------------------
@@ -51,9 +59,31 @@ Route::get('userlist', [UserlistController::class, 'index']);
 
 Auth::routes();
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::get('/categoryitem/categoryitemlist',[CategoryItemListController::class,'index'])->name('categoryitem.categoryitemlist');
+=======
+=======
 // ログアウトルート（コメントアウト解除）
 // Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+>>>>>>> main
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 //Route::get('/register',[RegisterController::class, 'register'])->name('register');
@@ -123,3 +153,4 @@ Route::get('/inventory', [InventoryController::class, 'index'])->name('inventory
 
 
 
+>>>>>>> main
