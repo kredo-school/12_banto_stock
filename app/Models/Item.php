@@ -19,13 +19,13 @@ class Item extends Model
         'inventory',
         'image',
         'status',
-        'category_id',
+        'category_id'
     ];
     public $timestamps = false;
 
 
     public function categories(){
-        return $this->belongsToMany(Category::class,'categories_items','item_id','category_id',)
+        return $this->belongsToMany(Category::class,'categories_items','item_id','category_id')
         ->withPivot('category_id');
     }
 }
