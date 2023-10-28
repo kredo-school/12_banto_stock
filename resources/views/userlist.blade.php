@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title', 'userlist')
-
+​
 @section('content')
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
             integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
@@ -21,7 +21,7 @@
                     <i class="fa-solid fa-hands fa-sm"></i>,
                 </h3>
             </div>
-
+​
         <div class="row mx-auto">
             <div class="card" style="max-width: 360px; height: 160px">
                 <div class="row">
@@ -101,7 +101,7 @@
                 </div>
             </div>
         </div>
-
+​
         <div class="container mt-5">
             <div class="row justify-content-between">
                 <div class="col-3">

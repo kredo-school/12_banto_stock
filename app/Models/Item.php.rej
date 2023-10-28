@@ -1,0 +1,17 @@
+diff a/app/Models/Item.php b/app/Models/Item.php	(rejected hunks)
+@@ -19,13 +19,13 @@
+         'inventory',
+         'image',
+         'status',
+-        'category_id',
++        'category_id'
+     ];
+     public $timestamps = false;
+ 
+ 
+     public function categories(){
+-        return $this->belongsToMany(Category::class,'categories_items','item_id','category_id',)
++        return $this->belongsToMany(Category::class,'categories_items','item_id','category_id')
+         ->withPivot('category_id');
+     }
+ }
