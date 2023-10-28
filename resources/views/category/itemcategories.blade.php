@@ -8,7 +8,7 @@
     body {
         margin: 0;
         padding: 0;
-        background-color: #99ccff;
+        /* background-color: #99ccff; */
     }
     
     .btn-color-sort {
@@ -23,7 +23,7 @@
 @endsection
 
 @section('content')
-<div class="container-fluid">
+<div class="container">
     <div class="row justify-content-center mt-1">
         <div class="col-12">
             <h1 class="h1 text-center fw-bold">ITEM CATEGORIES</h1>
