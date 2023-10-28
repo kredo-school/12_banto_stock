@@ -61,7 +61,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Active workers at Branch</h5>
                             <canvas id="pie-chart"></canvas>
-                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                            {{-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> --}}
                             <script>
                                 // ここにJavaScriptコードを挿入
                                 new Chart(document.getElementById("pie-chart"), {
