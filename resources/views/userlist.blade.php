@@ -60,6 +60,40 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">Active workers at Branch</h5>
+                            <canvas id="pie-chart"></canvas>
+                            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                            <script>
+                                // ここにJavaScriptコードを挿入
+                                new Chart(document.getElementById("pie-chart"), {
+                                    type: "pie",
+                                    data: {
+                                        labels: ["A", "B", "C", "D"],
+                                        datasets: [
+                                            {
+                                                backgroundColor: [
+                                                    "#003366",
+                                                    "#336699",
+                                                    "#99ccff",
+                                                    "#ccccff",
+                                                    "#f2f3f5",
+                                                ],
+                                                data: [9, 7, 2, 4],
+                                            },
+                                        ],
+                                    },
+                                    options: {
+                                        plugins: {
+                                            legend: {
+                                                display: true,
+                                                position: "right",
+                                                labels: {
+                                                    color: "rgb(0, 0, 0)",
+                                                },
+                                            },
+                                        },
+                                    },
+                                });
+                            </script>
                             <span></span>
                             <p class="card-text">A XXX</p>
                         </div>
