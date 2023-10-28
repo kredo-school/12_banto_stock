@@ -15,9 +15,7 @@ use App\Http\Controllers\UserlistController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\TransactionController;
-use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\CategoryItemListController;
 use App\Http\Controllers\EditProfileController;
 
 
@@ -36,12 +34,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// admin login 
+// admin login
 Route::get('/userlist', function () {
     return view('userlist');
 });
 
-Route::get('/editProfile', function () 
+Route::get('/editProfile', function ()
 {
     return view('editProfile');
 });
@@ -81,7 +79,7 @@ Route::get('/category/itemcategories', [CategoryItemListController::class, 'inde
 
 
 
-// editprofile 
+// editprofile
 Route::get('/edit-profile/{id}', [EditProfileController::class, 'index'])->name('EditProfile.index');
 Route::post('/edit-profile/{id}', [EditProfileController::class, 'update'])->name('edit-profile.edit');
 
@@ -129,4 +127,3 @@ Route::post('/item-view-send-order', [ItemViewController::class, 'sendOrder'])->
 Route::get('/transaction', [TransactionController::class, 'index'])->name('transaction.index');
 //InventoryController
 Route::get('/inventory', [InventoryController::class, 'index'])->name('inventory.index');
-
