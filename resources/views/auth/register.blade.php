@@ -56,12 +56,12 @@
 
 @section('content')
 <div class="container-fluid">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mt-5">
         <div class="col-md-8">
             <div class="card rounded-3">
                 <div class="row">
                     <div class="col-2 logo-section">
-                        <img src="{{ asset('storage/images/banto.png') }}" alt="Responsive image of cat" class="img-fluid banto-img">
+                        <img src="{{ asset('images/BANTO.jpg') }}" alt="Responsive image of cat" class="img-fluid banto-img">
                     </div>
                     <div class="col-8">
                         <h1 class="text-center fw-bold mb-3 mt-5">Create New Account</h1>
