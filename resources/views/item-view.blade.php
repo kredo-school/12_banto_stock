@@ -3,7 +3,7 @@
 @section('title', 'Item View')
 @section('content')
 
-<link rel="stylesheet" href="{{ asset('/css/items.css')  }}" >
+<link rel="stylesheet" href="{{ asset('/css/item.css')  }}" >
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
@@ -218,7 +218,7 @@
         <input type="hidden" name="total" value="{{ $total }}">
 
         <div class="d-flex justify-content-between">
-          <button type="submit" class="btn fw-bold send-btn">SEND ORDER</button>
+          <button type="submit" class="btn fw-bold send-btn" style="background-color: #336699; color: #fff;">SEND ORDER</button>
           <button type="submit" class="btn btn-light fw-bold cxl-btn">CANCEL</button>
         </div>
       </form>

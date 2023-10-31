@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Item Categories')
 @section('content')
+
 <div class="container-fluid">
     <div class="row justify-content-center mt-1">
         <div class="col-12">
