@@ -32,6 +32,8 @@ class UserController extends Controller
         $users = User::paginate(10);
         return redirect()->back();
     }
+
+
     public function login()
     {
         return view('auth.login');

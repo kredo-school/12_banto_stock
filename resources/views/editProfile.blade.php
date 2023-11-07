@@ -47,7 +47,10 @@ crossorigin="anonymous"></script>
             <div class="card-header border-primary "><h2>Edit Casher Profile </h2></div>
 
             <div class="card-body">
-            
+                {{-- 試しに書く --}}
+                
+                
+                {{--  --}}
                     <div>
                         <form action="{{ route('edit-profile.edit', ['id' => $user->id]) }}" method="post" enctype="multipart/form-data">
                             @csrf

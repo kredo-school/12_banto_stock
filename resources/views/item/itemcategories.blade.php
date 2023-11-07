@@ -1,29 +1,8 @@
 @extends('layouts.app')
-
-@section('title', 'Item Category')
-
-@section('styles')
-
-<style> 
-    body {
-        margin: 0;
-        padding: 0;
-        /* background-color: #99ccff; */
-    }
-    
-    .btn-color-sort {
-        background-color: #FFFFFF;
-    }
-
-    .btn-color-close {
-        background-color: #6699CC;
-    }
-</style>
-
-@endsection
-
+@section('title', 'Item Categories')
 @section('content')
-<div class="container">
+
+<div class="container-fluid">
     <div class="row justify-content-center mt-1">
         <div class="col-12">
             <h1 class="h1 text-center fw-bold">ITEM CATEGORIES</h1>
@@ -31,7 +10,7 @@
     </div>
     <div class="row mt-3">
         <div class="col-12 text-end">
-            <a href="#"><button type="button" class="btn btn-danger">CLOSE</button></a> {{--Return TOP VIEW--}}
+            <a href="{{ route('home')}}"><button type="button" class="btn btn-danger">CLOSE</button></a> {{--Return TOP VIEW--}}
         </div>
     </div>
     <div class="row mt-3">
@@ -47,15 +26,15 @@
                         alt="Category Image"
                         class="card-img-top mb-1 rounded" style="height: 180px; object-fit: cover;">                
                         <div class="card-body d-flex flex-column">
-                            {{-- Category name from categories table --}}
-                            <div class="text-dark fw-bold">Total Amount: $ {{ $category->item->sum('price') }}</div>
-                            {{-- Category total amount from categories table --}}
-                            <div class="text-dark fw-bold">Total Quantity: {{ $category->item->count() }} piece</div>
-                            {{-- Category total number from categories table --}}
-                            <div class="text-end mt-auto">
-                                <a href="{{route('category.edit' , $category->id)}}"><i class="fa-solid fa-pen me-1"></i></a>
-                                {{-- Go to category edit page --}}
-                            </div>
+                    {{-- Category name from categories table --}}
+                    <div class="text-dark fw-bold">Total Amount: $ {{ $category->item->sum('price') }}</div>
+                    {{-- Category total amount from categories table --}}
+                    <div class="text-dark fw-bold">Total Quantity: {{ $category->item->count() }} piece</div>
+                    {{-- Category total number from categories table --}}
+                    <div class="text-end mt-auto">
+                        <a href="{{route('category.edit' , $category->id)}}"><i class="fa-solid fa-pen me-1"></i></a>
+                        {{-- Go to category edit page --}}
+                    </div>
                 </div>
             </div>
         </div>
