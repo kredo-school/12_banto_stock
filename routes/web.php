@@ -8,19 +8,12 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ItemEditController;
 use App\Http\Controllers\ItemViewController;
-<<<<<<< HEAD
 use App\Http\Controllers\UserlistController;
 use App\Http\Controllers\DashboardController;
 // added 0927
 use App\Http\Controllers\InventoryController;
 use App\Http\Controllers\TransactionController;
-=======
-// added 0927
-use App\Http\Controllers\UserlistController;
-use App\Http\Controllers\InventoryController;
-use App\Http\Controllers\TransactionController;
-use App\Http\Controllers\DashboardController;
->>>>>>> c779153d12a0d4254989d1756f82b6b691f52939
+
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\CategoryItemListController;
 use App\Http\Controllers\EditProfileController;
@@ -41,20 +34,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-<<<<<<< HEAD
-// admin login 
-=======
-// admin login
->>>>>>> c779153d12a0d4254989d1756f82b6b691f52939
 Route::get('/userlist', function () {
     return view('userlist');
 });
 
-<<<<<<< HEAD
 Route::get('/editProfile', function () 
-=======
-Route::get('/editProfile', function ()
->>>>>>> c779153d12a0d4254989d1756f82b6b691f52939
+
 {
     return view('editProfile');
 });
